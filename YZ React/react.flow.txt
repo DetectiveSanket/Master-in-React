@@ -31,17 +31,17 @@
 | └── Project Structure     ✔️
 |
 |── Components
-| ├── Functional Components  
-| ├── Class Components       
-| ├── Component Props        
-| | ├── Passing Props       
-| | ├── Props Validation    
-| | ├── Default Props       
-| | └── Props Destructuring 
-| ├── Component Composition  
-| └── Component Patterns     
-| ├── Higher-Order Components (HOC) 
-| └── Render Props          
+| ├── Functional Components   ✔️
+| ├── Class Components       ✔️
+| ├── Component Props        ✔️
+| | ├── Passing Props       ✔️
+| | ├── Props Validation    ✔️
+| | ├── Default Props       ✔️
+| | └── Props Destructuring ✔️
+| ├── Component Composition ✔️
+| └── Component Patterns    ✔️
+| ├── Higher-Order Components (HOC) ✔️
+| └── Render Props         ✔️
 |
 |── State Management
 | ├── useState Hook          
