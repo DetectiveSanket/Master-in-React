@@ -31,199 +31,199 @@
 | └── Project Structure     ✔️
 |
 |── Components
-| ├── Functional Components  ✔️
-| ├── Class Components       ✔️
-| ├── Component Props        ✔️
-| | ├── Passing Props       ✔️
-| | ├── Props Validation    ✔️
-| | ├── Default Props       ✔️
-| | └── Props Destructuring ✔️
-| ├── Component Composition  ✔️
-| └── Component Patterns     ✔️
-| ├── Higher-Order Components (HOC) ✔️
-| └── Render Props          ✔️
+| ├── Functional Components  
+| ├── Class Components       
+| ├── Component Props        
+| | ├── Passing Props       
+| | ├── Props Validation    
+| | ├── Default Props       
+| | └── Props Destructuring 
+| ├── Component Composition  
+| └── Component Patterns     
+| ├── Higher-Order Components (HOC) 
+| └── Render Props          
 |
 |── State Management
-| ├── useState Hook          ✔️
-| | ├── State Updates       ✔️
-| | ├── State with Objects  ✔️
-| | └── State with Arrays   ✔️
-| ├── State vs Props         ✔️
-| ├── Lifting State Up       ✔️
-| └── State Management Patterns ✔️
+| ├── useState Hook          
+| | ├── State Updates       
+| | ├── State with Objects  
+| | └── State with Arrays   
+| ├── State vs Props         
+| ├── Lifting State Up       
+| └── State Management Patterns 
 |
 |── React Hooks
 | ├── Built-in Hooks
-| | ├── useState            ✔️
-| | ├── useEffect           ✔️
-| | | ├── Component Lifecycle ✔️
-| | | ├── Cleanup Functions  ✔️
-| | | └── Dependency Array   ✔️
-| | ├── useContext          ✔️
-| | ├── useReducer          ✔️
-| | ├── useCallback         ✔️
-| | ├── useMemo             ✔️
-| | ├── useRef              ✔️
-| | ├── useImperativeHandle ✔️
-| | ├── useLayoutEffect     ✔️
-| | └── useDebugValue       ✔️
-| ├── Custom Hooks          ✔️
-| └── Hooks Rules           ✔️
+| | ├── useState            
+| | ├── useEffect           
+| | | ├── Component Lifecycle 
+| | | ├── Cleanup Functions  
+| | | └── Dependency Array   
+| | ├── useContext          
+| | ├── useReducer          
+| | ├── useCallback         
+| | ├── useMemo             
+| | ├── useRef              
+| | ├── useImperativeHandle 
+| | ├── useLayoutEffect     
+| | └── useDebugValue       
+| ├── Custom Hooks          
+| └── Hooks Rules           
 |
 |── Event Handling
-| ├── Event Handlers        ✔️
-| ├── SyntheticEvents       ✔️
-| ├── Event Binding         ✔️
-| └── Event Parameters      ✔️
+| ├── Event Handlers        
+| ├── SyntheticEvents       
+| ├── Event Binding         
+| └── Event Parameters      
 |
 |── Conditional Rendering
-| ├── if/else statements     ✔️
-| ├── Ternary Operator      ✔️
-| ├── Logical && Operator   ✔️
-| └── Switch Statements     ✔️
+| ├── if/else statements     
+| ├── Ternary Operator      
+| ├── Logical && Operator   
+| └── Switch Statements     
 |
 |── Lists and Keys
-| ├── Rendering Lists       ✔️
-| ├── Keys in React         ✔️
-| ├── Dynamic Lists         ✔️
-| └── List Performance      ✔️
+| ├── Rendering Lists       
+| ├── Keys in React         
+| ├── Dynamic Lists         
+| └── List Performance      
 |
 |── Forms and Input Handling
-| ├── Controlled Components ✔️
-| ├── Uncontrolled Components ✔️
-| ├── Form Validation       ✔️
-| ├── Multiple Inputs       ✔️
-| └── Form Libraries        ✔️
-| ├── Formik               ✔️
-| └── React Hook Form      ✔️
+| ├── Controlled Components 
+| ├── Uncontrolled Components 
+| ├── Form Validation       
+| ├── Multiple Inputs       
+| └── Form Libraries        
+| ├── Formik               
+| └── React Hook Form      
 |
 |── Component Lifecycle
-| ├── Class Component Lifecycle ✔️
-| | ├── componentDidMount   ✔️
-| | ├── componentDidUpdate  ✔️
-| | └── componentWillUnmount ✔️
-| └── Functional Component Lifecycle ✔️
-| └── useEffect Equivalents ✔️
+| ├── Class Component Lifecycle 
+| | ├── componentDidMount   
+| | ├── componentDidUpdate  
+| | └── componentWillUnmount 
+| └── Functional Component Lifecycle 
+| └── useEffect Equivalents 
 |
 |── Context API
-| ├── React.createContext   ✔️
-| ├── Context.Provider      ✔️
-| ├── Context.Consumer      ✔️
-| ├── useContext Hook       ✔️
-| └── Context Best Practices ✔️
+| ├── React.createContext   
+| ├── Context.Provider      
+| ├── Context.Consumer      
+| ├── useContext Hook       
+| └── Context Best Practices 
 |
 |── React Router
-| ├── Installation & Setup  ✔️
-| ├── Basic Routing         ✔️
-| ├── Route Parameters      ✔️
-| ├── Nested Routes         ✔️
-| ├── Navigation            ✔️
-| | ├── Link Component     ✔️
-| | ├── NavLink Component  ✔️
-| | └── useNavigate Hook   ✔️
-| ├── Route Guards          ✔️
-| └── Dynamic Routing       ✔️
+| ├── Installation & Setup  
+| ├── Basic Routing         
+| ├── Route Parameters      
+| ├── Nested Routes         
+| ├── Navigation            
+| | ├── Link Component     
+| | ├── NavLink Component  
+| | └── useNavigate Hook   
+| ├── Route Guards          
+| └── Dynamic Routing       
 |
 |── State Management Libraries
-| ├── Redux                 ✔️
-| | ├── Actions            ✔️
-| | ├── Reducers           ✔️
-| | ├── Store              ✔️
-| | ├── connect()          ✔️
-| | └── useSelector/useDispatch ✔️
-| ├── Redux Toolkit         ✔️
-| ├── Zustand              ✔️
-| ├── Recoil               ✔️
-| └── Context + useReducer ✔️
+| ├── Redux                 
+| | ├── Actions            
+| | ├── Reducers           
+| | ├── Store              
+| | ├── connect()          
+| | └── useSelector/useDispatch 
+| ├── Redux Toolkit         
+| ├── Zustand              
+| ├── Recoil               
+| └── Context + useReducer 
 |
 |── Styling in React
-| ├── CSS Stylesheets       ✔️
-| ├── Inline Styles         ✔️
-| ├── CSS Modules           ✔️
-| ├── Styled Components     ✔️
-| ├── Emotion              ✔️
-| ├── Tailwind CSS         ✔️
-| └── CSS-in-JS            ✔️
+| ├── CSS Stylesheets       
+| ├── Inline Styles         
+| ├── CSS Modules           
+| ├── Styled Components     
+| ├── Emotion              
+| ├── Tailwind CSS         
+| └── CSS-in-JS            
 |
 |── HTTP Requests & APIs
-| ├── Fetch API             ✔️
-| ├── Axios                 ✔️
-| ├── useEffect for API calls ✔️
-| ├── Loading States        ✔️
-| ├── Error Handling        ✔️
-| └── Custom API Hooks      ✔️
+| ├── Fetch API             
+| ├── Axios                 
+| ├── useEffect for API calls 
+| ├── Loading States        
+| ├── Error Handling        
+| └── Custom API Hooks      
 |
 |── Performance Optimization
-| ├── React.memo           ✔️
-| ├── useMemo              ✔️
-| ├── useCallback          ✔️
-| ├── React.lazy           ✔️
-| ├── Suspense             ✔️
-| ├── Code Splitting       ✔️
-| ├── Bundle Analysis      ✔️
-| └── Profiling            ✔️
+| ├── React.memo           
+| ├── useMemo              
+| ├── useCallback          
+| ├── React.lazy           
+| ├── Suspense             
+| ├── Code Splitting       
+| ├── Bundle Analysis      
+| └── Profiling            
 |
 |── Error Boundaries
-| ├── Error Boundary Class  ✔️
-| ├── componentDidCatch     ✔️
-| ├── getDerivedStateFromError ✔️
-| └── Error Boundary Libraries ✔️
+| ├── Error Boundary Class  
+| ├── componentDidCatch     
+| ├── getDerivedStateFromError 
+| └── Error Boundary Libraries 
 |
 |── Refs and DOM Access
-| ├── useRef Hook           ✔️
-| ├── Ref Forwarding        ✔️
-| ├── Callback Refs         ✔️
-| └── DOM Manipulation      ✔️
+| ├── useRef Hook           
+| ├── Ref Forwarding        
+| ├── Callback Refs         
+| └── DOM Manipulation      
 |
 |── Portals
-| ├── ReactDOM.createPortal ✔️
-| ├── Modal Implementation  ✔️
-| └── Portal Use Cases      ✔️
+| ├── ReactDOM.createPortal 
+| ├── Modal Implementation  
+| └── Portal Use Cases      
 |
 |── Testing
-| ├── Jest                  ✔️
-| ├── React Testing Library ✔️
-| ├── Component Testing     ✔️
-| ├── Hook Testing          ✔️
-| ├── Integration Testing   ✔️
-| ├── Snapshot Testing      ✔️
-| └── E2E Testing           ✔️
-| ├── Cypress              ✔️
-| └── Playwright           ✔️
+| ├── Jest                  
+| ├── React Testing Library 
+| ├── Component Testing     
+| ├── Hook Testing          
+| ├── Integration Testing   
+| ├── Snapshot Testing      
+| └── E2E Testing           
+| ├── Cypress              
+| └── Playwright           
 |
 |── Build Tools & Bundlers
-| ├── Webpack               ✔️
-| ├── Vite                  ✔️
-| ├── Parcel                ✔️
-| ├── Rollup                ✔️
-| └── ESBuild               ✔️
+| ├── Webpack               
+| ├── Vite                  
+| ├── Parcel                
+| ├── Rollup                
+| └── ESBuild               
 |
 |── TypeScript with React
-| ├── TypeScript Setup      ✔️
-| ├── Component Types       ✔️
-| ├── Props Types           ✔️
-| ├── State Types           ✔️
-| ├── Event Types           ✔️
-| ├── Ref Types             ✔️
-| └── Generic Components    ✔️
+| ├── TypeScript Setup      
+| ├── Component Types       
+| ├── Props Types           
+| ├── State Types           
+| ├── Event Types           
+| ├── Ref Types             
+| └── Generic Components    
 |
 |── Advanced Patterns
-| ├── Compound Components   ✔️
-| ├── Render Props          ✔️
-| ├── Higher-Order Components ✔️
-| ├── Custom Hooks          ✔️
-| ├── Provider Pattern      ✔️
-| ├── Observer Pattern      ✔️
-| └── Factory Pattern       ✔️
+| ├── Compound Components   
+| ├── Render Props          
+| ├── Higher-Order Components 
+| ├── Custom Hooks          
+| ├── Provider Pattern      
+| ├── Observer Pattern      
+| └── Factory Pattern       
 |
 |── React 18+ Features
-| ├── Concurrent Features   ✔️
-| ├── Suspense for Data Fetching ✔️
-| ├── Server Components     ✔️
-| ├── Automatic Batching    ✔️
-| ├── useTransition         ✔️
-| ├── useDeferredValue      ✔️
-| └── useId                 ✔️
+| ├── Concurrent Features   
+| ├── Suspense for Data Fetching 
+| ├── Server Components     
+| ├── Automatic Batching    
+| ├── useTransition         
+| ├── useDeferredValue      
+| └── useId                 
 |
 |── Meta Frameworks
 | ├── Next.js               ✔️
