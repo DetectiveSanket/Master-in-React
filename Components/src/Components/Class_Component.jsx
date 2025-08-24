@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 class Class_Component extends Component {
     // The constructor is where you initialize state
+
     constructor(props) {
         super(props);
         this.state = {
@@ -15,8 +16,9 @@ class Class_Component extends Component {
             <>
                 <h1 style={{ color: 'orange' }}>Class_Component</h1>
 
-                <h1 style={{ color: 'cyan' }}>{this.state.message}</h1>
-                <p style={{ color: 'cyan' }}>{this.props.message}</p>
+                <p style={{ color: 'cyan' }}> {this.state.message} </p>
+                <p style={{ color: 'cyan' }}> {this.props.message} </p>
+
             </>
         );
     }
@@ -25,7 +27,7 @@ class Class_Component extends Component {
 export default Class_Component;
 
 /*
-Readable summary: Functional vs Class Components
+⁡⁢⁣⁣Readable summary: Functional vs Class Components⁡
 
 - Syntax
     - Functional: function Component() {}
@@ -40,8 +42,8 @@ Readable summary: Functional vs Class Components
     - Class: use Lifecycle methods: componentDidMount, componentDidUpdate, componentWillUnmount
 
 - Props
-    - Functional: received as function arguments (props) or destructured
-    - Class: accessed via this.props
+    - Functional: received as function ⁡⁣⁣⁢arguments (props) ⁡or destructured
+    - Class: accessed via ⁡⁣⁣⁢this.props⁡
 
 - "this" keyword
     - Functional: not used

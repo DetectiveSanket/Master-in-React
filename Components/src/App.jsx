@@ -1,6 +1,6 @@
 
 import './App.css'
-import Function_Component from './Components/Function_Component'
+import { Function_Component , AnotherFunctionComponent } from './Components/Function_Component'
 import Class_Component from './Components/Class_Component'
 
 function App() {
@@ -28,6 +28,7 @@ function App() {
             <hr />
             
              <Function_Component message={message}/> {/*// Passing message as prop to Function_Component */}
+             <AnotherFunctionComponent />
 
             <hr />
 
