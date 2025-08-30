@@ -43,13 +43,13 @@
 | ├── Higher-Order Components (HOC) ✔️
 | └── Render Props         ✔️
 |
-|── State Management
-| ├── useState Hook          
-| | ├── State Updates       
-| | ├── State with Objects  
-| | └── State with Arrays   
-| ├── State vs Props         
-| ├── Lifting State Up       
+|── State Management       ✔️
+| ├── useState Hook           ✔️
+| | ├── State Updates       ✔️
+| | ├── State with Objects  ✔️
+| | └── State with Arrays   ✔️
+| ├── State vs Props         ✔️
+| ├── Lifting State Up       ✔️
 | └── State Management Patterns 
 |
 |── React Hooks

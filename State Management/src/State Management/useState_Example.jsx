@@ -115,4 +115,75 @@ export default useState_Example;
 
         * Caveats
             - The set function only updates the state variable for the next render. If you read the state variable after calling the set function, you will still get the old value that was on the screen before your call.
+
+
+    3. State Updates
+
+        - React state should never be ⁡⁣⁣⁢mutated directly⁡. You always use the updater function.
+        - To mutate something directly means to change the existing object or array itself instead of creating a new copy.
+
+        Incorrect:
+        count = count + 1; // ❌ won't trigger re-render
+
+        Correct:
+        setCount(count + 1); // ✅ triggers re-render      
+        
+        ! Direct mutation (❌ wrong way)
+        const [user, setUser] = useState({ name: "John", age: 25 });
+
+        function updateAge() {
+        user.age = 26;         // ❌ directly changing the state object
+        setUser(user);         // ❌ React may not re-render because reference didn’t change
+
+        ! Immutable update (✅ correct way)
+        const [user, setUser] = useState({ name: "John", age: 25 });
+
+        function updateAge() {
+        setUser(prev => ({ ...prev, age: 26 }));  // ✅ creates a new object reference
+    
+        
+    4. State with Objects
+
+        - When your state is an object, you must copy the old state to preserve unchanged properties (because setState replaces, not merges).
+
+        ⁡⁢⁢⁢const [user, setUser] = useState({ name: "John", age: 25 });
+
+        const incrementAge = () => {
+            setUser(prevUser => ({ ...prevUser, age: prevUser.age + 1 }));
+        };⁡
+
+        ⁡⁢⁢⁢<p>{user.name} is {user.age} years old</p>
+        <button onClick={incrementAge}>Increase Age</button>⁡
+
+    5. State with Arrays
+
+        - When storing arrays, treat them immutably:
+        - Use map to update items.
+        - Use filter to remove items.
+        - Use spread [...arr, newItem] to add items.  
+        
+    7. Lifting State Up
+
+        - When two sibling components need to share the same state, you "lift" the state to their closest parent and pass it down via props. 
+        
+        ex_
+           ⁡⁢⁢⁢function ChildA({ value, onChange }) {
+                return <input value={value} onChange={e => onChange(e.target.value)} />;
+            }
+
+            function ChildB({ value }) {
+                return <p>You typed: {value}</p>;
+            }
+
+            function Parent() {
+            const [shared, setShared] = useState("");
+
+            return (
+                    <div>
+                    <ChildA value={shared} onChange={setShared} />
+                    <ChildB value={shared} />
+                    </div>
+                );
+            }⁡
+
 */
