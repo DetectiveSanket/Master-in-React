@@ -1,10 +1,10 @@
-import { useState } from 'react'
 
 
 import './App.css'
-  const [count, setCount] = useState(0)
+// Import the example component from the correct folder and alias it with PascalCase
+import UseStateExample from './State Management/useState_Example'
 
-
+ 
 
 function App() {
   return (
@@ -22,7 +22,9 @@ function App() {
                     | └── State Management Patterns 
                 </p>
             </div>
-            
+
+            <UseStateExample />
+
         </>
     )
 }
