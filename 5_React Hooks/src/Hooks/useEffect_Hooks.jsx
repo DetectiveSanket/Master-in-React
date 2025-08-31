@@ -23,6 +23,7 @@ function UseEffectHooks() {
 
     return (
         <>
+            <hr />
             <h4>useEffect Hook</h4>
         </>
     )

@@ -1,6 +1,7 @@
 
 import './App.css'
 import UseEffectHooks from './Hooks/useEffect_Hooks';
+import UseReducerHook from './Hooks/useReducer_Hook';
 
 function App() {
 
@@ -30,6 +31,7 @@ function App() {
             </p>
 
             <UseEffectHooks />
+            <UseReducerHook />
         </>
     )
 }
@@ -37,18 +39,15 @@ function App() {
 export default App;
 
 /* 
-    # React Hooks
-      1. React Hooks Overview
+  # React Hooks
+    ⁡⁢⁣⁣1. React Hooks Overview⁡
 
         - Hooks are functions that let you “hook into” React features (like state, context, lifecycle methods) inside functional components — no need for class components anymore.
 
         - Before React 16.8, you needed class components to use features like lifecycle methods and state. Hooks replaced that pain. Now, you can use functional components for everything!
 
 
-
-
-
-      2. Built-in Hooks
+    2. Built-in Hooks⁡
 
         a) useState
             • We’ve already covered this in the previous module: 
@@ -84,7 +83,26 @@ export default App;
         - useLayoutEffect
         - useDebugValue
 
-    ## Custom Hooks
+    ⁡⁢⁣⁣3. Custom Hooks⁡
+        - You can build your own hooks to share logic between components.
+        - A custom hook is just a function starting with use that can call other hooks.
 
-    ## Hooks Rules
+    ⁡⁢⁣⁣4. Hooks Rules⁡
+        1) Only call hooks at the top level.
+            - Don’t call inside loops, conditions, or nested functions.
+            - This ensures consistent hook call order across renders.
+
+        2) Only call hooks from React functions.
+            - Functional components.
+            - Custom hooks.
+            - Not from regular JS functions.
+
+    ⁡⁢⁣⁣##  Summary⁡
+        - Basic state and effects → useState, useEffect.
+        - Shared/global state → useContext, useReducer.
+        - Performance optimizations → useMemo, useCallback.
+        - DOM manipulation → useRef, useImperativeHandle, useLayoutEffect.
+        - Debugging → useDebugValue.
+        - Reusable logic → Custom Hooks.
+        - Golden rules → Top-level only, React functions only.       
 */
