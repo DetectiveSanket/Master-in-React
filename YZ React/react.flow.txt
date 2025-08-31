@@ -2,7 +2,7 @@
 ## The React Learning Tree 👇
 
 ```
-|
+|__1.
 |── Prerequisites (JavaScript Foundation)
 | ├── ES6+ Features          ✔️
 | | ├── Arrow Functions      ✔️
@@ -18,6 +18,7 @@
 | | └── forEach()           ✔️
 | └── DOM Manipulation       ✔️
 |
+|__2.
 |── React Fundamentals
 | ├── What is React?         ✔️
 | ├── Virtual DOM            ✔️
@@ -30,6 +31,7 @@
 | ├── Vite                  ✔️
 | └── Project Structure     ✔️
 |
+|__3.
 |── Components
 | ├── Functional Components  ✔️
 | ├── Class Components       ✔️
@@ -43,6 +45,7 @@
 | ├── Higher-Order Components (HOC) ✔️
 | └── Render Props         ✔️
 |
+|__4.
 |── State Management        ✔️
 | ├── useState Hook         ✔️
 | | ├── State Updates       ✔️
@@ -52,6 +55,7 @@
 | ├── Lifting State Up      ✔️
 | └── State Management Patterns  ✔️
 |
+|__5.
 |── React Hooks
 | ├── Built-in Hooks
 | | ├── useState            
@@ -70,12 +74,14 @@
 | ├── Custom Hooks          
 | └── Hooks Rules           
 |
+|__6.
 |── Event Handling
 | ├── Event Handlers        
 | ├── SyntheticEvents       
 | ├── Event Binding         
 | └── Event Parameters      
 |
+|__7.
 |── Conditional Rendering
 | ├── if/else statements     
 | ├── Ternary Operator      
