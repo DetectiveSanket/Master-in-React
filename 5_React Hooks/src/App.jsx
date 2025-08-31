@@ -1,5 +1,6 @@
 
 import './App.css'
+import UseEffectHooks from './Hooks/useEffect_Hooks';
 
 function App() {
 
@@ -27,6 +28,8 @@ function App() {
                 | ├── Custom Hooks          
                 | └── Hooks Rules 
             </p>
+
+            <UseEffectHooks />
         </>
     )
 }
