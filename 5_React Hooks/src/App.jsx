@@ -57,13 +57,6 @@ export default App;
             • useEffect is used to perform side effects in React components.
             • It can be used for data fetching, subscriptions, or manually changing the DOM.
 
-            * Side effects = anything outside rendering: fetching data, subscriptions, DOM manipulation, timers.
-
-            • It replaces lifecycle methods in class components:
-                - componentDidMount → run once after render.
-                - componentDidUpdate → run on updates.
-                - componentWillUnmount → cleanup.
-
         c) useContext
             • useContext is used to access the React context API.
             • It allows you to share values (like themes or user info) between components without prop drilling.
