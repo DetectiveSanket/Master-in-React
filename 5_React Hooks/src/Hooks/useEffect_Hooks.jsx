@@ -54,8 +54,8 @@ export default UseEffectHooks;
             - To clean up resources (like intervals or event listeners), return a function inside useEffect:
 
             ⁡⁢⁢⁢useEffect(() => {
-            const id = setInterval(() => console.log("tick"), 1000);
-            return () => clearInterval(id); // cleanup on unmount or before next effect run
+                const id = setInterval(() => console.log("tick"), 1000);
+                return () => clearInterval(id); // cleanup on unmount or before next effect run
             }, []);⁡    
 
         • React Component Lifecycle (Functional Components)  

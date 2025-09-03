@@ -60,32 +60,37 @@ export default App;
         c) useContext
             • useContext is used to access the React context API.
             • It allows you to share values (like themes or user info) between components without prop drilling.
+
         d) useReducer
             • useReducer is an alternative to useState for managing complex state logic.
             • It’s particularly useful for managing state in larger applications.
+
         e) useCallback
             • useCallback is used to memoize callback functions.
             • It helps prevent unnecessary re-renders by returning a memoized version of the callback.
+
         f) useMemo
             • useMemo is used to memoize expensive calculations.
             • It helps optimize performance by recalculating the value only when its dependencies change.
+
         g) useRef
             • useRef is used to create a mutable ref object.
             • It can be used to access DOM elements or store mutable values that don’t trigger re-renders.
+
         - useImperativeHandle
         - useLayoutEffect
         - useDebugValue
 
     ⁡⁢⁣⁣3. Custom Hooks⁡
         - You can build your own hooks to share logic between components.
-        - A custom hook is just a function starting with use that can call other hooks.
+        - A custom hook is just a function starting with "⁡⁣⁣⁢use⁡" that can call other hooks.
 
     ⁡⁢⁣⁣4. Hooks Rules⁡
-        1) Only call hooks at the top level.
+        1) Hook can only call at the top level.
             - Don’t call inside loops, conditions, or nested functions.
             - This ensures consistent hook call order across renders.
 
-        2) Only call hooks from React functions.
+        2) Hook can only call or used from React functions.
             - Functional components.
             - Custom hooks.
             - Not from regular JS functions.
