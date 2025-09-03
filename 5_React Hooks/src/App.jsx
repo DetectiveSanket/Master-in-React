@@ -1,5 +1,6 @@
 
 import './App.css'
+import UseContextHooks from './Hooks/UseContext_Hooks';
 import UseEffectHooks from './Hooks/useEffect_Hooks';
 import UseReducerHook from './Hooks/useReducer_Hook';
 
@@ -32,6 +33,7 @@ function App() {
 
             <UseEffectHooks />
             <UseReducerHook />
+            <UseContextHooks />
         </>
     )
 }
