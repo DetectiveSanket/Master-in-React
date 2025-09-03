@@ -108,7 +108,7 @@ export default useState_Example;
         * Parameters 
             • ⁡⁣⁢⁣nextState⁡: The value that you want the state to be. It can be a value of any type, but there is a special behavior for functions.
 
-            • If you pass a function as nextState, it will be treated as an updater function. It must be pure, should take the pending state as its only argument, and should return the next state. React will put your updater function in a queue and re-render your component. During the next render, React will calculate the next state by applying all of the queued updaters to the previous state. See an example below.
+            • If you pass a function as nextState, it will be treated as an ⁡⁣⁣⁢updater function⁡. It must be pure, should take the pending state as its only argument, and should return the next state. React will put your updater function in a queue and re-render your component. During the next render, React will calculate the next state by applying all of the queued updaters to the previous state. See an example below.
 
         * Returns
             - set functions do not have a return value.
@@ -119,28 +119,29 @@ export default useState_Example;
 
     3. State Updates
 
-        - React state should never be ⁡⁣⁣⁢mutated directly⁡. You always use the updater function.
+        - React state should never be ⁡⁣⁣⁢mutated directly⁡. You always use the ⁡⁣⁣⁢updater function.⁡
         - To mutate something directly means to change the existing object or array itself instead of creating a new copy.
 
-        Incorrect:
+        ⁡⁢⁣⁢Incorrect:⁡
         count = count + 1; // ❌ won't trigger re-render
 
-        Correct:
+        ⁡⁢⁣⁢Correct:⁡
         setCount(count + 1); // ✅ triggers re-render      
         
         ! Direct mutation (❌ wrong way)
         const [user, setUser] = useState({ name: "John", age: 25 });
 
         function updateAge() {
-        user.age = 26;         // ❌ directly changing the state object
-        setUser(user);         // ❌ React may not re-render because reference didn’t change
+            user.age = 26;         // ❌ directly changing the state object
+            setUser(user);         // ❌ React may not re-render because reference didn’t change
+        }
 
         ! Immutable update (✅ correct way)
         const [user, setUser] = useState({ name: "John", age: 25 });
 
         function updateAge() {
-        setUser(prev => ({ ...prev, age: 26 }));  // ✅ creates a new object reference
-    
+            setUser(prev => ({ ...prev, age: 26 }));  // ✅ creates a new object reference
+        }
         
     4. State with Objects
 
