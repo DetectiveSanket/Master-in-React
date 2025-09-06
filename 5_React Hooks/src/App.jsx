@@ -1,5 +1,6 @@
 
 import './App.css'
+import UseCallbackhook from './Hooks/UseCallback_hook';
 import UseContextHooks from './Hooks/UseContext_Hooks';
 import UseEffectHooks from './Hooks/useEffect_Hooks';
 import UseMemoHook from './Hooks/UseMemo_Hook';
@@ -33,9 +34,20 @@ function App() {
             </p>
 
             {/* <UseEffectHooks />
+
+                <hr />
             <UseReducerHook />
-            <UseContextHooks /> */}
-            <UseMemoHook />
+
+                <hr />
+                
+            <UseContextHooks />
+            
+                <hr />
+            <UseMemoHook /> */}
+
+            <hr />
+
+            <UseCallbackhook />
         </>
     )
 }

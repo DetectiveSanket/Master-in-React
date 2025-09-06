@@ -58,21 +58,21 @@
 |__5.
 |── React Hooks         ✔️
 | ├── Built-in Hooks    ✔️
-| | ├── useState      ✔️      
+| | ├── useState       ✔️      
 | | ├── useEffect      ✔️     
 | | | ├── Component Lifecycle ✔️
 | | | ├── Cleanup Functions  ✔️
 | | | └── Dependency Array   ✔️
-| | ├── useContext         ✔️  
-| | ├── useReducer       ✔️   
-| | ├── useCallback         
-| | ├── useMemo             
+| | ├── useContext          ✔️  
+| | ├── useReducer          ✔️   
+| | ├── useCallback         ✔️    
+| | ├── useMemo             ✔️   
 | | ├── useRef              
 | | ├── useImperativeHandle ✔️
 | | ├── useLayoutEffect     ✔️
 | | └── useDebugValue       ✔️
 | ├── Custom Hooks          
-| └── Hooks Rules           
+| └── Hooks Rules           ✔️      
 |
 |__6.
 |── Event Handling

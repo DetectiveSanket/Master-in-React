@@ -77,6 +77,11 @@ export default UseMemoHook;
             - This is particularly useful for optimizing performance in scenarios where a function performs expensive calculations or operations that do not need to be re-executed on every render.
             - By using useMemo, you can avoid unnecessary recalculations and improve the efficiency of your React components.
 
+            -- Its cache the value/result called memoized value.
+            -- For example, if you have a component that renders a list of items and you want to filter or sort the list based on user input, you can use useMemo to memoize the filtered or sorted list so that it is only recalculated when the user input changes.
+            -- This can help improve the performance of your component by avoiding unnecessary re-renders and calculations.
+
+            
    ⁡⁣⁢⁣ Key Use Cases:⁡
         - Performance Optimization: Memoizing expensive calculations to avoid unnecessary re-computations.
         - Referential Equality: Ensuring that objects or arrays maintain the same reference between renders unless their dependencies change.
