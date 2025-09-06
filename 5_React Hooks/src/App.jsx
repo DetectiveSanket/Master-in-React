@@ -2,6 +2,7 @@
 import './App.css'
 import UseContextHooks from './Hooks/UseContext_Hooks';
 import UseEffectHooks from './Hooks/useEffect_Hooks';
+import UseMemoHook from './Hooks/UseMemo_Hook';
 import UseReducerHook from './Hooks/useReducer_Hook';
 
 function App() {
@@ -31,9 +32,10 @@ function App() {
                 | └── Hooks Rules 
             </p>
 
-            <UseEffectHooks />
+            {/* <UseEffectHooks />
             <UseReducerHook />
-            <UseContextHooks />
+            <UseContextHooks /> */}
+            <UseMemoHook />
         </>
     )
 }
