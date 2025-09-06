@@ -63,7 +63,7 @@
 | | | ├── Component Lifecycle ✔️
 | | | ├── Cleanup Functions  ✔️
 | | | └── Dependency Array   ✔️
-| | ├── useContext          
+| | ├── useContext         ✔️  
 | | ├── useReducer       ✔️   
 | | ├── useCallback         
 | | ├── useMemo             

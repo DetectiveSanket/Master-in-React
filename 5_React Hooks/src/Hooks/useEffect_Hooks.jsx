@@ -68,18 +68,18 @@ export default UseEffectHooks;
                       │ State or props change
                       ▼
                 ┌─────────────┐
-                │ Component   │
-                │  Updates    │  ← Re-render → useEffect runs if deps changed
+                │  Component  │
+                │   Updates   │  ← Re-render → useEffect runs if deps changed
                 └─────┬───────┘
                       │
           Component removed from DOM
                       ▼
                 ┌─────────────┐
-                │ Component   │
-                │ Unmounts    │  ← Cleanup function (if any) runs
+                │  Component  │
+                │  Unmounts   │  ← Cleanup function (if any) runs
                 └─────────────┘
             
-        > How useEffect fits into this
+        ⁡⁣⁢⁣> How useEffect fits into this⁡
 
             useEffect(() => {...}, [])
                 - Runs once on mount
@@ -104,7 +104,7 @@ export default UseEffectHooks;
                     }, [count]);⁡
 
             
-            -││- What does "mount" mean?
+            ⁡⁣⁢⁣-││- What does "mount" mean?⁡
                 - In React, mounting is when a component is inserted into the DOM for the first time.
                 - Mount → component appears in the DOM (first render).
                 - Update → component re-renders because state/props changed.

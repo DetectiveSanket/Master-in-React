@@ -9,7 +9,7 @@ function ChildC() {
     return (
         <div>
             <h3>ChildC</h3>
-            <h2>Context value: {user?.name}</h2> 
+            <h2>Context value: {user?.name} </h2> 
             <p>child C get value form useCContext_hook successfully without props drilling</p>
         </div>
     );
