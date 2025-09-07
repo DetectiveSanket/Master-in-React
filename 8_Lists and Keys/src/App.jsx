@@ -1,10 +1,21 @@
-
+import React, { useState } from 'react'
 import './App.css'
 
 function App() {
 
+    // 1. Rendering Lists && 2. Keys in React
     const fruits = ['Mango', 'Apple', 'Banana', 'Grapes'];
 
+    // 3. Dynamic Lists
+    const [tools , setTools] = useState(['HTML', 'CSS', 'JavaScript']);
+
+    function addTools() {
+        setTools([...tools , 'ReactJS'])
+    };
+
+    function removeTools(tool) {
+        setTools(tools.filter((t) => t !== tool))
+    }
 
     return (
         <>
@@ -45,6 +56,32 @@ function App() {
                         - Now React knows exactly which list items changed if you update the array.
                 */}
             </ul>
+
+            <hr />
+
+            {/* ⁡⁢⁣⁣3. Dynamic Lists ⁡*/}
+            <div>
+                <h2>Dynamic Lists</h2>
+                <button onClick={addTools}>Add Tools</button>
+
+                <ul>
+                    {
+                        tools.map((tool ) => (
+                             <li key={tool}>
+                                {tool}
+                                <button onClick={()=> removeTools(tool)}>Remove the Tool</button>
+                            </li>
+                        ))
+                    }
+                    {/* 
+                        Explanation :-
+                            - setTodos([...todos, "ReactJs"]) → creates a new array with the new todo.
+                            - Each item has a unique key={todo}. for example key={ReactJs}
+                            - Remove works by filtering out the clicked item. 
+                    */}
+                </ul>    
+
+            </div>
         </>
     )
 }
@@ -70,8 +107,16 @@ export default App;
             
             ⁡
      ⁡⁣⁢⁣• Dynamic Lists
+        - Lists can be dynamic: you can add, remove, or update items.
+        - React efficiently re-renders only the changed items (if keys are used correctly).
 
      • List Performance⁡
+        - Lists can get very large (e.g., 10,000+ rows).
+        - Performance issues happen if React re-renders the entire list every time.
+        - Optimization strategies:
+        ✅ Use unique, stable keys.
+        ✅ Use React.memo for list items to prevent unnecessary re-renders.
+        ✅ Use windowing/virtualization libraries (like react-window or react-virtualized) for very large lists.
 
     
 

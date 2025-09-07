@@ -90,11 +90,11 @@
 | └── Early Returns.      ✔️
 |
 |__8.
-|── Lists and Keys
-| ├── Rendering Lists       
-| ├── Keys in React         
-| ├── Dynamic Lists         
-| └── List Performance      
+|── Lists and Keys     ✔️
+| ├── Rendering Lists  ✔️     
+| ├── Keys in React     ✔️    
+| ├── Dynamic Lists     ✔️    
+| └── List Performance   ✔️   
 |
 |── Forms and Input Handling
 | ├── Controlled Components 
