@@ -96,6 +96,7 @@
 | ├── Dynamic Lists     ✔️    
 | └── List Performance   ✔️   
 |
+|__9.
 |── Forms and Input Handling
 | ├── Controlled Components 
 | ├── Uncontrolled Components 
@@ -105,13 +106,14 @@
 | ├── Formik               
 | └── React Hook Form      
 |
-|── Component Lifecycle
-| ├── Class Component Lifecycle 
-| | ├── componentDidMount   
-| | ├── componentDidUpdate  
-| | └── componentWillUnmount 
-| └── Functional Component Lifecycle 
-| └── useEffect Equivalents 
+|__10.
+|── Component Lifecycle            ❌
+| ├── Class Component Lifecycle    ❌
+| | ├── componentDidMount          ❌
+| | ├── componentDidUpdate         ❌
+| | └── componentWillUnmount       ❌
+| └── Functional Component Lifecycle  ✔️
+| └── useEffect Equivalents ✔️
 |
 |── Context API
 | ├── React.createContext   
