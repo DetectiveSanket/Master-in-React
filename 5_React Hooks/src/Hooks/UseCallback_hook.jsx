@@ -38,7 +38,7 @@ function UseCallbackhook() {
 
             {/* 
                 //todo: If your are sending function as a prop , then react.memo is not able to save you from re-rendering of child component.
-                //* So to solve this problem we have to use useCallback hook.
+                //* So to solve this problem we have to use 𝘂𝘀𝗲𝗖𝗮𝗹𝗹𝗯𝗮𝗰𝗸 𝗵𝗼𝗼𝗸.
             */}
 
             <CallbackHookchild 
