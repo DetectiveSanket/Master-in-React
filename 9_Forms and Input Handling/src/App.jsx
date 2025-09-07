@@ -28,6 +28,30 @@ function App() {
     }
 
   // 3. Form Validation
+        const [email , setEmail] = useState('');
+        const [error , setError] = useState('');
+
+        function validateEmail(e) {
+            e.preventDefault();
+
+            if(!email.includes('@')) {
+                setError('Invalid email address');
+            }
+            else {
+                setError('');
+                alert(`Form submitted with email: ${email}`);
+                setEmail(''); // Clear controlled input after submission
+            }
+        }
+
+/* 
+         - Validation ensures that the data entered into a form meets certain criteria before it is processed or submitted.
+         - It helps maintain data integrity and improves user experience by providing immediate feedback on input errors.
+         - Validation can be:
+         - Client-side validation (e.g., checking if fields are filled, email format).
+         - Server-side validation (e.g., checking for unique usernames).
+         - Can be done using controlled components (validate on change/submit) or uncontrolled components (validate on submit).
+ */
 
   // 4. Multiple Inputs
 
@@ -95,6 +119,22 @@ function App() {
 
             {/* ⁡⁢⁣⁡⁣⁢⁣3.Form Validation⁡⁡ */}
             <p>Form Validation will be here</p>
+            <form onSubmit={validateEmail}>
+                <label htmlFor="email">Email: </label>
+                <input 
+                    type="text"
+                    value={email}
+                    placeholder='Enter your email'
+                    onChange={(e) => setEmail(e.target.value)}
+                />
+                {error && <p style={{color:'red'}}>{error}</p>}    
+                <button type='submit'>Submit</button>
+            </form>
+            {/* 
+                Explanation:
+                        - setError updates when validation fails.
+                        - Error message shows dynamically..
+            */}
 
             <hr />
 
@@ -124,5 +164,22 @@ export default App;
         - The value comes from state, and the onChange updates that state.
         - React is the single source of truth.
 
-    • ⁡⁣⁢⁣Uncontrolled Components⁡    
+    • ⁡⁣⁢⁣Uncontrolled Components⁡  
+        - An uncontrolled component uses the DOM itself to keep the input’s value.
+        - Instead of React state, you use useRef to access the value when needed.
+        
+    • ⁡⁣⁢⁣⁡⁢⁣⁣⁡⁣⁢⁣𝗙𝗼𝗿𝗺 𝗩𝗮𝗹𝗶𝗱𝗮𝘁𝗶𝗼𝗻⁡ ⁡   
+        - Validation ensures inputs are correct before submission.
+        - Can be:
+            - Client-side (JS/React validation).
+            - Server-side (after submission).
+        - With controlled components, validation is easy since values are always in state.
+        - With uncontrolled components, you may need to access values via refs for validation.
+
+    • ⁡⁣⁢⁣⁡⁢⁣⁣⁡⁢⁣⁣⁡⁣⁢⁣𝗠𝘂𝗹𝘁𝗶𝗽𝗹𝗲 𝗜𝗻𝗽𝘂𝘁𝘀⁡⁡⁡   
+        - Forms often have multiple inputs (text, checkboxes, radios, selects).
+        - For controlled components, manage each input's state or use a single state object.
+        - For uncontrolled components, use refs for each input.
+
+    • ⁡⁣⁢⁣⁡⁢⁣⁣⁡⁣⁢⁣𝗙𝗼𝗿𝗺 𝗟𝗶𝗯𝗿𝗮𝗿𝗶𝗲𝘀⁡
 */
