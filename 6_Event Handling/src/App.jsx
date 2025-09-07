@@ -7,6 +7,13 @@ function App() {
         alert('Button Clicked!');
     }
 
+    // 2. SyntheticEvents
+    function handleChange(event) {
+        console.log('Typed value : ', event.target.value);
+        console.log("Event Type : ", event.type); // "change"
+        console.log(event); // SyntheticEvent object
+    }
+
     return (
         <>
 
@@ -34,6 +41,11 @@ function App() {
             <hr />
 
             {/* ⁡⁢⁣⁣2. ⁡⁢⁣⁣SyntheticEvents⁡ */}
+                    <input 
+                        type="text" 
+                        placeholder='Type something...'
+                        onChange={handleChange}
+                    />
 
             {/* ⁡⁢⁣⁣3. Event Binding⁡ */}
 
@@ -61,5 +73,25 @@ export default App;
         ⁡⁣⁢⁣1. Event Handlers:-
             - In React, events are handled using attributes like onClick, onChange, onSubmit.
             - These attributes expect a function reference, not a function call.
-            - React uses camelCase (onClick) instead of lowercase (onclick) used in plain HTML.⁡        
+            - React uses camelCase (onClick) instead of lowercase (onclick) used in plain HTML.⁡ 
+            
+        ⁡⁣⁢⁣2. SyntheticEvents:-⁡
+            * Normally, browsers provide their own native events (like MouseEvent, KeyboardEvent).
+            - React creates a cross-browser wrapper around the browser's native event called SyntheticEvent.
+
+            * React wraps these in a SyntheticEvent, which is:
+               <> A lightweight wrapper that normalizes differences across browsers.
+               <> Works like native events but has consistent properties (e.g., event.target, event.type).
+
+            * React reuses event objects (event pooling) for performance. After an event handler finishes, the event object may be cleared.
+                <> That’s why if you access event asynchronously (like inside setTimeout), you may see it’s null.
+                <> To avoid that → call event.persist().
+
+        3. Event Binding:-
+            - In class components, you often need to bind event handlers to the component instance using .bind(this) or by using arrow functions.
+            - In functional components, you can define event handlers directly within the component without needing to bind them.
+
+        4. Event Parameters:-
+            - You can pass additional parameters to event handlers by using arrow functions or by defining a function that returns another function.
+            - The first parameter of the event handler is always the event object, which contains information about the event that occurred.    
 */
