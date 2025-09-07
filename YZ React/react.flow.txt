@@ -97,14 +97,14 @@
 | └── List Performance   ✔️   
 |
 |__9.
-|── Forms and Input Handling
-| ├── Controlled Components 
-| ├── Uncontrolled Components 
-| ├── Form Validation       
-| ├── Multiple Inputs       
-| └── Form Libraries        
-| ├── Formik               
-| └── React Hook Form      
+|── Forms and Input Handling ✔️
+| ├── Controlled Components ✔️
+| ├── Uncontrolled Components ✔️
+| ├── Form Validation       ✔️
+| ├── Multiple Inputs      ✔️ 
+| └── Form Libraries       ✔️ 
+| ├── Formik               ✔️
+| └── React Hook Form      ✔️
 |
 |__10.
 |── Component Lifecycle            ❌
@@ -115,6 +115,7 @@
 | └── Functional Component Lifecycle  ✔️
 | └── useEffect Equivalents ✔️
 |
+|__11.
 |── Context API
 | ├── React.createContext   
 | ├── Context.Provider      
