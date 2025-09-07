@@ -75,11 +75,11 @@
 | └── Hooks Rules           ✔️      
 |
 |__6.
-|── Event Handling
-| ├── Event Handlers        
-| ├── SyntheticEvents       
-| ├── Event Binding         
-| └── Event Parameters      
+|── Event Handling   ✔️
+| ├── Event Handlers  ✔️      
+| ├── SyntheticEvents   ✔️    
+| ├── Event Binding    ✔️     
+| └── Event Parameters  ✔️    
 |
 |__7.
 |── Conditional Rendering
