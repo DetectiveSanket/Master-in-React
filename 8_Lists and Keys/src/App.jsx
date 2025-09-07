@@ -118,6 +118,10 @@ export default App;
         ✅ Use React.memo for list items to prevent unnecessary re-renders.
         ✅ Use windowing/virtualization libraries (like react-window or react-virtualized) for very large lists.
 
-    
+    ✅ Summary
+        <> Rendering Lists → Use .map() to create JSX from arrays.
+        <> Keys → Unique + stable identifiers so React knows what changed.
+        <> Dynamic Lists → Use state (useState) to add/remove/update items.
+        <> List Performance → Use keys, memo, and virtualization for large lists.    
 
 */
