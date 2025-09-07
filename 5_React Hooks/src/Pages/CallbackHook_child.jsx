@@ -23,17 +23,17 @@ import React from 'react'
 const CallbackHookchild = React.memo (
     (props) => {
 
-    console.log("Child component re-rendered again....");
+        console.log("Child component re-rendered again....");
 
-    return (
-        <div>
+        return (
+            <div>
 
-            <h3>Child Component</h3>
-            <p>Count value in child component : {props.name}</p>
-            <button onClick={props.onClick}>Increment from child</button>
-        </div>
-    )
-}
+                <h3>Child Component</h3>
+                <p>Count value in child component : {props.name}</p>
+                <button onClick={props.onClick}>Increment from child</button>
+            </div>
+        )
+    }
 ) 
 
 export default CallbackHookchild;
