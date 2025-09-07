@@ -5,7 +5,7 @@ import LoginBtn from './components/LoginBtn';
 
 function App() {
 
-    const [isLoggedIn, setIsLoggedIn] = useState(true);
+    const [isLoggedIn, ] = useState(true);
 
     //*  1> if/else statement 
             

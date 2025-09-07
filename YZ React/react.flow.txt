@@ -82,13 +82,14 @@
 | └── Event Parameters  ✔️ 
 |
 |__7.
-|── Conditional Rendering.
-| ├── if/else statements.     
-| ├── Ternary Operator.      
-| ├── Logical && Operator.   
-| └── Switch Statements.  
-| └── Early Returns.      
+|── Conditional Rendering. ✔️
+| ├── if/else statements.  ✔️    
+| ├── Ternary Operator.      ✔️
+| ├── Logical && Operator.  ✔️ 
+| └── Switch Statements.  ✔️
+| └── Early Returns.      ✔️
 |
+|__8.
 |── Lists and Keys
 | ├── Rendering Lists       
 | ├── Keys in React         
