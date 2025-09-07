@@ -75,18 +75,19 @@
 | └── Hooks Rules           ✔️      
 |
 |__6.
-|── Event Handling   ✔️
-| ├── Event Handlers  ✔️      
-| ├── SyntheticEvents   ✔️    
-| ├── Event Binding    ✔️     
-| └── Event Parameters  ✔️    
+|── Event Handling    ✔️
+| ├── Event Handlers  ✔️   
+| ├── SyntheticEvents   ✔️ 
+| ├── Event Binding     ✔️  
+| └── Event Parameters  ✔️ 
 |
 |__7.
-|── Conditional Rendering
-| ├── if/else statements     
-| ├── Ternary Operator      
-| ├── Logical && Operator   
-| └── Switch Statements     
+|── Conditional Rendering.
+| ├── if/else statements.     
+| ├── Ternary Operator.      
+| ├── Logical && Operator.   
+| └── Switch Statements.  
+| └── Early Returns.      
 |
 |── Lists and Keys
 | ├── Rendering Lists       
