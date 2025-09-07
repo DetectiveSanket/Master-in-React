@@ -14,6 +14,12 @@ function App() {
         console.log(event); // SyntheticEvent object
     }
 
+    // 3. Event Binding
+    const label = "click me";
+     function handle() {
+         console.log("You clicked:", label);
+    } 
+
     return (
         <>
 
@@ -41,13 +47,47 @@ function App() {
             <hr />
 
             {/* ⁡⁢⁣⁣2. ⁡⁢⁣⁣SyntheticEvents⁡ */}
-                    <input 
-                        type="text" 
-                        placeholder='Type something...'
-                        onChange={handleChange}
-                    />
+                <input 
+                    type="text" 
+                    placeholder='Type something...'
+                    onChange={handleChange}
+                />
+                {/* 
+                    Explanation:
+                        - When you type into the input, React creates a SyntheticEvent and passes it to handleChange.
+                        * event.target.value → gives the text inside the input.
+                        * event.type → tells you what kind of event it is (like "change", "click"). event.type → "change".
+                        👉 You don’t need to worry about cross-browser issues — React’s SyntheticEvent handles it.
+                */}
 
-            {/* ⁡⁢⁣⁣3. Event Binding⁡ */}
+            <hr />    
+
+            {/* ⁡⁢⁣⁡⁢⁣⁣3. Event Binding⁡⁡ */}
+                {/* Example 1: Inline Arrow Function */}
+                    <button onClick={() => console.log("clicked inline....")}>
+                        click me    
+                    </button>    
+                    {/* 
+                        Explanation:
+                            - Here, we use an inline arrow function for the onClick handler.
+                            * This is useful for simple actions or when you need to pass parameters.
+                            * Simple, but creates a new function on every render.
+                            - Okay for small apps, but less efficient for very frequent renders..
+                            👉 For complex logic or performance-critical components, define the handler outside the JSX.
+                    */}
+
+                <br /><br />
+
+                {/* Example 2: Separate Function */}
+                    <button onClick={handle}>{label}</button>;    
+                    {/* 
+                        Explanation:
+                            - handleClick is defined once per render and reused.
+                            - More readable and scalable.
+                    */}      
+
+
+            <hr />    
 
             {/* ⁡⁢⁣⁣4. Event Parameters⁡ */}
         </>
@@ -87,11 +127,15 @@ export default App;
                 <> That’s why if you access event asynchronously (like inside setTimeout), you may see it’s null.
                 <> To avoid that → call event.persist().
 
-        3. Event Binding:-
-            - In class components, you often need to bind event handlers to the component instance using .bind(this) or by using arrow functions.
-            - In functional components, you can define event handlers directly within the component without needing to bind them.
+        ⁡⁣⁢⁣3. Event Binding:-⁡
+            - Event binding = attaching an event handler to a component.
+            - Handlers often need access to props/state.
+            - There are different ways to do binding:
+               * Inline arrow functions.
+               * Predefined handler functions.
+               * Binding with parameters.
 
-        4. Event Parameters:-
+        ⁡⁣⁢⁣4. Event Parameters:-⁡
             - You can pass additional parameters to event handlers by using arrow functions or by defining a function that returns another function.
             - The first parameter of the event handler is always the event object, which contains information about the event that occurred.    
 */
