@@ -58,7 +58,7 @@ function App() {
                 // return <LogoutBtn />
             }
 
-            
+
            
         </>
     )
@@ -90,4 +90,13 @@ export default App;
             - If condition is false → renders nothing.
 
        • ⁡⁣⁢⁣𝗦𝘄𝗶𝘁𝗰𝗵 𝗦𝘁𝗮𝘁𝗲𝗺𝗲𝗻𝘁⁡
+            - The switch statement is another way to perform conditional rendering in React, especially when you have multiple conditions to check.
+            - It evaluates an expression and matches its value against multiple case clauses.
+            - When a match is found, the corresponding block of code is executed.
+
+       • ⁡⁣⁢⁣⁡⁣⁢⁣𝗘𝗮𝗿𝗹𝘆 𝗥𝗲𝘁𝘂𝗿𝗻𝘀⁡
+            - Early returns can be used in React components to conditionally render content by returning early from the component function based on certain conditions.
+            - This approach helps to avoid deeply nested conditional statements and makes the code more readable.
+            - You can use early returns to handle specific cases or conditions before rendering the main content of the component.
+
 */  
