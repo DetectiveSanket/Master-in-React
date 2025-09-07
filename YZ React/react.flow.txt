@@ -71,7 +71,7 @@
 | | ├── useImperativeHandle ✔️
 | | ├── useLayoutEffect     ✔️
 | | └── useDebugValue       ✔️
-| ├── Custom Hooks          
+| ├── Custom Hooks          ✔️  
 | └── Hooks Rules           ✔️      
 |
 |__6.

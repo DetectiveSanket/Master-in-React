@@ -1,11 +1,19 @@
-import React from 'react'
+import React from 'react';
+import useCounter from '../Custom Hooks/useCounter';
 
 function UseRefHook() {
+    const { count, increment, decrement } = useCounter(10);
+
     return (
         <div>
             <h1>useRef Hook</h1>
+            <hr />
+            <h3>Example of using a `useCounter` custom hook:</h3>
+            <p>Count: {count}</p>
+            <button onClick={increment}>Increment</button>
+            <button onClick={decrement}>Decrement</button>
         </div>
-    )
+    );
 }
 
  export default UseRefHook;
