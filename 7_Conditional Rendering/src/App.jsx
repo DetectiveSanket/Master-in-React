@@ -99,4 +99,16 @@ export default App;
             - This approach helps to avoid deeply nested conditional statements and makes the code more readable.
             - You can use early returns to handle specific cases or conditions before rendering the main content of the component.
 
+    ✅ Summary
+
+       - if/else → simplest, but not inline.
+       - Ternary (? :) → compact, good for toggling between two UI states.
+       - Logical && → great for conditionally showing something or nothing.
+       - Switch → best for multiple conditions (status codes, roles, etc.).
+
+    ⚡ Pro tip:
+       - Sometimes a mix is used:
+       - switch for big conditions (loading/error/success).
+       - && for optional UI (like badges or notifications).  
+             
 */  
