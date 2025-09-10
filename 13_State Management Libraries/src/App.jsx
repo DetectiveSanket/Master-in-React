@@ -1,7 +1,20 @@
 
+import { useDispatch, useSelector } from 'react-redux';
 import './App.css'
+import { decrement, increment } from './store/CounterSlice';
 
 function App() {
+
+    const count = useSelector((state) => state.counter.value);
+    const dispatch = useDispatch();
+
+    function handleIncrement() {
+        dispatch(increment());
+    }
+
+    function handleDecrement() {
+        dispatch(decrement());
+    }
 
 
     return (
@@ -21,11 +34,21 @@ function App() {
             | ├── Recoil               
             | └── Context + useReducer
         </p>
+
+        <hr />
+
+        <button onClick={handleIncrement}>Increment +</button>
+        <h4>count: {count}</h4>
+        <button onClick={handleDecrement}>Decrement - </button>
       </>
     )
 }
 
 export default App;
+
+// state -> The data that your app uses and displays. for example , in counter app, the count / count value is the state.
+// management -> How you handle and update that data.
+// libraries -> Pre-built tools that help you manage state more easily.
 
 /* 
     # ⁡⁢⁣⁣𝗦𝘁𝗮𝘁𝗲 𝗠𝗮𝗻𝗮𝗴𝗲𝗺𝗲𝗻𝘁 𝗟𝗶𝗯𝗿𝗮𝗿𝗶𝗲𝘀⁡
@@ -56,6 +79,8 @@ export default App;
         • Key Concepts:
             - Actions: Plain objects describing what happened.
             - Reducers: Pure functions that take the current state and an action, and return a new state.
+            - Slices: Redux Toolkit concept to split state and reducers into smaller pieces.
+            - state: The data that your app uses and displays.
             - Store: Holds the app state and provides methods to access and update it.
             - useSelector: Hook to read state from the store.
             - useDispatch: Hook to dispatch actions to the store.
@@ -72,6 +97,13 @@ export default App;
             - createSlice: Combines reducers and actions in one place.
             - createAsyncThunk: Simplifies async logic (e.g., API calls).
             - Immer: Allows writing "mutating" logic that produces new immutable state.
+
+            steps to use Redux Toolkit:
+                1) Install Redux Toolkit and React-Redux.
+                2) create a Redux Store (using configureStore).
+                3) Provide the store to your React app (using <Provider>).
+                4) Create Slices (using createSlice).
+                5) Use useSelector and useDispatch in your components.
 
     ⁡⁢⁣⁣3️⃣ Zustand
     4️⃣ Recoil
