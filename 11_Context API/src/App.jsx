@@ -62,5 +62,14 @@ export default App;
         - Theme management (light/dark mode).
         - User authentication and authorization.
         - Language localization.
-        - Global settings and preferences.    
+        - Global settings and preferences.   
+        
+   ⁡⁣⁢⁣ • Advantages⁡
+        ✅ Avoids prop drilling
+        ✅ Makes code cleaner and easier to maintain
+        ✅ Built into React (no external library needed)
+
+    ⁡⁣⁢⁣• Disadvantages⁡
+        ⚠️ Can make components less reusable (they depend on context).
+        ⚠️ Can cause extra re-renders if not used carefully (we’ll cover best practices later).    
 */
