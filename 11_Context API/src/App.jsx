@@ -1,8 +1,19 @@
 
+import { createContext } from 'react';
 import './App.css'
+import ChildA from './components/ChildA';
+import ChildB from './components/ChildB';
+const UseContext = createContext();
 
 function App() {
 
+    const user = {
+            name: "John Doe",
+            email: "abc@gamil.com",
+            age: 25,
+            city: "New York",
+            country: "USA"
+        };
 
     return (
         <>
@@ -16,11 +27,20 @@ function App() {
                 | ├── useContext Hook       
                 | └── Context Best Practices 
             </p>
+
+            <hr />
+
+            <UseContext.Provider value={user}>
+                <h2>App Component</h2>
+                <ChildA />
+                {/* <ChildB /> */}
+            </UseContext.Provider>
         </>
     )
 }
 
 export default App;
+export { UseContext };
 
 /* 
     ⁡⁢⁣⁣# 𝗖𝗼𝗻𝘁𝗲𝘅𝘁 𝗔𝗣𝗜⁡
