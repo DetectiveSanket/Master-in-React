@@ -91,5 +91,76 @@ export { UseContext };
 
     ⁡⁣⁢⁣• Disadvantages⁡
         ⚠️ Can make components less reusable (they depend on context).
-        ⚠️ Can cause extra re-renders if not used carefully (we’ll cover best practices later).    
+        ⚠️ Can cause extra re-renders if not used carefully (we’ll cover best practices later).   
+        
+    ________________________________________________________________________________________
+
+    1️⃣ React.createContext() 
+       - What it Does
+        <>This function creates a Context object.
+        <>You call it once, then use it to create a Provider and Consumer.
+
+        Example
+            ⁡⁢⁢⁢import React, { createContext } from "react";
+
+            export const ThemeContext = createContext("light"); 
+            ? "light" is default value if no provider is found
+⁡
+
+        🔑 Key Point:
+            - Default value is used only when there is no Provider above in the component tree.
+
+    2️⃣ Context.Provider
+        What it Does
+            <> Provider is a component that comes with every Context object.
+            <> It provides a value to all components that consume this context.
+
+        Example
+        ⁡⁢⁢⁢import { ThemeContext } from "./ThemeContext";
+
+        function App() {
+        return (
+            <ThemeContext.Provider value="dark">
+            <Toolbar />
+            </ThemeContext.Provider>
+        );
+        }⁡
+
+
+    * Here, every component inside <ThemeContext.Provider> will have access to "dark" as the context value.
+
+    3️⃣ Context.Consumer (Old Way)
+        - Before useContext, you had to use Consumer to read the value.
+        - This uses a render prop pattern.
+
+        Example
+        ⁡⁢⁢⁢function Toolbar() {
+        return (
+                <ThemeContext.Consumer>
+                {(value) => <button>Theme: {value}</button>}
+                </ThemeContext.Consumer>
+            );
+        }⁡
+
+
+    ⚠️ Drawback:
+
+        - This syntax is verbose.
+        - Hard to use when you need multiple contexts → leads to nested Consumers (ugly code).
+
+    4️⃣ useContext Hook (Modern Way)
+        - The simpler and modern way to consume context inside a function component.
+
+        Example
+        ⁡⁢⁢⁢    import { useContext } from "react";
+            import { ThemeContext } from "./ThemeContext";
+
+            function Toolbar() {
+                const theme = useContext(ThemeContext);
+                return <button>Theme: {theme}</button>;
+            }⁡
+
+
+    ✅ Much cleaner.
+    ✅ Works well with multiple contexts (no nesting hell).
 */

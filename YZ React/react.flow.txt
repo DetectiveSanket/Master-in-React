@@ -116,12 +116,12 @@
 | └── useEffect Equivalents ✔️
 |
 |__11.
-|── Context API
-| ├── React.createContext   
-| ├── Context.Provider      
-| ├── Context.Consumer      
-| ├── useContext Hook       
-| └── Context Best Practices 
+|── Context API  ✔️
+| ├── React.createContext   ✔️
+| ├── Context.Provider      ✔️
+| ├── Context.Consumer      ✔️
+| ├── useContext Hook       ✔️
+| └── Context Best Practices ✔️
 |
 |── React Router
 | ├── Installation & Setup  
