@@ -1,5 +1,6 @@
 {
     "cSpell.ignoreWords": [
         "jaake"
-    ]
+    ],
+    "terminal.integrated.suggest.enabled": true
 }

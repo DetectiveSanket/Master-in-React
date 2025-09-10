@@ -38,8 +38,13 @@ export { UserContext };
 /* 
     ⁡⁢⁣⁣# 𝘂𝘀𝗲𝗖𝗼𝗻𝘁𝗲𝘅𝘁 𝗛𝗼𝗼𝗸⁡
         - React Context is a way to manage state globally.
+        * Basically , it is used to share data between components without passing props down manually at every level.
+        - The useContext Hook allows you to access the context value directly in functional components.
         - It can be used together with the useState Hook to share state between deeply nested components more easily than with useState alone.
         * This Hook solve the problem of prop drilling.
+
+        ? useContext is just one part of the ⁡⁣⁣⁢𝗖𝗼𝗻𝘁𝗲𝘅𝘁 𝗔𝗣𝗜⁡ — specifically, it’s a hook to read the value from a context.
+        ? You still need to use createContext() + Provider to set up the context first.
 
         • The Problem
             - State should be held by the highest parent component in the stack that requires access to the state.
