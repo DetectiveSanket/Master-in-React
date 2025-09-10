@@ -137,17 +137,17 @@
 | └── Dynamic Routing       
 |
 |__13.
-|── State Management Libraries
-| ├── Redux                 
-| | ├── Actions            
-| | ├── Reducers           
-| | ├── Store              
-| | ├── connect()          
-| | └── useSelector/useDispatch 
-| ├── Redux Toolkit         
-| ├── Zustand              
-| ├── Recoil               
-| └── Context + useReducer 
+|── State Management Libraries ✔️
+| ├── Redux                 ✔️
+| | ├── Actions             ✔️
+| | ├── Reducers            ✔️
+| | ├── Store               ✔️
+| | ├── connect()           ✔️
+| | └── useSelector/useDispatch ✔️
+| ├── Redux Toolkit      ✔️   
+| ├── Zustand           ✔️   
+| ├── Recoil           ✔️    
+| └── Context + useReducer ✔️
 |
 |__14.
 |── Styling in React
