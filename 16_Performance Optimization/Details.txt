@@ -1,0 +1,204 @@
+   
+   ⁡⁢⁣⁣## 𝟭𝟲. 𝗣𝗲𝗿𝗳𝗼𝗿𝗺𝗮𝗻𝗰𝗲 𝗢𝗽𝘁𝗶𝗺𝗶𝘇𝗮𝘁𝗶𝗼𝗻 𝗶𝗻 𝗥𝗲𝗮𝗰𝘁⁡
+   _______________________________________________________________________________
+
+    - React re-renders components whenever state/props change.
+    - This is usually good, but in big apps, unnecessary re-renders can make your app slow.
+
+    > This unit teaches you how to avoid wasteful renders, load code efficiently, and analyze performance.
+
+_______________________________________________________________________________
+
+    1️⃣⁡⁣⁢⁣ 𝗥𝗲𝗮𝗰𝘁.𝗺𝗲𝗺𝗼⁡
+
+    🔧 What it is:
+        - A higher-order component that prevents unnecessary re-renders by memoizing the rendered output.
+        - (It’s like saying: “If props didn’t change, don’t bother re-rendering this component.”)
+
+    Example:
+    ⁡⁢⁢⁢import React from "react";
+
+    const Child = React.memo(({ value }) => {
+        console.log("Child rendered");
+        return <p>Value: {value}</p>;
+    });
+
+    function App() {
+        const [count, setCount] = React.useState(0);
+
+        return (
+            <div>
+                <Child value="Hello" /> {/* This will not re-render when count changes */}
+                <button onClick={() => setCount(count + 1)}>Increase Count</button>
+            </div>
+        );
+    }⁡
+
+
+    ✅ When to use:
+        - For pure components (output depends only on props)
+        - When props rarely change
+
+    ⚠️ Don’t overuse — memoization itself has a cost.
+
+    _______________________________________________________________________________
+
+
+    2️⃣ ⁡⁣⁢⁣𝘂𝘀𝗲𝗠𝗲𝗺𝗼⁡
+
+    🔧 What it is:
+        - A hook to memoize expensive calculations so they are not recalculated on every render.
+
+    Example:
+    ⁡⁢⁢⁢import { useState, useMemo } from "react";
+
+    function ExpensiveComponent({ numbers }) {
+        const [count, setCount] = useState(0);
+
+        const total = useMemo(() => {
+            console.log("Calculating...");
+            return numbers.reduce((acc, n) => acc + n, 0);
+        }, [numbers]);
+
+        return (
+            <div>
+                <p>Sum: {total}</p>
+                <button onClick={() => setCount(count + 1)}>Re-render</button>
+            </div>
+        );
+    }⁡
+
+
+    ✅ When to use:
+        - When a calculation is expensive (loops, filtering, sorting)
+        - When result does not need to be recalculated unless dependencies change
+
+    _______________________________________________________________________________
+
+    3️⃣ ⁡⁣⁢⁣𝘂𝘀𝗲𝗖𝗮𝗹𝗹𝗯𝗮𝗰𝗸⁡
+
+    🔧 What it is:
+        - A hook to memoize functions so that they are not re-created on every render.
+
+    Example:
+    ⁡⁢⁢⁢import { useCallback, useState } from "react";
+    import React from "react";
+
+    const Child = React.memo(({ onClick }) => {
+        console.log("Child rendered");
+        return <button onClick={onClick}>Click Me</button>;
+    });
+
+    function App() {
+        const [count, setCount] = useState(0);
+
+        const handleClick = useCallback(() => {
+            console.log("Button clicked");
+        }, []); // memoized function
+
+        return (
+            <>
+            <Child onClick={handleClick} />
+            <button onClick={() => setCount(count + 1)}>Increase Count</button>
+            </>
+        );
+    }⁡
+
+
+    ✅ When to use:
+     - When passing functions as props to memoized components
+     - Prevents child components from re-rendering unnecessarily
+
+    _______________________________________________________________________________
+
+    4️⃣ ⁡⁣⁢⁣𝗥𝗲𝗮𝗰𝘁.𝗹𝗮𝘇𝘆⁡
+
+    🔧 What it is:
+        - Allows code-splitting by lazy-loading components only when needed.
+        - Improves initial load time by reducing bundle size.
+        - Enables dynamic imports.
+        - Enhances user experience by loading components on demand.  
+
+    Example:
+    ⁡⁢⁢⁢import React, { Suspense } from "react";
+
+    const About = React.lazy(() => import("./About"));
+
+    function App() {
+        return (
+            <Suspense fallback={<p>Loading...</p>}>
+                <About />
+            </Suspense>
+        );
+    ⁡}
+
+
+    ✅ Benefit:
+        - ⁡⁣⁣⁢Loads components on demand, improving initial page load speed⁡.
+
+    _______________________________________________________________________________
+
+    5️⃣ ⁡⁣⁢⁣𝗦𝘂𝘀𝗽𝗲𝗻𝘀𝗲⁡
+
+    🔧 What it is:
+        - Works with React.lazy (and other async operations in future React features) to show a fallback UI while content is loading.
+
+    ✅ Example already shown above (fallback={<p>Loading...</p>}).
+
+    _______________________________________________________________________________
+
+    6️⃣ ⁡⁣⁢⁣𝗖𝗼𝗱𝗲 𝗦𝗽𝗹𝗶𝘁𝘁𝗶𝗻𝗴⁡
+
+    🔧 What it is:
+        - Breaking your JavaScript bundle into smaller pieces (chunks) so users download only what they need.
+
+    ⁡⁣⁣⁢React.lazy does this automatically, but you can also use tools like Webpack’s dynamic imports or Vite’s code-splitting.⁡
+
+    _______________________________________________________________________________
+
+    7️⃣ Bundle Analysis
+
+    🔧 What it is:
+    Analyze what’s inside your production bundle to see what is taking too much space.
+
+    Example:
+
+    Install source-map-explorer
+
+    npm install source-map-explorer --save-dev
+
+
+    Run:
+
+    npx source-map-explorer 'build/static/js/*.js'
+
+
+    ✅ This helps you identify large libraries and optimize imports.
+
+    _______________________________________________________________________________
+
+    8️⃣ Profiling
+
+    🔧 What it is:
+    Using React DevTools (Performance tab) to measure how often components re-render and how much time rendering takes.
+
+    Steps:
+
+    Install React DevTools browser extension
+
+    Open Profiler tab in DevTools
+
+    Record interactions → See which components re-rendered too often
+
+    _______________________________________________________________________________
+
+    📌 Summary Table
+    Concept	Purpose	When to Use
+    React.memo	Prevents unnecessary re-render if props don’t change	Pure components
+    useMemo	Memoizes expensive calculations	Sorting, filtering, loops
+    useCallback	Memoizes functions	When passing functions as props
+    React.lazy	Lazy loads components	Large pages, reduce initial bundle size
+    Suspense	Shows fallback while waiting	Wrap lazy components
+    Code Splitting	Optimizes loading	Big apps with many pages
+    Bundle Analysis	Find large dependencies	Optimize bundle size
+    Profiling	Measure performance	Detect unnecessary renders
