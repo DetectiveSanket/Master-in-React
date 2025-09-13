@@ -156,10 +156,10 @@ _______________________________________________________________________________
 
     _______________________________________________________________________________
 
-    7️⃣ Bundle Analysis
+    7️⃣ ⁡⁣⁢⁣𝗕𝘂𝗻𝗱𝗹𝗲 𝗔𝗻𝗮𝗹𝘆𝘀𝗶𝘀⁡
 
     🔧 What it is:
-    Analyze what’s inside your production bundle to see what is taking too much space.
+        - Analyze what’s inside your production bundle to see what is taking too much space.
 
     Example:
 
@@ -177,10 +177,10 @@ _______________________________________________________________________________
 
     _______________________________________________________________________________
 
-    8️⃣ Profiling
+    8️⃣ ⁡⁣⁢⁣𝗣𝗿𝗼𝗳𝗶𝗹𝗶𝗻𝗴⁡
 
     🔧 What it is:
-    Using React DevTools (Performance tab) to measure how often components re-render and how much time rendering takes.
+        - Using React DevTools (Performance tab) to measure how often components re-render and how much time rendering takes.
 
     Steps:
 
@@ -192,13 +192,18 @@ _______________________________________________________________________________
 
     _______________________________________________________________________________
 
-    📌 Summary Table
-    Concept	Purpose	When to Use
-    React.memo	Prevents unnecessary re-render if props don’t change	Pure components
-    useMemo	Memoizes expensive calculations	Sorting, filtering, loops
-    useCallback	Memoizes functions	When passing functions as props
-    React.lazy	Lazy loads components	Large pages, reduce initial bundle size
-    Suspense	Shows fallback while waiting	Wrap lazy components
-    Code Splitting	Optimizes loading	Big apps with many pages
-    Bundle Analysis	Find large dependencies	Optimize bundle size
-    Profiling	Measure performance	Detect unnecessary renders
+    📌 ⁡⁣⁢⁣𝗦𝘂𝗺𝗺𝗮𝗿𝘆 𝗧𝗮𝗯𝗹𝗲⁡
+        - Concept	Purpose	When to Use
+        - React.memo	Prevents unnecessary re-render if props don’t change	Pure components
+        - useMemo	Memoizes expensive calculations	Sorting, filtering, loops
+        - useCallback	Memoizes functions	When passing functions as props
+        - React.lazy	Lazy loads components	Large pages, reduce initial bundle size
+        - Suspense	Shows fallback while waiting	Wrap lazy components
+        - Code Splitting	Optimizes loading	Big apps with many pages
+        - Bundle Analysis	Find large dependencies	Optimize bundle size
+        - Profiling	Measure performance	Detect unnecessary renders
+
+
+*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+
+        
