@@ -2,5 +2,9 @@
     "cSpell.ignoreWords": [
         "jaake"
     ],
-    "terminal.integrated.suggest.enabled": true
+    "terminal.integrated.suggest.enabled": true,
+    "kiroAgent.configureMCP": "Disabled",
+    "Codegeex.CompletionModel": "CodeGeeX Pro[Beta]",
+    "geminicodeassist.codeGenerationPaneViewEnabled": true,
+    "codium.codeCompletion.enable": true
 }
