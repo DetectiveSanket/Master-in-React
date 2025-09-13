@@ -1,0 +1,207 @@
+
+
+⁡⁢⁣⁣## 𝟭𝟱. 𝗛𝗧𝗧𝗣 𝗥𝗲𝗾𝘂𝗲𝘀𝘁𝘀 & 𝗔𝗣𝗜𝘀 𝗶𝗻 𝗥𝗲𝗮𝗰𝘁⁡
+
+    |__15.
+    |── HTTP Requests & APIs
+    | ├── Fetch API             
+    | ├── Axios                 
+    | ├── useEffect for API calls 
+    | ├── Loading States        
+    | ├── Error Handling        
+    | └── Custom API Hooks    
+
+_________________________________________________________________________________
+
+1️⃣ ⁡⁣⁢⁣𝗙𝗲𝘁𝗰𝗵 𝗔𝗣𝗜⁡
+    - The Fetch API is built into modern browsers — no installation needed.
+    - Used to make network requests.
+
+    Example: Fetching Data from an API
+
+
+    ⁡⁢⁢⁢import { useEffect, useState } from "react";
+
+    function Users() {
+        const [users, setUsers] = useState([]);
+
+        useEffect(() => {
+            fetch("https://jsonplaceholder.typicode.com/users")
+            .then((response) => response.json())  // Convert response to JSON
+            .then((data) => setUsers(data))       // Save in state
+            .catch((error) => console.error("Error fetching users:", error));
+        }, []); // [] → run once (on mount)
+
+        return (
+            <div>
+            <h1>Users</h1>
+            <ul>
+                {users.map((u) => <li key={u.id}>{u.name}</li>)}
+            </ul>
+            </div>
+     ⁡   );
+    }
+
+
+    ✅ Key points:
+        - fetch(url) returns a ⁡⁣⁣⁢Promise⁡.
+        - .json() converts response body to usable data.
+        - [] dependency array ensures it runs only once.
+
+_________________________________________________________________________________
+
+    2️⃣ Axios
+
+        - Axios is a library (needs installation) that makes requests simpler and has built-in JSON parsing.
+        - Most developers prefer Axios for its ease of use and additional features.
+        - Features:
+            - Automatic JSON data transformation
+            - Better error handling
+            - Supports older browsers
+            - Interceptors for request/response manipulation
+
+        - Install: npm install axios
+
+
+        Example:
+
+        ⁡⁢⁢⁢import axios from "axios";
+        import { useEffect, useState } from "react";
+
+        function Users() {
+            const [users, setUsers] = useState([]);
+        
+            useEffect(() => {
+                axios.get("https://jsonplaceholder.typicode.com/users")
+                .then((res) => setUsers(res.data))
+                .catch((err) => console.error("Error:", err));
+        }, []);
+
+        return (
+                <div>
+                <h1>Users</h1>
+                <ul>{users.map((u) => <li key={u.id}>{u.name}</li>)}</ul>
+                </div>
+            );
+        }⁡
+
+
+    ✅ Axios automatically:
+        - Converts response to JSON
+        - Handles errors more gracefully
+        - Supports interceptors (advanced)
+
+_________________________________________________________________________________
+
+    3️⃣ ⁡⁣⁢⁣𝘂𝘀𝗲𝗘𝗳𝗳𝗲𝗰𝘁 𝗳𝗼𝗿 𝗔𝗣𝗜 𝗖𝗮𝗹𝗹𝘀⁡
+
+        • Why use useEffect?
+            - API calls must be made after the component mounts (not during render).
+            - useEffect ensures the fetch runs at the right time.
+
+   ⁡⁢⁢⁢     useEffect(() => {
+            // Your API call logic here
+        }, []);⁡
+
+
+    ✅ Best practice: empty dependency array → runs once (like componentDidMount in class components).
+
+_________________________________________________________________________________
+
+    4️⃣ ⁡⁣⁢⁣𝗟𝗼𝗮𝗱𝗶𝗻𝗴 𝗦𝘁𝗮𝘁𝗲𝘀⁡
+        - Show a loading indicator while waiting for API response:
+
+        ⁡⁢⁢⁢const [loading, setLoading] = useState(true);
+
+        useEffect(() => {
+            fetch("https://jsonplaceholder.typicode.com/users")
+                .then(res => res.json())
+                .then(data => {
+                    setUsers(data);
+                    setLoading(false);
+                });
+        }, []);
+
+    if (loading) return <p>Loading...</p>;⁡
+
+_________________________________________________________________________________
+
+    5️⃣ ⁡⁣⁢⁣𝗘𝗿𝗿𝗼𝗿 𝗛𝗮𝗻𝗱𝗹𝗶𝗻𝗴⁡
+
+        - Handle failures gracefully:
+        - Show error messages to users instead of breaking the app.
+
+        - Example:
+
+   ⁡⁢⁢⁢         const [error, setError] = useState(null);
+
+            useEffect(() => {
+                fetch("https://jsonplaceholder.typicode.com/unknown-endpoint")
+                    .then(res => {
+                    if (!res.ok) throw new Error("Network response was not ok");
+                        return res.json();
+                    })
+                    .then(data => setUsers(data))
+                    .catch(err => setError(err.message));
+            }, []);
+
+            if (error) return <p style={{ color: "red" }}>Error: {error}</p>;⁡
+
+
+       ✅ Always check response.ok before using response.json().
+
+_________________________________________________________________________________
+
+    6️⃣ ⁡⁣⁢⁣𝗖𝘂𝘀𝘁𝗼𝗺 𝗔𝗣𝗜 𝗛𝗼𝗼𝗸𝘀⁡
+
+        - When you need to call APIs in multiple components, create custom hooks to avoid repeating code.
+        - Used for cleaner, reusable logic.
+        - Example: A reusable hook for fetching data
+
+        ⁡⁢⁢⁢import { useState, useEffect } from "react";
+
+        function useFetch(url) {
+            const [data, setData] = useState([]);
+            const [loading, setLoading] = useState(true);
+            const [error, setError] = useState(null);
+
+            useEffect(() => {
+                fetch(url)
+                .then((res) => {
+                    if (!res.ok) throw new Error("Failed to fetch");
+                    return res.json();
+                })
+                .then((data) => setData(data))
+                .catch((err) => setError(err.message))
+                .finally(() => setLoading(false));
+            }, [url]);
+
+            return { data, loading, error };
+        }
+
+        export default useFetch;⁡
+
+
+    Usage:
+
+        ⁡⁢⁢⁢function Users() {
+            const { data: users, loading, error } = useFetch("https://jsonplaceholder.typicode.com/users");
+
+            if (loading) return <p>Loading...</p>;
+            if (error) return <p>Error: {error}</p>;
+
+            return <ul>{users.map(u => <li key={u.id}>{u.name}</li>)}</ul>;
+        }⁡
+
+    ✅ This makes your code cleaner & reusable.
+______________________________________________________________________________________
+**************************************************************************************
+
+    📌 ⁡⁣⁢⁣Summary Table⁡
+        - Concept	What It Does
+        - Fetch API	Native, lightweight, requires .json() conversion
+        - Axios	Third-party library, easier syntax, more features
+        - useEffect	Runs API calls after component mounts
+        - Loading States	UX improvement – show spinner or text
+        - Error Handling	Prevent app crashes on API failure
+        - Custom Hooks	Reusable API logic, keeps components clean
