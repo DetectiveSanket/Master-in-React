@@ -150,15 +150,16 @@
 | └── Context + useReducer ✔️
 |
 |__14.
-|── Styling in React
-| ├── CSS Stylesheets       
-| ├── Inline Styles         
-| ├── CSS Modules           
-| ├── Styled Components     
-| ├── Emotion              
-| ├── Tailwind CSS         
-| └── CSS-in-JS            
+|── Styling in React ✔️
+| ├── CSS Stylesheets      ✔️ 
+| ├── Inline Styles      ✔️   
+| ├── CSS Modules        ✔️   
+| ├── Styled Components   ✔️  
+| ├── Emotion           ✔️   
+| ├── Tailwind CSS       ✔️  
+| └── CSS-in-JS         ✔️   
 |
+|__15.
 |── HTTP Requests & APIs
 | ├── Fetch API             
 | ├── Axios                 
@@ -167,6 +168,7 @@
 | ├── Error Handling        
 | └── Custom API Hooks      
 |
+|__16.
 |── Performance Optimization
 | ├── React.memo           
 | ├── useMemo              
@@ -177,23 +179,27 @@
 | ├── Bundle Analysis      
 | └── Profiling            
 |
+|__17.
 |── Error Boundaries
 | ├── Error Boundary Class  
 | ├── componentDidCatch     
 | ├── getDerivedStateFromError 
 | └── Error Boundary Libraries 
 |
+|__18.
 |── Refs and DOM Access
 | ├── useRef Hook           
 | ├── Ref Forwarding        
 | ├── Callback Refs         
 | └── DOM Manipulation      
 |
+|__19.
 |── Portals
 | ├── ReactDOM.createPortal 
 | ├── Modal Implementation  
 | └── Portal Use Cases      
 |
+|__20.
 |── Testing
 | ├── Jest                  
 | ├── React Testing Library 
@@ -205,13 +211,15 @@
 | ├── Cypress              
 | └── Playwright           
 |
-|── Build Tools & Bundlers
+|__21.
+|── Build Tools & Bundlers 
 | ├── Webpack               
 | ├── Vite                  
 | ├── Parcel                
 | ├── Rollup                
 | └── ESBuild               
 |
+|__22.
 |── TypeScript with React
 | ├── TypeScript Setup      
 | ├── Component Types       
@@ -221,6 +229,7 @@
 | ├── Ref Types             
 | └── Generic Components    
 |
+|__23.
 |── Advanced Patterns
 | ├── Compound Components   
 | ├── Render Props          
@@ -230,6 +239,7 @@
 | ├── Observer Pattern      
 | └── Factory Pattern       
 |
+|__24.
 |── React 18+ Features
 | ├── Concurrent Features   
 | ├── Suspense for Data Fetching 
@@ -239,6 +249,7 @@
 | ├── useDeferredValue      
 | └── useId                 
 |
+|__25.
 |── Meta Frameworks
 | ├── Next.js               ✔️
 | | ├── File-based Routing  ✔️
@@ -249,6 +260,7 @@
 | ├── Remix                 ✔️
 | └── Gatsby                ✔️
 |
+|__26.
 |── Development Tools
 | ├── React Developer Tools ✔️
 | ├── ESLint                ✔️
@@ -257,6 +269,7 @@
 | ├── Storybook             ✔️
 | └── React Strict Mode     ✔️
 |
+|__27.
 |── Deployment
 | ├── Build Process         ✔️
 | ├── Static Hosting        ✔️
@@ -266,6 +279,7 @@
 | ├── CDN Deployment        ✔️
 | └── CI/CD Pipelines       ✔️
 |
+|__28.
 |── Architecture Patterns
 | ├── Component Architecture ✔️
 | ├── Folder Structure      ✔️
@@ -273,12 +287,14 @@
 | ├── Code Organization     ✔️
 | └── Design Patterns       ✔️
 |
+|__29.
 |── Security
 | ├── XSS Prevention        ✔️
 | ├── CSRF Protection       ✔️
 | ├── Input Sanitization    ✔️
 | └── Secure Coding Practices ✔️
 |
+|__30.
 |── Mobile Development
 | ├── React Native          ✔️
 | ├── Progressive Web Apps  ✔️

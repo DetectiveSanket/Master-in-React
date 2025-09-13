@@ -1,0 +1,186 @@
+    🎨 14. Styling in React – Complete Guide
+
+    1️⃣ ⁡⁢⁣⁣CSS Stylesheets (Global CSS)⁡ ✅
+
+    How it works:
+    ⁡⁣⁢⁣You create a normal .css file and import it into your component or index.js.⁡
+
+    /* styles.css */
+    ⁡⁢⁢⁢h1 {
+        color: blue;
+    }
+
+    import "./styles.css";
+
+    export default function App() {
+        return <h1>Hello World</h1>;
+    }⁡
+
+
+    ✅ Pros:
+        - Easiest, familiar way to style
+        - Works well for small projects
+
+    ❌ Cons:
+
+        - Styles are global → can accidentally affect other components
+        - Hard to manage in large apps
+
+    ----------------------------------------------------------------------------------    
+
+    2️⃣ ⁡⁢⁣⁣Inline Styles⁡ ✅
+
+    How it works:
+    ⁡⁣⁢⁣Use the style prop with a JS object.⁡
+
+    ⁡⁢⁢⁢export default function Button() {
+        return (
+            <button style={{ backgroundColor: "blue", color: "white", padding: "10px" }}>
+            Click Me
+            </button>
+        );
+    }⁡
+
+
+    ✅ Pros:
+        - Quick for small tweaks
+        - Styles scoped to the element
+
+    ❌ Cons:
+        - No pseudo-classes (:hover) or media queries easily
+        - Can make JSX messy
+
+------------------------------------------------------------------------------------
+
+
+    3️⃣ ⁡⁢⁣⁣CSS Modules⁡ ✅
+
+    How it works:
+   ⁡⁣⁢⁣ Create a .module.css file. Import it → get a scoped styles object.⁡
+
+    /* Button.module.css */
+   ⁡⁢⁢⁢ .btn {
+        background-color: blue;
+        color: white;
+        padding: 10px;
+    }
+
+    import styles from "./Button.module.css";
+
+    export default function Button() {
+        return <button className={styles.btn}>Click Me</button>;
+    }⁡
+
+
+    ✅ Pros:
+        - Styles are component-scoped (no global conflicts)
+        - Works with plain CSS
+
+    ❌ Cons:
+        - Slightly verbose (import + use object)
+        - Not as dynamic as CSS-in-JS
+
+    ----------------------------------------------------------------------------------
+
+    4️⃣ ⁡⁢⁣⁡⁢⁣⁣𝗦𝘁𝘆𝗹𝗲𝗱 𝗖𝗼𝗺𝗽𝗼𝗻𝗲𝗻𝘁𝘀⁡ ✅
+
+    How it works:
+    ⁡⁣⁢⁣Uses a library (styled-components) to create styled React components.⁡
+
+    npm install styled-components
+
+    ⁡⁢⁢⁢import styled from "styled-components";
+
+    const Button = styled.button`
+        background-color: blue;
+        color: white;
+        padding: 10px;
+    
+        &:hover {
+            background-color: darkblue;
+        }
+        `;
+    
+        export default function App() {
+        return <Button>Click Me</Button>;
+    }⁡
+
+
+    ✅ Pros:
+        - CSS syntax inside JS
+        - Dynamic styles using props
+        - No class name conflicts
+
+    ❌ Cons:
+        - Extra dependency
+        - Can be slower in very large apps
+
+    5️⃣ ⁡⁢⁣⁣Emotion⁡ ✅
+
+    ⁡⁣⁢⁣Similar to Styled Components, but slightly lighter and faster.⁡
+    Two ways: styled API or css prop.
+
+    npm install @emotion/react @emotion/styled
+
+    ⁡⁢⁢⁢import styled from "@emotion/styled";
+
+    const Button = styled.button`
+        background: blue;
+        color: white;
+        padding: 10px;
+    `;
+
+    export default function App() {
+        return <Button>Click</Button>;
+    }⁡
+
+
+    ✅ Pros:
+        - Same benefits as styled-components
+        - More flexible (supports css prop)
+
+    ❌ Cons:
+        - Extra dependency
+        - Slight learning curve
+
+    6️⃣ ⁡⁢⁣⁣𝗧𝗮𝗶𝗹𝘄𝗶𝗻𝗱 𝗖𝗦𝗦⁡ ✅
+
+    ⁡⁣⁢⁣Utility-first CSS framework with pre-built classes.⁡
+
+    npm install -D tailwindcss postcss autoprefixer
+    npx tailwindcss init -p
+
+
+    Configure tailwind.config.js → then use classes:
+
+    ⁡⁢⁢⁢export default function Button() {
+        return (
+            <button className="bg-blue-500 text-white px-4 py-2 rounded">
+            Click Me
+            </button>
+        );
+    }⁡
+
+
+    ✅ Pros:
+        - No custom CSS needed (fast development)
+        - Highly customizable
+        - Great for prototyping
+
+    ❌ Cons:
+        - JSX can look messy
+        - Requires learning class utilities
+
+    7️⃣ ⁡⁢⁣⁣CSS-in-JS (General Approach)⁡ ✅
+
+    Styled Components & Emotion are actually implementations of CSS-in-JS.
+    The idea: write CSS directly in JS files → styles are scoped, dynamic, and injected at runtime.
+
+    🧐 Which One Should You Use?
+        <> Approach	Best For
+        <> Global CSS	Tiny projects, beginners
+        <> Inline Styles	Quick styling, dynamic inline tweaks
+        <> CSS Modules	Medium projects, simple scoping
+        <> Styled Components / Emotion	Component-driven, dynamic styling
+        <> Tailwind CSS	Rapid UI development, production-ready designs
+        <> CSS-in-JS	Large teams, when you want fully scoped + dynamic styles
