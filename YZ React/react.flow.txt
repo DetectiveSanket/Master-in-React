@@ -124,17 +124,17 @@
 | └── Context Best Practices ✔️
 |
 |__12.
-|── React Router
-| ├── Installation & Setup  
-| ├── Basic Routing         
-| ├── Route Parameters      
-| ├── Nested Routes         
-| ├── Navigation            
-| | ├── Link Component     
-| | ├── NavLink Component  
-| | └── useNavigate Hook   
-| ├── Route Guards          
-| └── Dynamic Routing       
+|── React Router ✔️
+| ├── Installation & Setup  ✔️
+| ├── Basic Routing         ✔️
+| ├── Route Parameters      ✔️
+| ├── Nested Routes         ✔️
+| ├── Navigation            ✔️
+| | ├── Link Component     ✔️
+| | ├── NavLink Component  ✔️
+| | └── useNavigate Hook   ✔️
+| ├── Route Guards          ✔️
+| └── Dynamic Routing     ✔️  
 |
 |__13.
 |── State Management Libraries ✔️

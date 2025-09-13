@@ -1,7 +1,39 @@
 
 import './App.css'
+import {createBrowserRouter, RouterProvider} from 'react-router-dom'
+import Home from './components/Home';
+import Contact from './components/Contact';
+import Navbar from './components/Navbar';
 
 function App() {
+
+    const route = createBrowserRouter([
+        {
+            path:"/",
+            element:<div>
+                <Navbar />
+                <Home />
+            </div>
+        },
+        {
+            path:"/about",
+            element:<div>
+                <Navbar />
+                <h1>About</h1>
+            </div>
+        },
+
+        {
+            path:"/contact",
+            element:<div>
+                <Navbar />
+                <Contact />
+            </div>
+        },
+
+        
+
+    ])  
 
 
   return (
@@ -21,6 +53,8 @@ function App() {
                 | ├── Route Guards          
                 | └── Dynamic Routing 
             </p>
+        <RouterProvider router={route}/>
+
         </>
     )
 }
@@ -40,8 +74,34 @@ export default App;
         A) In a React application, we often want to create multiple views or pages that users can navigate between. React Router provides a way to define these routes and manage the navigation between them seamlessly.
 
         ⁡⁣⁢⁣• Installation & SetUp⁡
+            - npm install react-router-dom
+            - import { BrowserRouter } from 'react-router-dom'
+            - Wrap your app in <BrowserRouter> in main.jsx or index.js
+
         ⁡⁣⁢⁣• Basic Routing⁡
+           - Define routes using <Routes> and <Route> components.
+           - Each <Route> specifies a path and the component to render.
+
+        ⁡⁣⁢⁣• Navigation⁡
+            - Use <Link> or <NavLink> components to create navigation links.
+            - <NavLink> can apply active styles based on the current route.
+            - useNavigate hook allows programmatic navigation.
+
+        ⁡⁣⁢⁣• Nested Routes⁡
+            - Define routes within other routes to create nested views.
+            - Use <Outlet> component to render child routes.
+
         ⁡⁣⁢⁣• Route Parameters⁡
+            - Define dynamic segments in routes using :paramName.
+            - Access parameters using useParams hook.
+
+        ⁡⁣⁢⁣• Route Guards⁡
+            - Implement protected routes that require authentication.
+            - Redirect users based on their authentication status.
+
+        ⁡⁣⁢⁣• Dynamic Routing⁡
+            - Create routes dynamically based on data or user input.
+            - Useful for applications with user-generated content or complex navigation structures.
 
 */
 
