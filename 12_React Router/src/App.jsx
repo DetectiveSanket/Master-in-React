@@ -207,14 +207,14 @@ export default App;
 */
 
 // 1. npm install react-router-dom
-// 2. BrowserRouter as Router
+// 2. BrowserRouter as Router :- 
 // 3. Routes
 // 4. Route
-// 5. Link
-// 6. NavLink
-// 7. useParams
-// 8. useNavigate
-// 9. Navigate
+// 5. Link :- used to navigate between different routes 
+// 6. NavLink :- like Link but with active styling
+// 7. useParams :- to access route parameters means for dynamic routing
+// 8. useNavigate :- to programmatically navigate
+// 9. Navigate :- to redirect users
 // 10. Outlet
 // 11. Custom 404 Page
 // 12. Nested Routing
