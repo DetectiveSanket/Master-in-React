@@ -169,15 +169,15 @@
 | └── Custom API Hooks      ✔️
 |
 |__16.
-|── Performance Optimization
-| ├── React.memo           
-| ├── useMemo              
-| ├── useCallback          
-| ├── React.lazy           
-| ├── Suspense             
-| ├── Code Splitting       
-| ├── Bundle Analysis      
-| └── Profiling            
+|── Performance Optimization  ✔️
+| ├── React.memo           ✔️
+| ├── useMemo              ✔️
+| ├── useCallback          ✔️
+| ├── React.lazy           ✔️
+| ├── Suspense             ✔️
+| ├── Code Splitting       ✔️
+| ├── Bundle Analysis      ✔️
+| └── Profiling            ✔️
 |
 |__17.
 |── Error Boundaries
