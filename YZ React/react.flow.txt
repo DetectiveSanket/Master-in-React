@@ -160,13 +160,13 @@
 | └── CSS-in-JS         ✔️   
 |
 |__15.
-|── HTTP Requests & APIs
-| ├── Fetch API             
-| ├── Axios                 
-| ├── useEffect for API calls 
-| ├── Loading States        
-| ├── Error Handling        
-| └── Custom API Hooks      
+|── HTTP Requests & APIs ✔️
+| ├── Fetch API             ✔️
+| ├── Axios                 ✔️
+| ├── useEffect for API calls ✔️
+| ├── Loading States        ✔️
+| ├── Error Handling        ✔️
+| └── Custom API Hooks      ✔️
 |
 |__16.
 |── Performance Optimization
@@ -339,3 +339,5 @@
 - **Review previous concepts** regularly
 - **Join React communities** for support and networking
 - **Read official documentation** alongside this roadmap
+
+/* Consolas, 'Courier New', monospace */
