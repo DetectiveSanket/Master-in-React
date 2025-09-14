@@ -180,11 +180,11 @@
 | └── Profiling            ✔️
 |
 |__17.
-|── Error Boundaries
-| ├── Error Boundary Class  
-| ├── componentDidCatch     
-| ├── getDerivedStateFromError 
-| └── Error Boundary Libraries 
+|── Error Boundaries ✔️
+| ├── Error Boundary Class  ✔️
+| ├── componentDidCatch     ✔️
+| ├── getDerivedStateFromError ✔️
+| └── Error Boundary Libraries ✔️
 |
 |__18.
 |── Refs and DOM Access
