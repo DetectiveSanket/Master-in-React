@@ -220,14 +220,14 @@
 | └── ESBuild               
 |
 |__22.
-|── TypeScript with React
-| ├── TypeScript Setup      
-| ├── Component Types       
-| ├── Props Types           
-| ├── State Types           
-| ├── Event Types           
-| ├── Ref Types             
-| └── Generic Components    
+|── TypeScript with React   ❌
+| ├── TypeScript Setup      ❌
+| ├── Component Types       ❌
+| ├── Props Types           ❌
+| ├── State Types           ❌ 
+| ├── Event Types           ❌
+| ├── Ref Types             ❌
+| └── Generic Components    ❌
 |
 |__23.
 |── Advanced Patterns
@@ -250,55 +250,55 @@
 | └── useId                 
 |
 |__25.
-|── Meta Frameworks
-| ├── Next.js               ✔️
-| | ├── File-based Routing  ✔️
-| | ├── API Routes          ✔️
-| | ├── SSG/SSR             ✔️
-| | ├── Image Optimization  ✔️
-| | └── App Router          ✔️
-| ├── Remix                 ✔️
-| └── Gatsby                ✔️
+|── Meta Frameworks     ❌
+| ├── Next.js               ❌
+| | ├── File-based Routing  ❌
+| | ├── API Routes          ❌
+| | ├── SSG/SSR             ❌
+| | ├── Image Optimization  ❌
+| | └── App Router          ❌
+| ├── Remix             ❌  
+| └── Gatsby            ❌    
 |
 |__26.
 |── Development Tools
-| ├── React Developer Tools ✔️
-| ├── ESLint                ✔️
-| ├── Prettier              ✔️
-| ├── Husky                 ✔️
-| ├── Storybook             ✔️
-| └── React Strict Mode     ✔️
+| ├── React Developer Tools 
+| ├── ESLint                
+| ├── Prettier              
+| ├── Husky                 
+| ├── Storybook             
+| └── React Strict Mode     
 |
 |__27.
 |── Deployment
-| ├── Build Process         ✔️
-| ├── Static Hosting        ✔️
-| | ├── Netlify            ✔️
-| | ├── Vercel             ✔️
-| | └── GitHub Pages       ✔️
-| ├── CDN Deployment        ✔️
-| └── CI/CD Pipelines       ✔️
+| ├── Build Process         
+| ├── Static Hosting        
+| | ├── Netlify            
+| | ├── Vercel             
+| | └── GitHub Pages       
+| ├── CDN Deployment        
+| └── CI/CD Pipelines       
 |
 |__28.
 |── Architecture Patterns
-| ├── Component Architecture ✔️
-| ├── Folder Structure      ✔️
-| ├── State Management Strategy ✔️
-| ├── Code Organization     ✔️
-| └── Design Patterns       ✔️
+| ├── Component Architecture 
+| ├── Folder Structure      
+| ├── State Management Strategy 
+| ├── Code Organization     
+| └── Design Patterns       
 |
 |__29.
 |── Security
-| ├── XSS Prevention        ✔️
-| ├── CSRF Protection       ✔️
-| ├── Input Sanitization    ✔️
-| └── Secure Coding Practices ✔️
+| ├── XSS Prevention        
+| ├── CSRF Protection       
+| ├── Input Sanitization    
+| └── Secure Coding Practices 
 |
 |__30.
 |── Mobile Development
-| ├── React Native          ✔️
-| ├── Progressive Web Apps  ✔️
-| └── Responsive Design     ✔️
+| ├── React Native          
+| ├── Progressive Web Apps  
+| └── Responsive Design     
 |
 |──
 | END __
