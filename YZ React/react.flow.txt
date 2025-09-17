@@ -181,7 +181,7 @@
 |
 |__17.
 |── Error Boundaries ✔️
-| ├── Error Boundary Class  ✔️
+| ├── Error Boundary Class  ✔️      
 | ├── componentDidCatch     ✔️
 | ├── getDerivedStateFromError ✔️
 | └── Error Boundary Libraries ✔️

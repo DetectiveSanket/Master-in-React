@@ -50,7 +50,7 @@ ________________________________________________________________________________
 
 _________________________________________________________________________________
 
-    2️⃣ Axios
+    2️⃣ ⁡⁣⁢⁣Axios⁡
 
         - Axios is a library (needs installation) that makes requests simpler and has built-in JSON parsing.
         - Most developers prefer Axios for its ease of use and additional features.

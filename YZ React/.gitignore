@@ -1,1 +1,24 @@
 /.qodo
+# Ignore all node_modules folders recursively
+**/node_modules/
+
+
+# Ignore build output
+/dist
+/build
+
+# Ignore dependency directories
+/node_modules
+
+
+# All node_modules folders, no matter where they are located in your project, will now be ignored by Git. This includes any nested node_modules folders under subdirectories. Your repository will remain clean and lightweight.
+
+# Ignore environment files
+.env
+
+# Ignore logs
+*.log
+
+# Ignore OS generated files
+.DS_Store
+Thumbs.db
