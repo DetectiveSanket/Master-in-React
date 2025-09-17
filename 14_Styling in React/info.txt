@@ -1,4 +1,20 @@
+
     🎨 14. Styling in React – Complete Guide
+    __________________________________________________________________________________
+
+    ## In this guide, we’ll explore the most popular ways to style React applications, including:
+        |__14.
+        |── Styling in React 
+        | ├── CSS Stylesheets  
+        | ├── Inline Styles     
+        | ├── CSS Modules       
+        | ├── Styled Components 
+        | ├── Emotion           
+        | ├── Tailwind CSS      
+        | └── CSS-in-JS 
+
+___________________________________________________________________________________
+
 
     1️⃣ ⁡⁢⁣⁣CSS Stylesheets (Global CSS)⁡ ✅
 
