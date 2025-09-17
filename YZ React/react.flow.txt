@@ -187,11 +187,11 @@
 | └── Error Boundary Libraries ✔️
 |
 |__18.
-|── Refs and DOM Access
-| ├── useRef Hook           
-| ├── Ref Forwarding        
-| ├── Callback Refs         
-| └── DOM Manipulation      
+|── Refs and DOM Access  ✔️
+| ├── useRef Hook        ✔️ 
+| ├── Ref Forwarding     ✔️   
+| ├── Callback Refs      ✔️   
+| └── DOM Manipulation   ✔️   
 |
 |__19.
 |── Portals

@@ -1,5 +1,6 @@
 
 import './App.css'
+import Timer from './components/Timer';
 import UseCaseA from './components/UseCaseA';
 import UseCaseB from './components/UseCaseB';
 import UseRefHook from './components/UseRef_Hook';
@@ -35,6 +36,10 @@ function App() {
 
             {/* ⁡⁢⁣⁣1. useRef Hook⁡ */}
             <UseRefHook />
+
+            <hr />
+            {/* Timer example */}
+            <Timer />
         </>
     )
 }
