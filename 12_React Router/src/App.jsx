@@ -57,6 +57,48 @@ function App() {
 }
 
 export default App;
+/* 
+    OLD WAY (BrowserRouter + Routes)         NEW WAY (createBrowserRouter + RouterProvider)
+    ─────────────────────────────────        ─────────────────────────────────────────────
+    main.jsx                                 main.jsx
+    ─────────────────────────────────        ─────────────────────────────────────────────
+    <BrowserRouter>                          // No BrowserRouter needed
+    <App />                               <App /> 
+    </BrowserRouter>                        
+
+    ─────────────────────────────────        ─────────────────────────────────────────────
+    App.jsx                                  App.jsx
+    ─────────────────────────────────        ─────────────────────────────────────────────
+    function App() {                         const router = createBrowserRouter([
+    return (                                 { path: "/", element: <Home /> },
+        <>                                      { path: "/about", element: <About /> }
+        <Navbar />                          ]);
+        <Routes>                           
+            <Route path="/"                   export default function App() {
+                element={<Home />} />            return <RouterProvider router={router} />;
+            <Route path="/about"             }
+                element={<About />} />
+        </Routes>
+        </>
+    )
+    }
+    ─────────────────────────────────        ─────────────────────────────────────────────
+    Flow:                                    Flow:
+    BrowserRouter wraps App →                Router created in App.jsx → passed to
+    App.jsx uses <Routes>/<Route>            <RouterProvider> (no BrowserRouter needed)
+
+    
+    ___________________________________________________________________________________________________________________
+    | Feature              | Old Way (BrowserRouter)             | New Way (createBrowserRouter)                    |
+    | -------------------- | ----------------------------------- | ------------------------------------------------ |
+    | **Router Setup**     | Wrap app in `<BrowserRouter>`       | No `<BrowserRouter>` needed                      |
+    | **Route Definition** | Inside `<Routes>` with `<Route>`    | Defined in JS object array                       |
+    | **Good For**         | Small/medium projects, simpler code | Large apps, central route config, code-splitting |
+    | **Example**          | `<Route path="/" element={<Home />} />` | `{ path: "/", element: <Home /> }`            |
+    ___________________________________________________________________________________________________________________
+
+ */
+
 
 /* 
     ⁡⁢⁣⁣## 𝗥𝗲𝗮𝗰𝘁 𝗥𝗼𝘂𝘁𝗲𝗿 𝗗𝗼𝗺⁡
