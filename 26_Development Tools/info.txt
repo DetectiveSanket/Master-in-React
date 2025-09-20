@@ -1,0 +1,224 @@
+    |__26.
+    |── Development Tools
+    | ├── React Developer Tools 
+    | ├── ESLint                
+    | ├── Prettier              
+    | ├── Husky                 
+    | ├── Storybook             
+    | └── React Strict Mode 
+
+    ⁡⁢⁢⁣_________________________________________________________________________________________________⁡ 
+    
+    🛠️⁡⁢⁣⁣ 𝗗𝗘𝗩𝗘𝗟𝗢𝗣𝗠𝗘𝗡𝗧 𝗧𝗢𝗢𝗟𝗦 𝗜𝗡 𝗥𝗘𝗔𝗖𝗧 (𝗗𝗘𝗘𝗣 𝗗𝗜𝗩𝗘)⁡
+    ==================================================
+
+    - When we build React apps, writing JSX/JS is just one part of development.
+    - Real-world projects need debugging, linting, formatting, enforcing rules, 
+    documenting components, and keeping code clean.
+    * That's where development tools come in.
+
+    --------------------------------------------------
+    1️⃣ ⁡⁣⁢⁣𝗥𝗘𝗔𝗖𝗧 𝗗𝗘𝗩𝗘𝗟𝗢𝗣𝗘𝗥 𝗧𝗢𝗢𝗟𝗦 (𝗕𝗥𝗢𝗪𝗦𝗘𝗥 𝗘𝗫𝗧𝗘𝗡𝗦𝗜𝗢𝗡)⁡
+    --------------------------------------------------
+
+    🧠 WHAT IT IS
+        • React Developer Tools is a browser extension for Chrome/Firefox that allows you to:
+            - Inspect the React component tree
+            - See props, state, and hooks in real-time
+            - Profile performance (see which components re-render)
+
+    🔑 WHY YOU NEED IT
+        • Without DevTools, you're "blind" — you can only see the HTML.
+        • But React doesn't work directly with HTML; it uses the virtual DOM.
+        • DevTools gives you a window into that virtual DOM.
+
+    ⚙️ SETUP
+        1. Go to Chrome Web Store → Install React Developer Tools
+        2. Open any React app → Right-click → Inspect → New tab ⚛️ Components
+
+    🧩 EXAMPLE
+        Open your app → Select a component → You'll see:
+        • Props: { title: "Hello" }
+        • State: { count: 5 }
+        • Hooks: useState, useEffect dependencies
+
+    🎯 USE CASES
+        • Debug props drilling (see which component receives what data)
+        • Check if a component is re-rendering too many times
+        • Find why state is not updating
+
+    ✅ BEST PRACTICES
+        • Always enable "Highlight Updates" in DevTools → it shows which components re-render in real-time
+        • Use the Profiler tab to measure performance bottlenecks
+
+    ⁡⁢⁢⁣_________________________________________________________________________________________________⁡ 
+     
+
+    --------------------------------------------------
+    2️⃣ ⁡⁣⁢⁣𝗘𝗦𝗟𝗜𝗡𝗧 (𝗟𝗜𝗡𝗧𝗘𝗥)⁡
+    --------------------------------------------------
+
+    🧠 WHAT IT IS
+        • ESLint is a static code analysis tool that detects errors and enforces coding standards
+        • Think of it as a grammar checker for your JavaScript/JSX code
+
+    🔑 WHY YOU NEED IT
+        • Without ESLint:
+            - You might have unused variables, undefined functions, missing dependencies in useEffect
+            - Code style can become inconsistent across a team
+
+    ⚙️ SETUP
+        ```
+        npm install eslint --save-dev
+        npx eslint --init
+        ```
+        
+        • Choose:
+            - Framework: React
+            - Format: JSON
+            - Rules: Airbnb style guide (recommended)
+        
+        • Generates .eslintrc.json:
+        ```
+        {
+            "extends": ["eslint:recommended", "plugin:react/recommended"],
+            "rules": {
+                "no-unused-vars": "warn",
+                "react/prop-types": "off"
+            }
+        }
+        ```
+
+    🧩 EXAMPLE
+        ```
+        const App = () => {
+        let name = "Sanket" // ESLint warns: name is never used
+        return <h1>Hello</h1>
+        }
+        ```
+
+    🎯 USE CASES
+        • Catch bugs early (before running code)
+        • Keep code consistent across team
+
+    ✅ BEST PRACTICES
+        • Combine with Prettier for formatting
+        • Run ESLint in pre-commit hooks (Husky)
+
+   ⁡⁢⁢⁣_________________________________________________________________________________________________⁡     
+
+    --------------------------------------------------
+    3️⃣ ⁡⁣⁢⁣𝗣𝗥𝗘𝗧𝗧𝗜𝗘𝗥 (𝗖𝗢𝗗𝗘 𝗙𝗢𝗥𝗠𝗔𝗧𝗧𝗘𝗥)⁡
+    --------------------------------------------------
+
+    🧠 WHAT IT IS
+        • Prettier is an opinionated code formatter
+        • It automatically reformats code (spaces, tabs, semicolons) to maintain a consistent style
+
+    🔑 WHY YOU NEED IT
+        • No more arguing in a team about spaces/tabs
+        • Code always looks clean and consistent
+
+    ⚙️ SETUP
+        ```
+        npm install --save-dev prettier
+        npx prettier --write .
+        ```
+        
+        • Add .prettierrc:
+        ```
+        {
+        "singleQuote": true,
+        "semi": false,
+        "tabWidth": 2
+        }
+        ```
+
+    🧩 EXAMPLE
+        • Input:
+        ```
+        function hello(){console.log("Hi")}
+        ```
+        
+        • After Prettier:
+        ```
+        function hello() {
+        console.log('Hi')
+        }
+        ```
+
+    🎯 USE CASES
+        • Clean code formatting before commit
+        • Pair with ESLint (eslint-plugin-prettier) to show format issues as lint errors
+
+   ⁡⁢⁢⁣_________________________________________________________________________________________________⁡
+
+    --------------------------------------------------
+    4️⃣ ⁡⁣⁢⁣𝗛𝗨𝗦𝗞𝗬 (𝗚𝗜𝗧 𝗛𝗢𝗢𝗞𝗦)⁡
+    --------------------------------------------------
+
+    🧠 WHAT IT IS
+        • Husky lets you run scripts before git actions (pre-commit, pre-push)
+        • It helps enforce code quality automatically
+
+    ⁡⁢⁢⁣_________________________________________________________________________________________________⁡    
+
+    --------------------------------------------------
+    5️⃣ ⁡⁣⁢⁣𝗦𝗧𝗢𝗥𝗬𝗕𝗢𝗢𝗞 (𝗖𝗢𝗠𝗣𝗢𝗡𝗘𝗡𝗧 𝗣𝗟𝗔𝗬𝗚𝗥𝗢𝗨𝗡𝗗)⁡
+    --------------------------------------------------
+
+    🧠 WHAT IT IS
+        • Storybook is a development environment for building UI components in isolation
+
+    🔑 WHY YOU NEED IT
+        • Test components without running the entire app
+        • Document components for designers & other developers
+
+    ⚙️ SETUP
+        ```
+        npx storybook init
+        npm run storybook
+        ```
+        
+        • Opens a UI in your browser where you can render components with different props
+
+    🧩 EXAMPLE
+        ```
+        // Button.stories.jsx
+        import Button from './Button'
+
+        export default { title: 'Button', component: Button }
+
+        export const Primary = () => <Button label="Click Me" />
+        export const Disabled = () => <Button label="Click Me" disabled />
+        ```
+
+⁡⁢⁢⁣_________________________________________________________________________________________________⁡
+
+    --------------------------------------------------
+    6️⃣ ⁡⁣⁢⁣𝗥𝗘𝗔𝗖𝗧 𝗦𝗧𝗥𝗜𝗖𝗧 𝗠𝗢𝗗𝗘⁡⁡
+    --------------------------------------------------
+
+    🧠 WHAT IT IS
+        • StrictMode is a development-only wrapper that checks for unsafe React practices
+
+    🔑 WHY YOU NEED IT
+        • Warns you about deprecated APIs
+        • Helps you write future-proof code
+
+    ⚙️ EXAMPLE
+        ```
+        <React.StrictMode>
+        <App />
+        </React.StrictMode>
+        ```
+
+    --------------------------------------------------
+    🧭 𝗣𝗨𝗧𝗧𝗜𝗡𝗚 𝗜𝗧 𝗔𝗟𝗟 𝗧𝗢𝗚𝗘𝗧𝗛𝗘𝗥 (𝗣𝗜𝗣𝗘𝗟𝗜𝗡𝗘)
+    --------------------------------------------------
+
+    Write Code → Prettier Formats → ESLint Checks → Husky Blocks Bad Commits →
+    Storybook Tests Components → React DevTools Debugging → StrictMode Warnings
+
+    This is how they work together to make your project clean, consistent, and bug-free.
+    ⁡⁢⁢⁣_________________________________________________________________________________________________⁡

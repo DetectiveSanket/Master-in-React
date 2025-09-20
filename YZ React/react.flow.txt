@@ -212,12 +212,12 @@
 | └── Playwright          ✔️ 
 |
 |__21.
-|── Build Tools & Bundlers 
-| ├── Webpack               
-| ├── Vite                  
-| ├── Parcel                
-| ├── Rollup                
-| └── ESBuild               
+|── Build Tools & Bundlers  ✔️
+| ├── Webpack               ✔️
+| ├── Vite                  ✔️
+| ├── Parcel                ✔️
+| ├── Rollup               ✔️ 
+| └── ESBuild               ✔️
 |
 |__22.
 |── TypeScript with React   ❌
@@ -230,7 +230,7 @@
 | └── Generic Components    ❌
 |
 |__23.
-|── Advanced Patterns
+|── Advanced Patterns        ✔️(⁡⁢⁣⁣Latter with seperate course⁡⁡)
 | ├── Compound Components   
 | ├── Render Props          
 | ├── Higher-Order Components 
@@ -240,7 +240,7 @@
 | └── Factory Pattern       
 |
 |__24.
-|── React 18+ Features
+|── React 18+ Features     ✔️(⁡⁢⁣⁣Latter with seperate course⁡)
 | ├── Concurrent Features   
 | ├── Suspense for Data Fetching 
 | ├── Server Components     
@@ -295,10 +295,10 @@
 | └── Secure Coding Practices 
 |
 |__30.
-|── Mobile Development
-| ├── React Native          
-| ├── Progressive Web Apps  
-| └── Responsive Design     
+|── Mobile Development ❌
+| ├── React Native      ❌    
+| ├── Progressive Web Apps  ❌
+| └── Responsive Design     ❌
 |
 |──
 | END __
