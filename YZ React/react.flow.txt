@@ -280,12 +280,12 @@
 | └── CI/CD Pipelines  ✔️       
 |
 |__28.
-|── Architecture Patterns
-| ├── Component Architecture 
-| ├── Folder Structure      
-| ├── State Management Strategy 
-| ├── Code Organization     
-| └── Design Patterns       
+|── Architecture Patterns ✔️
+| ├── Component Architecture ✔️
+| ├── Folder Structure      ✔️
+| ├── State Management Strategy ✔️
+| ├── Code Organization     ✔️
+| └── Design Patterns       ✔️
 |
 |__29.
 |── Security
