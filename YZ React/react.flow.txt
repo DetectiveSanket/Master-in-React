@@ -288,11 +288,11 @@
 | └── Design Patterns       ✔️
 |
 |__29.
-|── Security
-| ├── XSS Prevention        
-| ├── CSRF Protection       
-| ├── Input Sanitization    
-| └── Secure Coding Practices 
+|── Security  ✔️
+| ├── XSS Prevention       ✔️ 
+| ├── CSRF Protection      ✔️ 
+| ├── Input Sanitization    ✔️
+| └── Secure Coding Practices ✔️
 |
 |__30.
 |── Mobile Development ❌
@@ -301,7 +301,8 @@
 | └── Responsive Design     ❌
 |
 |──
-| END __
+| END __ ─── Thank You’re for Learning! ❤️🙏
+
 ```
 
 ## 🎯 Recommended Learning Flow:
