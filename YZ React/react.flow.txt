@@ -194,22 +194,22 @@
 | └── DOM Manipulation   ✔️   
 |
 |__19.
-|── Portals
-| ├── ReactDOM.createPortal 
-| ├── Modal Implementation  
-| └── Portal Use Cases      
+|── Portals ❌
+| ├── ReactDOM.createPortal ❌
+| ├── Modal Implementation  ❌
+| └── Portal Use Cases      ❌
 |
 |__20.
-|── Testing
-| ├── Jest                  
-| ├── React Testing Library 
-| ├── Component Testing     
-| ├── Hook Testing          
-| ├── Integration Testing   
-| ├── Snapshot Testing      
-| └── E2E Testing           
-| ├── Cypress              
-| └── Playwright           
+|── Testing     ✔️(⁡⁢⁣⁣Latter with seperate course⁡)
+| ├── Jest                  ✔️
+| ├── React Testing Library ✔️
+| ├── Component Testing     ✔️
+| ├── Hook Testing          ✔️
+| ├── Integration Testing   ✔️
+| ├── Snapshot Testing      ✔️
+| └── E2E Testing          ✔️ 
+| ├── Cypress             ✔️ 
+| └── Playwright          ✔️ 
 |
 |__21.
 |── Build Tools & Bundlers 
