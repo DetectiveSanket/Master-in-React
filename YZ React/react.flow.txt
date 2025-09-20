@@ -261,23 +261,23 @@
 | └── Gatsby            ❌    
 |
 |__26.
-|── Development Tools
-| ├── React Developer Tools 
-| ├── ESLint                
-| ├── Prettier              
-| ├── Husky                 
-| ├── Storybook             
-| └── React Strict Mode     
+|── Development Tools  ✔️
+| ├── React Developer Tools ✔️
+| ├── ESLint                ✔️
+| ├── Prettier              ✔️
+| ├── Husky                 ✔️
+| ├── Storybook             ✔️
+| └── React Strict Mode     ✔️
 |
 |__27.
-|── Deployment
-| ├── Build Process         
-| ├── Static Hosting        
-| | ├── Netlify            
-| | ├── Vercel             
-| | └── GitHub Pages       
-| ├── CDN Deployment        
-| └── CI/CD Pipelines       
+|── Deployment  ✔️(⁡⁢⁣⁣𝗡𝗲𝗲𝗱 𝗣𝗿𝗮𝗰𝘁𝗶𝗰𝗲⁡)
+| ├── Build Process      ✔️
+| ├── Static Hosting    ✔️
+| | ├── Netlify         ✔️
+| | ├── Vercel          ✔️
+| | └── GitHub Pages   ✔️
+| ├── CDN Deployment   ✔️
+| └── CI/CD Pipelines  ✔️       
 |
 |__28.
 |── Architecture Patterns
