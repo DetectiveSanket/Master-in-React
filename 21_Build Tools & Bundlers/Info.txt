@@ -1,0 +1,64 @@
+    
+    
+    |__21.
+    |── Build Tools & Bundlers 
+    | ├── Webpack               
+    | ├── Vite                  
+    | ├── Parcel                
+    | ├── Rollup                
+    | └── ESBuild 
+
+    _____________________________________________________________________________________________________
+
+    ## Build Tools & Bundlers
+
+    Build tools and bundlers are essential in modern web development to optimize and manage your codebase. They help in transforming, bundling, and optimizing your code for better performance and maintainability. Here are some of the most popular build tools and bundlers used in the React ecosystem:
+
+    🏗️ Build Tools & Bundlers
+
+    1️⃣ Theory – What & Why?
+    --------------------------
+    When we write modern JavaScript (React, ES6+, JSX), browsers can't directly run all of it (e.g., JSX, imports, tree-shaking).
+    So, we use Build Tools & Bundlers to:
+
+    ✅ Bundle → Combine multiple JS files into one (or few) optimized files
+    ✅ Transpile → Convert modern JS/JSX into browser-friendly JS
+    ✅ Optimize → Minify, remove unused code (tree-shaking)
+    ✅ Serve → Provide fast dev server with hot reload
+    ✅ Code Split → Load code only when needed
+
+    Without them, your React project would not run efficiently in production.
+
+    2️⃣ Setup (General Idea)
+    --------------------------
+    Each bundler/tool has its own setup, but steps are similar:
+
+    1. Install tool (e.g., npm install --save-dev vite)
+    2. Configure tool (e.g., vite.config.js, webpack.config.js)
+    3. Add scripts to package.json (npm run dev, npm run build)
+    4. Run development server → get hot reloading
+    5. Run production build → get optimized output
+
+    | Tool        | Best For                     | Pros                                      |Cons                                   |
+    |-------------|------------------------------|-------------------------------------------|----------------------------------------|
+    | **Webpack** | Large, complex apps          | Very customizable, plugins ecosystem      | Steep learning curve, verbose config   |
+    | **Vite**    | Modern React/JS apps         | Blazing fast dev server, zero-config      | Slightly fewer plugins than Webpack    |
+    | **Parcel**  | Beginners, quick prototyping | Zero config, automatic setup              | Less control than Webpack              |
+    | **Rollup**  | Libraries (npm packages)     | Great for bundling libraries (tree-shaking)| Not as feature-rich for full apps     |
+    | **ESBuild** | Speed-focused builds         | Extremely fast                            | Minimal plugin ecosystem, used by Vite |
+
+
+    5️⃣ Use Cases
+        - Webpack → Enterprise apps where you need deep customization
+        - Vite → Modern React/Vue/Vanilla apps, fastest dev server
+        - Parcel → Simple projects, quick start with no config
+        - Rollup → Building JS libraries (like React component packages)
+        - ESBuild → Super fast builds, used internally by Vite
+
+    6️⃣ Best Practices
+
+        ✅ Use Vite for most modern React projects
+        ✅ Use Code Splitting & Lazy Loading to reduce bundle size
+        ✅ Always run npm run build and test production build before deployment
+        ✅ Analyze bundle size with tools (Webpack Bundle Analyzer, Vite-bundle-visualizer)
+        ✅ Keep dependencies updated to get better tree-shaking and optimization
