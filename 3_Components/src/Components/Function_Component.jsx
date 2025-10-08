@@ -1,6 +1,6 @@
 import React from 'react'
 
-export function Function_Component({message}) {
+export function FunctionComponent({message , userInfo}) {
 
     const helloMessage = "Hello from Function Component";
 
@@ -10,6 +10,13 @@ export function Function_Component({message}) {
 
             <p>msg : {helloMessage}</p>
             <p>This message is coming from a parent component: {message}</p>
+
+            <h2>name : {userInfo?.name}</h2>
+            <h2>age : {userInfo?.age}</h2>
+            <h2>city : {userInfo?.city}</h2>
+            <h2>street : {userInfo?.address?.street}</h2>
+            <h2>number : {userInfo?.address?.number}</h2>
+            <h2>hobbies : {userInfo?.hobbies?.join(', ')}</h2>
         </>
     )
 }

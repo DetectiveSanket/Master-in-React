@@ -1,17 +1,27 @@
 
 import './App.css'
-import { Function_Component , AnotherFunctionComponent } from './Components/Function_Component'
+import { FunctionComponent , AnotherFunctionComponent } from './Components/Function_Component'
 import Class_Component from './Components/Class_Component'
 import withHello from './Components/Higher_order_Component'
 
 function App() {
 
-    const message = "Hello from App Component"
+    const message = "Hello from App Component";
+    const obj = {
+        name: "John",
+        age: 30,
+        city: "New York",
+        address:{
+            street: "5th Avenue",
+            number: 10
+        },
+        hobbies: ['reading', 'traveling', 'swimming']
+    }
  
   return (
         <>
         <h1 style={{color: 'green'}}>React Components: Those are topic that we are going to this Section</h1>
-            {/* <p>
+             <p>
                 |── Components
                 | ├── Functional Components ✔️
                 | ├── Class Components      ✔️
@@ -24,11 +34,11 @@ function App() {
                 | └── Component Patterns ✔️
                 | ├── Higher-Order Components (HOC) ✔️
                 | └── Render Props ✔️
-            </p> */}
+            </p> 
 
             <hr />
             
-             <Function_Component message={message}/> {/*//? Passing message as prop to Function_Component */}
+             <FunctionComponent message={message} userInfo={obj} /> {/*//? Passing message as prop to Function_Component */}
              <AnotherFunctionComponent />
 
             <hr />
@@ -39,7 +49,7 @@ function App() {
 
             {/* Higher-Order Components (HOC) */}
             {/* Example usage of HOC: wrap Function_Component with withHello */}
-            {withHello(Function_Component)({ message: "Hello from HOC" })}
+            {withHello(FunctionComponent)({ message: "Hello from HOC" })}
 
 
 

@@ -20,8 +20,8 @@ function App() {
         <>
             <div>
                 <h1>props passing in function component</h1>
-                <ChildA text={msg} userInfo={obj} />
-                {/* <ChildA obj={...obj} /> */}
+                {/* <ChildA text={msg} userInfo={obj} /> */}
+                <ChildA text={msg} {...obj} />
             </div>
         </>
     )

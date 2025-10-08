@@ -16,8 +16,8 @@ class Class_Component extends Component {
             <>
                 <h1 style={{ color: 'orange' }}>Class_Component</h1>
 
-                <p style={{ color: 'cyan' }}> {this.state.message} </p>
-                <p style={{ color: 'cyan' }}> {this.props.message} </p>
+                <p style={{ color: 'cyan' }}> {this.state.message} </p> //? accessing state in class component
+                <p style={{ color: 'cyan' }}> {this.props.message} </p> //? accessing props in class component (from parent) 
 
             </>
         );
@@ -29,27 +29,27 @@ export default Class_Component;
 /*
 ⁡⁢⁣⁣Readable summary: Functional vs Class Components⁡
 
-- Syntax
+- ⁡⁣⁢⁣𝗦𝘆𝗻𝘁𝗮𝘅⁡
     - Functional: function Component() {}
     - Class: class Component extends React.Component {}
 
-- State
+- ⁡⁣⁢⁣𝗦𝘁𝗮𝘁𝗲⁡
     - Functional: Managed with the useState() hook.
-    - Class: Managed with this.state and updated via this.setState().
+    - Class: Managed with ⁡⁣⁣⁢this.state⁡ and updated via ⁡⁣⁣⁢this.setState()⁡.
 
-- Lifecycle / Side Effects
-    - Functional: 	Managed with the useEffect() hook for side effects.
-    - Class: use Lifecycle methods: componentDidMount, componentDidUpdate, componentWillUnmount
+- ⁡⁣⁢⁣𝗟𝗶𝗳𝗲𝗰𝘆𝗰𝗹𝗲 / 𝗦𝗶𝗱𝗲 𝗘𝗳𝗳𝗲𝗰𝘁𝘀⁡
+    - Functional: Managed with the ⁡⁣⁣⁢useEffect() ⁡hook for side effects.
+    - Class: use Lifecycle methods: ⁡⁣⁣⁢componentDidMount, componentDidUpdate, componentWillUnmount⁡
 
-- Props
-    - Functional: received as function ⁡⁣⁣⁢arguments (props) ⁡or destructured
+- ⁡⁣⁢⁣𝗣𝗿𝗼𝗽𝘀⁡
+    - Functional: received as function ⁡⁣⁣⁢arguments (props) ⁡or ⁡⁣⁣⁢destructured⁡
     - Class: accessed via ⁡⁣⁣⁢this.props⁡
 
-- "this" keyword
+- ⁡⁣⁢⁣"𝘁𝗵𝗶𝘀" 𝗸𝗲𝘆𝘄𝗼𝗿𝗱⁡
     - Functional: not used
-    - Class: used; methods may require binding
+    - Class: used; methods may ⁡⁣⁣⁢require binding⁡
 
-- Modernity
+- ⁡⁣⁢⁣𝗠𝗼𝗱𝗲𝗿𝗻𝗶𝘁𝘆⁡
     - Functional: modern, recommended, most common
     - Class: legacy, still found in older codebases
 */
