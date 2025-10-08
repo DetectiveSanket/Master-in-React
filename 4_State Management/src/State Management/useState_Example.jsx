@@ -69,10 +69,10 @@ export default useState_Example;
 
 
 /* 
-    # Details Information
+    ⁡⁢⁣⁣# Details Information⁡
     ? https://react.dev/reference/react/useState
 
-    1. State Management in React (Data Management)
+    ⁡⁣⁢⁣1. State Management in React (Data Management)⁡
 
         - State is data that changes over time in your React components.
         - When state changes, React re-renders the component (or part of it) to reflect the new data.
@@ -81,7 +81,7 @@ export default useState_Example;
         * State → internal data owned by the component (mutable through React methods).
 
 
-    2. useState Hook
+    2. ⁡⁣⁢useState Hook
         - The useState hook is the most common way to manage local state in a functional component.
         - It allows you to add state to your components without converting them to class components.
         - The useState hook returns an array with two elements: the current (initial value) state value and a function to update it.
@@ -114,10 +114,10 @@ export default useState_Example;
             - set functions do not have a return value.
 
         * Caveats
-            - The set function only updates the state variable for the next render. If you read the state variable after calling the set function, you will still get the old value that was on the screen before your call.
+            - The ⁡⁣⁣⁢set function⁡ only updates the state variable for the next render. If you read the state variable after calling the set function, you will still get the old value that was on the screen before your call.
 
 
-    3. State Updates
+    3. ⁡⁢⁣⁣State Updates⁡
 
         - React state should never be ⁡⁣⁣⁢mutated directly⁡. You always use the ⁡⁣⁣⁢updater function.⁡
         - To mutate something directly means to change the existing object or array itself instead of creating a new copy.

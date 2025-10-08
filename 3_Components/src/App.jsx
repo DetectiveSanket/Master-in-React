@@ -51,8 +51,6 @@ function App() {
             {/* Example usage of HOC: wrap Function_Component with withHello */}
             {withHello(FunctionComponent)({ message: "Hello from HOC" })}
 
-
-
         </>
     )
 }
@@ -61,13 +59,13 @@ export default App
 
 /* 
     # Components in React
-      - Components are the building blocks of a React application.
-      - They allow you to split the UI into independent, reusable pieces.
-      - Each component has its own logic and controls its own rendering.
+      * Components are the building blocks of a React application.
+      * They allow you to split the UI into independent, reusable pieces.
+      * Each component has its own logic and controls its own rendering.
       - Components can be classified into two main types: Functional and Class components.
 
-      - Functional Components: These are JavaScript functions that return JSX. They can accept props as arguments and are typically used for presentational purposes.
+      • ⁡⁣⁢⁣Functional Components⁡: These are JavaScript functions that return JSX. They can accept props as arguments and are typically used for presentational purposes.
 
-      - Class Components: These are ES6 classes that extend the React.Component class. They can hold and manage their own state and lifecycle methods.
+      • ⁡⁣⁢⁣Class Components:⁡ These are ES6 classes that extend the React.Component class. They can hold and manage their own state and lifecycle methods.
 
 */
