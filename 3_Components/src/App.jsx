@@ -28,12 +28,12 @@ function App() {
 
             <hr />
             
-             <Function_Component message={message}/> {/*// Passing message as prop to Function_Component */}
+             <Function_Component message={message}/> {/*//? Passing message as prop to Function_Component */}
              <AnotherFunctionComponent />
 
             <hr />
 
-            <Class_Component message={message} /> {/* Passing message as a prop */}
+            <Class_Component message={message} /> {/*//? Passing message as a prop */}
 
             <hr />
 
