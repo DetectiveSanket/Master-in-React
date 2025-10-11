@@ -73,7 +73,7 @@ export default App;
             • useEffect is used to perform side effects in React components.
             • It can be used for data fetching, subscriptions, or manually changing the DOM.
 
-        c) useContext
+        ⁡⁣⁢⁣c)⁡ ⁡⁣⁢⁣useContext⁡
             • useContext is used to access the React context API.
             • It allows you to share values (like themes or user info) between components without prop drilling.
 
