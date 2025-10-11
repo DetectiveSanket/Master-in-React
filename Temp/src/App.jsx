@@ -1,70 +1,32 @@
 
-import { useEffect, useState } from 'react'
+import { useMemo, useState } from 'react';
 import './App.css'
 
 function App() {
     
-    const [title , setTitle] = useState("");
-    const [loading , setLoading] = useState(true);
-    const [error , setError] = useState(null);
-    const [change , setChange] = useState(false);
+    const [input , setInput] = useState(0);
 
-    useEffect(() => {
-        if (change) {
-            console.log("UseEffect is called because 'change' is true");
-            async function fetchData() {
-                try {
-                    // Setting loading to true when a fetch starts
-                    setLoading(true);
-                    const response = await fetch("https://jsonplaceholder.typicode.com/photos");
-                    if (!response.ok) {
-                        throw new Error(`HTTP error! status: ${response.status}`);
-                    }
-                    const data = await response.json();
-                    const result = data.slice(0, 10);
-                    setTitle(result);
-                    
-                } catch (e) {
-                    console.error(e);
-                    setError(e.message);
-                } finally {
-                    setLoading(false);
-                }
-            }
-            fetchData();
-        }
+    function expensiveCalculation(num) {
+        console.log("Calculating...");
+        for(let i = 0 ; i < 1000000000 ; i++) ;
+        return num * 2;
+    }
 
-    }, [ change ]);
-
-  
+    const res = useMemo(() => expensiveCalculation(input), [input]);  
 
   return (
         <>
             <div>
-                <h1>Photos from API</h1>
-                <div className="photo-grid">
-                    {
-                        loading ? (
-                            <p>Loading...</p>
-                        ) : error ? (
-                            <p>Error: {error}</p>
-                        ) : (
-                            title.map((photo) => (
-                                <div key={photo.id} className="photo">
-                                    {/* <img src={photo.url} alt={photo.title} /> */}
-                                    <p>{photo.title}</p>
-                                    <p>{photo.id}</p>
-                                </div>
-                            ))
-                        )
-                    }
-                </div>
+                <input 
+                    type="number"
+                    value={input}
+                    onChange={(e) => setInput(e.target.value)}
+                 />
 
-                <button onClick={() => setChange(!change)}>Change State</button> 
-                {change && <p>State Changed!</p>} {/* when when change value is true, this message will be displayed*/}
+                <h3>Expensive Calculation : {res}</h3>
             </div>
         </>
     )
 }
 
-export default App
+export default App;

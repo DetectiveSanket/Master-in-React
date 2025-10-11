@@ -13,7 +13,7 @@ function UseContextHooks() {
 
     return (
         <>  
-        <hr />
+            <hr />
             <h2>UseContext Hooks</h2>
 
             {/*//* step 2: Provider (wrap all the child inside the provider) */}
