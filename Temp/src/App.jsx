@@ -10,25 +10,29 @@ function App() {
     const [change , setChange] = useState(false);
 
     useEffect(() => {
-        console.log("UseEffect is called")
-        async function fetchData() {
-            try {
-                const response = await fetch("https://jsonplaceholder.typicode.com/photos");
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
+        if (change) {
+            console.log("UseEffect is called because 'change' is true");
+            async function fetchData() {
+                try {
+                    // Setting loading to true when a fetch starts
+                    setLoading(true);
+                    const response = await fetch("https://jsonplaceholder.typicode.com/photos");
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    const data = await response.json();
+                    const result = data.slice(0, 10);
+                    setTitle(result);
+                    
+                } catch (e) {
+                    console.error(e);
+                    setError(e.message);
+                } finally {
+                    setLoading(false);
                 }
-                const data = await response.json();
-                const result = data.slice(0, 10);
-                setTitle(result);
-                
-            }catch (e) {
-                console.error(e);
-                setError(e.message);
-            }finally {
-                setLoading(false);
             }
+            fetchData();
         }
-        fetchData();
 
     }, [ change ]);
 

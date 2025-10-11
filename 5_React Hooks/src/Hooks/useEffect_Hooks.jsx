@@ -135,3 +135,79 @@ export default UseEffectHooks;
                     - Unmount → you close the window entirely. 
 
 */
+
+
+/* 
+    ## ⁡⁢⁣⁢𝗖𝗼𝗺𝗽𝗹𝗲𝘅 𝗘𝘅𝗮𝗺𝗽𝗹𝗲 𝗼𝗳 𝘂𝘀𝗲𝗘𝗳𝗳𝗲𝗰𝘁 𝗛𝗼𝗼𝗸 𝘄𝗶𝘁𝗵 𝗗𝗮𝘁𝗮 𝗙𝗲𝘁𝗰𝗵𝗶𝗻𝗴⁡
+
+    
+import { useEffect, useState } from 'react'
+import './App.css'
+
+function App() {
+    
+    const [title , setTitle] = useState("");
+    const [loading , setLoading] = useState(true);
+    const [error , setError] = useState(null);
+    const [change , setChange] = useState(false);
+
+    useEffect(() => {
+        if (change) {
+            console.log("UseEffect is called because 'change' is true");
+            async function fetchData() {
+                try {
+                    ->  Setting loading to true when a fetch starts
+                    setLoading(true);
+                    const response = await fetch("https://jsonplaceholder.typicode.com/photos");
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    const data = await response.json();
+                    const result = data.slice(0, 10);
+                    setTitle(result);
+                    
+                } catch (e) {
+                    console.error(e);
+                    setError(e.message);
+                } finally {
+                    setLoading(false);
+                }
+            }
+            fetchData();
+        }
+
+    }, [ change ]);
+
+  
+
+  return (
+        <>
+            <div>
+                <h1>Photos from API</h1>
+                <div className="photo-grid">
+                    {
+                        loading ? (
+                            <p>Loading...</p>
+                        ) : error ? (
+                            <p>Error: {error}</p>
+                        ) : (
+                            title.map((photo) => (
+                                <div key={photo.id} className="photo">
+                                    <p>{photo.title}</p>
+                                    <p>{photo.id}</p>
+                                </div>
+                            ))
+                        )
+                    }
+                </div>
+
+                <button onClick={() => setChange(!change)}>Change State</button> 
+                {change && <p>State Changed!</p>} 
+            </div>
+        </>
+    )
+}
+
+export default App
+
+*/
