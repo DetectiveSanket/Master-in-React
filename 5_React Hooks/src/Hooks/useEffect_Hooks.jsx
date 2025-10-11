@@ -32,7 +32,7 @@ function UseEffectHooks() {
 export default UseEffectHooks;
 
 /*  
-    # 𝘂𝘀𝗲𝗘𝗳𝗳𝗲𝗰𝘁 𝗛𝗼𝗼𝗸
+    #⁡⁢⁣⁣ ⁡⁢⁣⁣𝘂𝘀𝗲𝗘𝗳𝗳𝗲𝗰𝘁 𝗛𝗼𝗼𝗸⁡⁡
         • useEffect is used to perform side effects in React components.
         • It can be used for data fetching, subscriptions, or manually changing the DOM.
 

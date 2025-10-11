@@ -55,21 +55,21 @@ function App() {
 export default App;
 
 /* 
-  # React Hooks
-    ⁡⁢⁣⁣1. React Hooks Overview⁡
+  ## React Hooks
+    ⁡⁢⁣⁣𝟭. 𝗥𝗲𝗮𝗰𝘁 𝗛𝗼𝗼𝗸𝘀 𝗢𝘃𝗲𝗿𝘃𝗶𝗲𝘄⁡
 
         - Hooks are functions that let you “hook into” React features (like state, context, lifecycle methods) inside functional components — no need for class components anymore.
 
-        - Before React 16.8, you needed class components to use features like lifecycle methods and state. Hooks replaced that pain. Now, you can use functional components for everything!
+        * Before React 16.8, you needed class components to use features like lifecycle methods and state. Hooks replaced that pain. Now, you can use functional components for everything!
 
 
-    2. Built-in Hooks⁡
+    ⁡⁢⁢⁣⁡⁢⁣⁣𝟮. 𝗕𝘂𝗶𝗹𝘁-𝗶𝗻 𝗛𝗼𝗼𝗸𝘀⁡⁡
 
-        a) useState
+        ⁡⁣⁢⁣a) useState⁡
             • We’ve already covered this in the previous module: 
                 - Manages local component state.
 
-        b) useEffect
+        ⁡⁣⁢⁣b) useEffect⁡
             • useEffect is used to perform side effects in React components.
             • It can be used for data fetching, subscriptions, or manually changing the DOM.
 
@@ -102,11 +102,11 @@ export default App;
         - A custom hook is just a function starting with "⁡⁣⁣⁢use⁡" that can call other hooks.
 
     ⁡⁢⁣⁣4. Hooks Rules⁡
-        1) Hook can only call at the top level.
+      * 1) Hook can only call at the top level.
             - Don’t call inside loops, conditions, or nested functions.
             - This ensures consistent hook call order across renders.
 
-        2) Hook can only call or used from React functions.
+      * 2) Hook can only call or used from React functions.
             - Functional components.
             - Custom hooks.
             - Not from regular JS functions.
