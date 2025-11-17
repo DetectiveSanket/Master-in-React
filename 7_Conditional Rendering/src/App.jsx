@@ -25,8 +25,6 @@ function App() {
         if(!isLoggedIn) {
             return <LoginBtn />
         }
-    
-        
         
 
     return (
@@ -58,8 +56,6 @@ function App() {
                 // return <LogoutBtn />
             }
 
-
-           
         </>
     )
 }
@@ -86,8 +82,8 @@ export default App;
 
        ⁡⁢⁣⁣•⁡ ⁡⁣⁢⁣𝗟𝗼𝗴𝗶𝗰𝗮𝗹 && 𝗢𝗽𝗲𝗿𝗮𝘁𝗼𝗿⁡
             - condition && expression
-            - If condition is true → renders the expression.
-            - If condition is false → renders nothing.
+            * If condition is true → renders the expression.
+            * If condition is false → renders nothing.
 
        • ⁡⁣⁢⁣𝗦𝘄𝗶𝘁𝗰𝗵 𝗦𝘁𝗮𝘁𝗲𝗺𝗲𝗻𝘁⁡
             - The switch statement is another way to perform conditional rendering in React, especially when you have multiple conditions to check.

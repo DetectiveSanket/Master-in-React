@@ -63,7 +63,7 @@ function App() {
             <hr />    
 
             {/* ⁡⁢⁣⁡⁢⁣⁣3. Event Binding⁡⁡ */}
-                {/* Example 1: Inline Arrow Function */}
+                {/* ⁡⁣⁢⁣Example 1: Inline Arrow Function⁡ */}
                     <button onClick={() => console.log("clicked inline....")}>
                         click me    
                     </button>    
@@ -78,7 +78,7 @@ function App() {
 
                 <br /><br />
 
-                {/* Example 2: Separate Function */}
+                {/* ⁡⁣⁢⁣Example 2: Separate Function⁡ */}
                     <button onClick={handle}>{label}</button>;    
                     {/* 
                         Explanation:
@@ -99,9 +99,9 @@ export default App;
 /* 
 ⁡⁢⁣⁣    # 𝗘𝘃𝗲𝗻𝘁 𝗛𝗮𝗻𝗱𝗹𝗶𝗻𝗴⁡
 
-        - In React, event handling is similar to handling events in regular HTML, but with some differences in syntax and behavior.
+        * In React, event handling is similar to handling events in regular HTML, but with some differences in syntax and behavior.
         - React uses a synthetic event system that wraps native events to provide cross-browser compatibility and consistent behavior.
-        - Event handlers in React are written in camelCase (e.g., onClick, onChange) instead of lowercase (e.g., onclick, onchange) as in HTML.
+        - Event handlers in React are written in ⁡⁣⁣⁢camelCase⁡ (e.g., onClick, onChange) instead of lowercase (e.g., onclick, onchange) as in ⁡⁣⁣⁢HTML⁡.
         - In React, you typically pass a function reference as the event handler rather than a string of code.
 
         ⁡⁣⁢⁣Basic syntax:⁡
