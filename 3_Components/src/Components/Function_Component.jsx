@@ -8,7 +8,7 @@ export function FunctionComponent({message , userInfo}) {
         <>
             <h1 style={{color: 'orange'}} >Function_Component</h1>
 
-            <p>msg : {helloMessage}</p>
+            <p>msg from inside component : {helloMessage}</p>
             <p>This message is coming from a parent component: {message}</p>
 
             <h2>name : {userInfo?.name}</h2>

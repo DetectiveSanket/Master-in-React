@@ -30,8 +30,8 @@ export default Class_Component;
 ⁡⁢⁣⁣Readable summary: Functional vs Class Components⁡
 
 - ⁡⁣⁢⁣𝗦𝘆𝗻𝘁𝗮𝘅⁡
-    - Functional: function Component() {}
-    - Class: class Component extends React.Component {}
+    - Functional: function Function_Name() {}
+    - Class: class Component_Name extends React.Component {}
 
 - ⁡⁣⁢⁣𝗦𝘁𝗮𝘁𝗲⁡
     - Functional: Managed with the useState() hook.

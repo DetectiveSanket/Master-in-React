@@ -81,7 +81,7 @@ export default useState_Example;
         * State → internal data owned by the component (mutable through React methods).
 
 
-    2. ⁡⁣⁢useState Hook
+    ⁡⁣⁢⁣2. useState Hook⁡
         - The useState hook is the most common way to manage local state in a functional component.
         - It allows you to add state to your components without converting them to class components.
         - The useState hook returns an array with two elements: the current (initial value) state value and a function to update it.

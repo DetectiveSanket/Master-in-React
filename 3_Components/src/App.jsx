@@ -58,7 +58,7 @@ function App() {
 export default App
 
 /* 
-    # Components in React
+    # ⁡⁢⁣⁣𝗖𝗼𝗺𝗽𝗼𝗻𝗲𝗻𝘁𝘀 𝗶𝗻 𝗥𝗲𝗮𝗰𝘁⁡
       * Components are the building blocks of a React application.
       * They allow you to split the UI into independent, reusable pieces.
       * Each component has its own logic and controls its own rendering.
