@@ -1,0 +1,16 @@
+
+## Interview Questions - Set 1 
+   -- Company Name :- SoftCardd
+   -- Date of Interview :- 10-01-2026
+   -- Role :- Software Developer
+   -- Experience :- Fresher / Intern
+   -- Mode :- Online (Zoom)
+   -- Duration :- 20 mins
+
+1) What / Difference between React Controlled and Uncontrolled Components?
+2) What is Props Drilling in React and how to avoid it?
+3) What is context API in React?
+5) What is Lazy loading in React?
+6) What is Middleware and how it works in express?
+7) How do you Handle Error in Node js?
+8) What is CORS and how to handle it in express?
