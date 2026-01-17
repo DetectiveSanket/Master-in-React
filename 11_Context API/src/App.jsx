@@ -1,10 +1,11 @@
 
-import { createContext } from 'react';
+import { createContext } from 'react'; //* step 1: import createContext from react
 import './App.css'
 import ChildA from './components/ChildA';
 import ChildB from './components/ChildB';
 
-const UseContext = createContext();
+const UseContext = createContext(); // * step 2: create context
+// export const UseContext = createContext();
 
 function App() {
 
@@ -31,7 +32,7 @@ function App() {
 
             <hr />
 
-            <UseContext.Provider value={user}>
+            <UseContext.Provider value={user}> {/* //* step 3: Provider (wrap all the child inside the provider) */}
                 <h2>App Component</h2>
                 <ChildA />
                 {/* <ChildB /> */}
