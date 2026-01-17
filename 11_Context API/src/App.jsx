@@ -3,6 +3,7 @@ import { createContext } from 'react';
 import './App.css'
 import ChildA from './components/ChildA';
 import ChildB from './components/ChildB';
+
 const UseContext = createContext();
 
 function App() {
@@ -48,6 +49,15 @@ export { UseContext };
         - It allows you to create a context object that can be accessed by any component within its provider.
         - Context is useful for managing global state, themes, user authentication, and other data that needs to be accessible throughout the app.
         * Think of it as a “data pipeline” that passes data from a parent to deeply nested children without manually passing props at every level.
+
+        ## ⁡⁣⁣⁢𝗪𝗵𝗮𝘁 𝗶𝘀 𝗣𝗿𝗼𝗽𝘀 𝗗𝗿𝗶𝗹𝗹𝗶𝗻𝗴?⁡
+            - Props drilling is the process of passing data from a parent component to deeply nested child components through multiple layers of intermediate components.
+            - This can lead to code that is hard to maintain and understand, especially when many components in the hierarchy do not need the data.
+            - To slove this problem, we can use Context API to provide the data at a higher level and consume it directly in the components that need it.
+                >< Solution of props driling
+                    - Context API
+                    - useContext Hook
+                    - State Management Libraries (like Redux, MobX)
 
         - Key components of Context API:
             1. React.createContext: Creates a context object with a default value.

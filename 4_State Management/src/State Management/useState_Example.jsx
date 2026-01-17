@@ -143,7 +143,7 @@ export default useState_Example;
             setUser(prev => ({ ...prev, age: 26 }));  // ✅ creates a new object reference
         }
         
-    4. State with Objects
+    4.⁡⁢⁣⁣ State with Objects⁡
 
         - When your state is an object, you must copy the old state to preserve unchanged properties (because setState replaces, not merges).
 
@@ -156,14 +156,14 @@ export default useState_Example;
         ⁡⁢⁢⁢<p>{user.name} is {user.age} years old</p>
         <button onClick={incrementAge}>Increase Age</button>⁡
 
-    5. State with Arrays
+    5. ⁡⁢⁣⁣State with Arrays⁡
 
         - When storing arrays, treat them immutably:
         - Use map to update items.
         - Use filter to remove items.
         - Use spread [...arr, newItem] to add items.  
         
-    7. Lifting State Up
+    7. ⁡⁢⁣⁣Lifting State Up⁡
 
         - When two sibling components need to share the same state, you "lift" the state to their closest parent and pass it down via props. 
         

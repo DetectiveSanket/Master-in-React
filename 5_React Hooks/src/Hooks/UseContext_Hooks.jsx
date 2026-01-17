@@ -51,6 +51,15 @@ export { UserContext };
             - To illustrate, we have many nested components. The component at the top and bottom of the stack need access to the state.
             - To do this without Context, we will need to pass the state as "props" through each nested component. This is called "prop drilling".
 
+        ## ⁡⁣⁣⁢⁡⁣⁣⁢𝗪𝗵𝗮𝘁 𝗶𝘀 𝗣𝗿𝗼𝗽𝘀 𝗗𝗿𝗶𝗹𝗹𝗶𝗻𝗴?⁡
+            - Props drilling is the process of passing data from a parent component to deeply nested child components through multiple layers of intermediate components.
+            - This can lead to code that is hard to maintain and understand, especially when many components in the hierarchy do not need the data.
+            - To slove this problem, we can use Context API to provide the data at a higher level and consume it directly in the components that need it.
+                >< Solution of props driling
+                    - Context API
+                    - useContext Hook
+                    - State Management Libraries (like Redux, MobX)    
+
         ⁡⁣⁢⁣• Basic syntax:⁡
             ⁡⁢⁢⁢const value = useContext(MyContext);⁡
             - This retrieves the current value of MyContext.
