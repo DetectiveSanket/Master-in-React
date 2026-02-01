@@ -60,7 +60,7 @@ export { UseContext };
                     - useContext Hook
                     - State Management Libraries (like Redux, MobX)
 
-        - Key components of Context API:
+        - ⁡⁣⁣⁢Key components of Context API:⁡
             1. React.createContext: Creates a context object with a default value.
             2. Context.Provider: A component that provides the context value to its children. (to provide the data.)
             3. Context.Consumer: A component that consumes the context value (less commonly used with hooks).
@@ -74,7 +74,7 @@ export { UseContext };
         - Memoize context values to prevent unnecessary re-renders of consuming components.
         - Keep context providers close to where they are needed in the component tree.
 
-    • useContext Hook
+    • ⁡⁣⁢⁣useContext Hook⁡
         - The useContext Hook allows you to access the context value directly in functional components.
         - useContext is just one part of the Context API — specifically, it’s a hook to read the value from a context.
         - You still need to use createContext() + Provider to set up the context first.    
@@ -106,12 +106,12 @@ export { UseContext };
         
     ________________________________________________________________________________________
 
-    1️⃣ React.createContext() 
+    1️⃣⁡⁣⁣⁢ React.createContext()⁡ 
        - What it Does
-        <>This function creates a Context object.
-        <>You call it once, then use it to create a Provider and Consumer.
+            <> This function creates a Context object.
+            <> You call it once, then use it to create a Provider and Consumer.
 
-        Example
+        Example:-
             ⁡⁢⁢⁢import React, { createContext } from "react";
 
             export const ThemeContext = createContext("light"); 
@@ -121,37 +121,37 @@ export { UseContext };
         🔑 Key Point:
             - Default value is used only when there is no Provider above in the component tree.
 
-    2️⃣ Context.Provider
+    2️⃣ ⁡⁣⁣⁢Context.Provider⁡
         What it Does
             <> Provider is a component that comes with every Context object.
             <> It provides a value to all components that consume this context.
 
-        Example
-        ⁡⁢⁢⁢import { ThemeContext } from "./ThemeContext";
+        Example:-
+            ⁡⁢⁢⁢import { ThemeContext } from "./ThemeContext";
 
-        function App() {
-        return (
-            <ThemeContext.Provider value="dark">
-            <Toolbar />
-            </ThemeContext.Provider>
-        );
-        }⁡
+            function App() {
+                return (
+                    <ThemeContext.Provider value="dark">
+                    <Toolbar />
+                    </ThemeContext.Provider>
+                );
+            }⁡
 
 
     * Here, every component inside <ThemeContext.Provider> will have access to "dark" as the context value.
 
-    3️⃣ Context.Consumer (Old Way)
+    3️⃣ ⁡⁣⁣⁢Context.Consumer (Old Way)⁡
         - Before useContext, you had to use Consumer to read the value.
         - This uses a render prop pattern.
 
-        Example
-        ⁡⁢⁢⁢function Toolbar() {
-        return (
-                <ThemeContext.Consumer>
-                {(value) => <button>Theme: {value}</button>}
-                </ThemeContext.Consumer>
-            );
-        }⁡
+        Example:-
+            ⁡⁢⁢⁢function Toolbar() {
+            return (
+                    <ThemeContext.Consumer>
+                    {(value) => <button>Theme: {value}</button>}
+                    </ThemeContext.Consumer>
+                );
+            }⁡
 
 
     ⚠️ Drawback:
@@ -159,10 +159,10 @@ export { UseContext };
         - This syntax is verbose.
         - Hard to use when you need multiple contexts → leads to nested Consumers (ugly code).
 
-    4️⃣ useContext Hook (Modern Way)
+    4️⃣ ⁡⁣⁣⁢useContext Hook (Modern Way)⁡
         - The simpler and modern way to consume context inside a function component.
 
-        Example
+        Example:-
         ⁡⁢⁢⁢    import { useContext } from "react";
             import { ThemeContext } from "./ThemeContext";
 

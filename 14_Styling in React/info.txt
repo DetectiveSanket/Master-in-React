@@ -19,7 +19,7 @@ ________________________________________________________________________________
     1️⃣ ⁡⁢⁣⁣CSS Stylesheets (Global CSS)⁡ ✅
 
     How it works:
-    ⁡⁣⁢⁣You create a normal .css file and import it into your component or index.js.⁡
+        - ⁡⁣⁢⁣You create a normal .css file and import it into your component or index.js.⁡
 
     /* styles.css */
     ⁡⁢⁢⁢h1 {
@@ -38,16 +38,15 @@ ________________________________________________________________________________
         - Works well for small projects
 
     ❌ Cons:
-
         - Styles are global → can accidentally affect other components
         - Hard to manage in large apps
 
-    ----------------------------------------------------------------------------------    
+----------------------------------------------------------------------------------    
 
     2️⃣ ⁡⁢⁣⁣Inline Styles⁡ ✅
 
     How it works:
-    ⁡⁣⁢⁣Use the style prop with a JS object.⁡
+        - ⁡⁣⁢⁣Use the style prop with a JS object.⁡
 
     ⁡⁢⁢⁢export default function Button() {
         return (
@@ -67,12 +66,12 @@ ________________________________________________________________________________
         - Can make JSX messy
 
 ------------------------------------------------------------------------------------
-
+ 
 
     3️⃣ ⁡⁢⁣⁣CSS Modules⁡ ✅
 
     How it works:
-   ⁡⁣⁢⁣ Create a .module.css file. Import it → get a scoped styles object.⁡
+   ⁡⁣⁢⁣     - Create a .module.css file. Import it → get a scoped styles object.⁡
 
     /* Button.module.css */
    ⁡⁢⁢⁢ .btn {
@@ -101,7 +100,7 @@ ________________________________________________________________________________
     4️⃣ ⁡⁢⁣⁡⁢⁣⁣𝗦𝘁𝘆𝗹𝗲𝗱 𝗖𝗼𝗺𝗽𝗼𝗻𝗲𝗻𝘁𝘀⁡ ✅
 
     How it works:
-    ⁡⁣⁢⁣Uses a library (styled-components) to create styled React components.⁡
+        - ⁡⁣⁢⁣Uses a library (styled-components) to create styled React components.⁡
 
     npm install styled-components
 
@@ -131,9 +130,11 @@ ________________________________________________________________________________
         - Extra dependency
         - Can be slower in very large apps
 
+------------------------------------------------------------------------------------
+
     5️⃣ ⁡⁢⁣⁣Emotion⁡ ✅
 
-    ⁡⁣⁢⁣Similar to Styled Components, but slightly lighter and faster.⁡
+    ⁡⁣⁢     - ⁣Similar to Styled Components, but slightly lighter and faster.⁡
     Two ways: styled API or css prop.
 
     npm install @emotion/react @emotion/styled
@@ -159,9 +160,11 @@ ________________________________________________________________________________
         - Extra dependency
         - Slight learning curve
 
+----------------------------------------------------------------------------------------------
+
     6️⃣ ⁡⁢⁣⁣𝗧𝗮𝗶𝗹𝘄𝗶𝗻𝗱 𝗖𝗦𝗦⁡ ✅
 
-    ⁡⁣⁢⁣Utility-first CSS framework with pre-built classes.⁡
+    ⁡⁣⁢     - ⁣Utility-first CSS framework with pre-built classes.⁡
 
     npm install -D tailwindcss postcss autoprefixer
     npx tailwindcss init -p
@@ -187,10 +190,12 @@ ________________________________________________________________________________
         - JSX can look messy
         - Requires learning class utilities
 
+-------------------------------------------------------------------------------------------------
+
     7️⃣ ⁡⁢⁣⁣CSS-in-JS (General Approach)⁡ ✅
 
-    Styled Components & Emotion are actually implementations of CSS-in-JS.
-    The idea: write CSS directly in JS files → styles are scoped, dynamic, and injected at runtime.
+        - Styled Components & Emotion are actually implementations of CSS-in-JS.
+        - The idea: write CSS directly in JS files → styles are scoped, dynamic, and injected at runtime.
 
     🧐 Which One Should You Use?
         <> Approach	Best For

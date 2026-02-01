@@ -163,42 +163,38 @@
 
     CI/CD: https://docs.github.com/en/actions
 
-    ✅ Takeaway:
-
-    Build → Optimize → Deploy
-
-    Use static hosting for simple React apps
-
-    Use CI/CD pipelines for automation
-
-    CDN for global users and faster delivery
+        ✅ Takeaway:
+            - Build → Optimize → Deploy
+            - Use static hosting for simple React apps
+            - Use CI/CD pipelines for automation
+            - CDN for global users and faster delivery
 
     ⁡⁢⁢⁣_________________________________________________________________________________________________⁡
 
     flowchart TD
-    A[React App Development] --> B[Run Production Build]
-    B --> C[Build Folder (Optimized JS, CSS, HTML)]
+        A[React App Development] --> B[Run Production Build]
+        B --> C[Build Folder (Optimized JS, CSS, HTML)]
 
-    %% Static Hosting Paths
-    C --> D[Static Hosting]
-    D --> D1[Netlify]
-    D --> D2[Vercel]
-    D --> D3[GitHub Pages]
+        %% Static Hosting Paths
+        C --> D[Static Hosting]
+        D --> D1[Netlify]
+        D --> D2[Vercel]
+        D --> D3[GitHub Pages]
 
-    %% CDN Deployment
-    C --> E[CDN Deployment]
-    E --> E1[S3 Bucket]
-    E --> E2[CloudFront / Global CDN]
+        %% CDN Deployment
+        C --> E[CDN Deployment]
+        E --> E1[S3 Bucket]
+        E --> E2[CloudFront / Global CDN]
 
-    %% CI/CD Pipeline
-    C --> F[CI/CD Automation]
-    F --> F1[GitHub Actions / GitLab CI / CircleCI]
-    F1 --> F2[Automatic Build & Test]
-    F2 --> F3[Auto Deployment to Hosting/CDN]
+        %% CI/CD Pipeline
+        C --> F[CI/CD Automation]
+        F --> F1[GitHub Actions / GitLab CI / CircleCI]
+        F1 --> F2[Automatic Build & Test]
+        F2 --> F3[Auto Deployment to Hosting/CDN]
 
-    %% Users
-    D1 --> G[Users Access via URL]
-    D2 --> G
-    D3 --> G
-    E2 --> G
-    F3 --> G
+        %% Users
+        D1 --> G[Users Access via URL]
+        D2 --> G
+        D3 --> G
+        E2 --> G
+        F3 --> G

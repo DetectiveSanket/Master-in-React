@@ -57,22 +57,23 @@ function App() {
 }
 
 export default App;
+
 /* 
-    OLD WAY (BrowserRouter + Routes)         NEW WAY (createBrowserRouter + RouterProvider)
-    ─────────────────────────────────        ─────────────────────────────────────────────
-    main.jsx                                 main.jsx
+    ⁡⁣⁢⁣OLD WAY (BrowserRouter + Routes)         NEW WAY (createBrowserRouter + RouterProvider)
+    ─────────────────────────────────        ─────────────────────────────────────────────⁡
+    ⁡⁣⁣⁢main.jsx                                 main.jsx⁡
     ─────────────────────────────────        ─────────────────────────────────────────────
     <BrowserRouter>                          // No BrowserRouter needed
-    <App />                               <App /> 
+        <App />                                 <App /> 
     </BrowserRouter>                        
 
     ─────────────────────────────────        ─────────────────────────────────────────────
-    App.jsx                                  App.jsx
+    ⁡⁣⁣⁢App.jsx                                  App.jsx⁡
     ─────────────────────────────────        ─────────────────────────────────────────────
     function App() {                         const router = createBrowserRouter([
-    return (                                 { path: "/", element: <Home /> },
+    return (                                    { path: "/", element: <Home /> },
         <>                                      { path: "/about", element: <About /> }
-        <Navbar />                          ]);
+        <Navbar />                           ]);
         <Routes>                           
             <Route path="/"                   export default function App() {
                 element={<Home />} />            return <RouterProvider router={router} />;
@@ -83,19 +84,19 @@ export default App;
     )
     }
     ─────────────────────────────────        ─────────────────────────────────────────────
-    Flow:                                    Flow:
-    BrowserRouter wraps App →                Router created in App.jsx → passed to
-    App.jsx uses <Routes>/<Route>            <RouterProvider> (no BrowserRouter needed)
+    ⁡⁣⁣⁢Flow:                                    Flow:⁡
+        - BrowserRouter wraps App →               - Router created in App.jsx → passed to
+        - App.jsx uses <Routes>/<Route>           - <RouterProvider> (no BrowserRouter needed)
 
     
-    ___________________________________________________________________________________________________________________
-    | Feature              | Old Way (BrowserRouter)             | New Way (createBrowserRouter)                    |
+    ________________________________________________________________________________________________________________
+    | ⁡⁣⁣⁢Feature              | Old Way (BrowserRouter)             | New Way (createBrowserRouter) ⁡                   |
     | -------------------- | ----------------------------------- | ------------------------------------------------ |
     | **Router Setup**     | Wrap app in `<BrowserRouter>`       | No `<BrowserRouter>` needed                      |
     | **Route Definition** | Inside `<Routes>` with `<Route>`    | Defined in JS object array                       |
     | **Good For**         | Small/medium projects, simpler code | Large apps, central route config, code-splitting |
-    | **Example**          | `<Route path="/" element={<Home />} />` | `{ path: "/", element: <Home /> }`            |
-    ___________________________________________________________________________________________________________________
+    | **Example**          | `<Route path="/" element={<Home />} />` | `{ path: "/", element: <Home /> }`           |
+    |_______________________________________________________________________________________________________________|
 
  */
 
@@ -104,6 +105,7 @@ export default App;
     ⁡⁢⁣⁣## 𝗥𝗲𝗮𝗰𝘁 𝗥𝗼𝘂𝘁𝗲𝗿 𝗗𝗼𝗺⁡
 
         - React Router Dom is a powerful library for handling routing in React applications. It allows developers to create single-page applications with dynamic routing capabilities, enabling seamless navigation between different views or components without requiring a full page reload.
+        * Before React Router Dom , React Application.....
 
         * React Router is a library (not built into React) that lets you handle routing (switching pages/views) in a React app.
         - Without it, React apps are just single-page — you’d need to manually show/hide components.
@@ -146,27 +148,27 @@ export default App;
 
         🧠 ⁡⁢⁣⁣Two Ways to Set Up React Router⁡
 
-        ⁡⁢⁣⁢React Router has two main setups:⁡
+        ⁡⁢⁣⁢>>>> React Router has two main setups:⁡
 
-        🟢 1. The Old Way (BrowserRouter + Routes)
+        🟢 ⁡⁣⁢⁣𝟭. 𝗧𝗵𝗲 𝗢𝗹𝗱 𝗪𝗮𝘆 (𝗕𝗿𝗼𝘄𝘀𝗲𝗿𝗥𝗼𝘂𝘁𝗲𝗿 + 𝗥𝗼𝘂𝘁𝗲𝘀)⁡
 
             - This is what most tutorials still show:
 
-        main.jsx
+        ⁡⁣⁣⁢main.jsx⁡
 
         ⁡⁢⁢⁢import { BrowserRouter } from "react-router-dom";
         import App from "./App.jsx";
 
         createRoot(document.getElementById("root")).render(
-        <StrictMode>
-            <BrowserRouter>
-            <App />
-            </BrowserRouter>
-        </StrictMode>
+            <StrictMode>
+                <BrowserRouter>
+                    <App />
+                </BrowserRouter>
+            </StrictMode>
         );⁡
 
 
-        App.jsx
+       ⁡⁣⁣⁢ App.jsx⁡
 
         ⁡⁢⁢⁢import { Routes, Route } from "react-router-dom";
         import Navbar from "./Navbar";
@@ -174,55 +176,57 @@ export default App;
         import Contact from "./Contact";
 
         function App() {
-        return (
-            <>
-            <Navbar />
-            <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/contact" element={<Contact />} />
-            </Routes>
-            </>
-        );
+            return (
+                <>
+                <Navbar />
+                <Routes>
+                    <Route path="/" element={<Home />} />
+                    <Route path="/contact" element={<Contact />} />
+                </Routes>
+                </>
+            );
         }⁡
 
 
         ✅ In this approach, BrowserRouter wraps your whole app.
         ✅ Inside App.jsx, you use <Routes> and <Route> to define pages.
 
-        🟢 2. The New Way (RouterProvider + createBrowserRouter)
+    -------------------------------------------------------------------------------------------------
+
+        🟢 ⁡⁣⁢⁣𝟮. 𝗧𝗵𝗲 𝗡𝗲𝘄 𝗪𝗮𝘆 (𝗥𝗼𝘂𝘁𝗲𝗿𝗣𝗿𝗼𝘃𝗶𝗱𝗲𝗿 + 𝗰𝗿𝗲𝗮𝘁𝗲𝗕𝗿𝗼𝘄𝘀𝗲𝗿𝗥𝗼𝘂𝘁𝗲𝗿)⁡
 
             - Your code is already using this method — and in this case, you do NOT wrap your app with BrowserRouter (commenting it out in main.jsx was correct ✅).
 
-        App.jsx
+        ⁡⁣⁣⁢App.jsx⁡
 
         ⁡⁢⁢⁢import { createBrowserRouter, RouterProvider } from "react-router-dom";
         import Navbar from "./Navbar";
         import Home from "./Home";
         import Contact from "./Contact";
 
-        const router = createBrowserRouter([
-        {
-            path: "/",
-            element: (
-            <div>
-                <Navbar />
-                <Home />
-            </div>
-            ),
-        },
-        {
-            path: "/contact",
-            element: (
-            <div>
-                <Navbar />
-                <Contact />
-            </div>
-            ),
-        },
+        const routes = createBrowserRouter([
+            {
+                path: "/",
+                element: (
+                <div>
+                    <Navbar />
+                    <Home />
+                </div>
+                ),
+            },
+            {
+                path: "/contact",
+                element: (
+                <div>
+                    <Navbar />
+                    <Contact />
+                </div>
+                ),
+            },
         ]);
 
         export default function App() {
-        return <RouterProvider router={router} />;
+            return <RouterProvider router={routes} />;
         }⁡
 
 
