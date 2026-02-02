@@ -1,8 +1,8 @@
 ﻿╔══════════════════════════════════════════════════════════════════════════════╗
 ║                                                                              ║
-║               🔄  CONTEXT API  vs  useContext HOOK  🔄                      ║
+║               🔄  ⁡⁢⁣⁣𝗖𝗢𝗡𝗧𝗘𝗫𝗧 𝗔𝗣𝗜  𝘃𝘀  𝘂𝘀𝗲𝗖𝗼𝗻𝘁𝗲𝘅𝘁 𝗛𝗢𝗢𝗞⁡  🔄                      ║
 ║                                                                              ║
-║                    Clearing Up the Confusion Once and For All                ║
+║                   > Clearing Up the Confusion Once and For All               ║
 ║                                                                              ║
 ╚══════════════════════════════════════════════════════════════════════════════╝
 
@@ -54,7 +54,7 @@
     
     
     ⚠️  THE DISTINCTION:
-        You can't use useContext if you haven't set up the Context API first!
+        You can't use ⁡⁣⁣⁢useContext⁡ if you haven't set up the ⁡⁣⁣⁢Context API⁡ first!
 
 
 
@@ -214,9 +214,9 @@
 
 ╔══════════════════════════════════════════════════════════════════════════════╗
 ║                                                                              ║
-║          🎯  BONUS: THE CONTEXT TRAP (When NOT to use it)  🎯               ║
+║          🎯  ⁡⁢⁣⁣BONUS: THE CONTEXT TRAP (When NOT to use it)⁡  🎯               ║
 ║                                                                              ║
-║                      A Senior Pro Secret You MUST Know!                      ║
+║                    > A Senior Pro Secret You MUST Know!                      ║
 ║                                                                              ║
 ╚══════════════════════════════════════════════════════════════════════════════╝
 
@@ -269,7 +269,7 @@
 │  5️⃣   THE REALITY: Does Everyone Re-render?                                 │
 └──────────────────────────────────────────────────────────────────────────────┘
 
-    You have a Provider wrapping components A, B, C, and D:
+    In your example, You have a Provider wrapping components A, B, C, and D:
 
 
             ┌─────────────────────────────────────────┐
@@ -304,7 +304,7 @@
 
 
 ┌──────────────────────────────────────────────────────────────────────────────┐
-│  6️⃣   HOW TO SOLVE THE "MASS RE-RENDER" PROBLEM                             │
+│  6️⃣   ⁡⁣⁢⁣𝗛𝗢𝗪 𝗧𝗢 𝗦𝗢𝗟𝗩𝗘 𝗧𝗛𝗘 "𝗠𝗔𝗦𝗦 𝗥𝗘-𝗥𝗘𝗡𝗗𝗘𝗥" 𝗣𝗥𝗢𝗕𝗟𝗘𝗠⁡                         │
 └──────────────────────────────────────────────────────────────────────────────┘
 
     As a Senior Dev, I use THREE main "Shields" to protect performance:
@@ -377,7 +377,7 @@
     ║     If only the "Settings" page needs specific data,                ║
     ║     only wrap the "Settings" page!                                  ║
     ║                                                                     ║
-    ║     ❌ <AppProvider>           ✅ <App>                              ║
+    ║     ❌ <AppProvider>           ✅ <App>                            ║
     ║           <App />                   <SettingsProvider>              ║
     ║        </AppProvider>                  <Settings />                 ║
     ║                                     </SettingsProvider>             ║
@@ -388,13 +388,13 @@
 
 
 ┌──────────────────────────────────────────────────────────────────────────────┐
-│  7️⃣   VISUAL EXAMPLE: The Office Intercom 🏢                                │
+│  7️⃣   ⁡⁣⁢⁣VISUAL EXAMPLE: The Office Intercom⁡ 🏢                                │
 └──────────────────────────────────────────────────────────────────────────────┘
 
     Imagine an office building (The Provider) 🏢
 
 
-    ❌ BAD CONTEXT:
+    ❌ ⁡⁣⁣⁢BAD CONTEXT⁡:
     ────────────────
     
         🔊 The Boss (Provider) shouts over the WHOLE building's 
@@ -405,12 +405,12 @@
             ┌─────────────────────────────────────────────────────┐
             │  🔊 "I JUST DRANK WATER!"                           │
             │                                                     │
-            │     😵 Dev Team    😵 HR       😵 Finance           │
-            │     (stops work)   (stops)    (stops)              │
+            │     😵 Dev Team    😵 HR     😵 Finance           │
+            │     (stops work)   (stops)    (stops)               │
             └─────────────────────────────────────────────────────┘
 
 
-    ✅ GOOD CONTEXT:
+    ✅ ⁡⁣⁣⁢GOOD CONTEXT⁡:
     ─────────────────
     
         📢 The Boss only uses the intercom for "Building-wide" news
@@ -429,7 +429,7 @@
 
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-📋  QUICK SUMMARY
+📋  ⁡⁣⁢⁣QUICK SUMMARY⁡
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
     ┌─────────────────────────────────────────────────────────────────────┐
@@ -451,6 +451,61 @@
 
 
 ════════════════════════════════════════════════════════════════════════════════
-                              📚 END OF NOTES 📚
+                              📚 ⁡⁢⁣⁢𝙀͟𝙉͟𝘿 𝙊͟𝙁 𝙉͟𝙊͟𝙏͟𝙀͟𝙎⁡ 📚
 ════════════════════════════════════════════════════════════════════════════════
 
+⁡⁢⁢⁢import React, { createContext, useContext, useState, memo } from 'react';⁡
+
+  1. Create the Context
+    ⁡⁢⁢⁢const CountContext = createContext();⁡
+
+  2. The Provider Component
+    ⁡⁢⁢⁢export const CountProvider = ({ children }) => {
+        const [count, setCount] = useState(0);
+
+        return (
+            <CountContext.Provider value={{ count, setCount }}>
+            {children}
+            </CountContext.Provider>
+        );
+    };⁡
+
+   3. Component A: This one LISTENS to Context
+    ⁡⁢⁢⁢const Header = () => {
+        const { count } = useContext(CountContext);
+        console.log("Header Rendered! (I need the count)");
+        return <h1>Current Count: {count}</h1>;
+    };⁡
+
+    4. Component B: The "Optimized" Footer
+      - We wrap it in memo() so it only re-renders if its OWN props change.
+      - Since it has no props and doesn't use useContext, it stays frozen!
+    ⁡⁢⁢⁢const Footer = memo(() => {
+        console.log("Footer Rendered! (Wait... I shouldn't be rendering)");
+        return <footer>I am just a simple footer.</footer>;
+    });⁡
+    
+     5. The App
+        ⁡⁢⁢⁢export default function App() {
+            return (
+                <CountProvider>
+                <Header />
+                <hr />
+                <CounterButton />
+                <Footer />
+                </CountProvider>
+            );
+        }
+
+        const CounterButton = () => {
+            const { setCount } = useContext(CountContext);
+            return <button onClick={() => setCount(prev => prev + 1)}>Add +1</button>;
+        };⁡
+
+    # What's happening here?
+
+        - Header: Every time you click the button, the count changes. Because Header uses useContext(CountContext), it says, "Hey, my data changed! I need to re-draw myself."
+
+        - Footer: Even though it is inside the CountProvider, it is wrapped in memo. Since it doesn't use the count data, React looks at it and says, "Nothing changed for you, buddy. Stay as you are."
+
+        > Without memo, the Footer would print "Footer Rendered!" in the console every single time you clicked the button. With memo, it only prints it once (when the app first starts).   
