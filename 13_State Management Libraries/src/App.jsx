@@ -77,7 +77,7 @@ export default App;
             - State is read-only, and changes are made with pure functions called reducers.
             - Actions describe what happened, and reducers specify how the state changes in response.
 
-            • Key Concepts:
+            • ⁡⁣⁢⁣Key Concepts:⁡
                 - Actions: Plain objects describing what happened.
                 - Reducers: Pure functions that take the current state and an action, and return a new state.
                 - Slices: Redux Toolkit concept to split state and reducers into smaller pieces.
@@ -93,7 +93,7 @@ export default App;
                 - Middleware: For handling side effects (e.g., async actions).
                 - DevTools: For debugging and inspecting state changes.
 
-            • Key Features:
+            • ⁡⁣⁢⁣Key Features:⁡
                 - configureStore: Simplifies store setup with good defaults.
                 - createSlice: Combines reducers and actions in one place.
                 - createAsyncThunk: Simplifies async logic (e.g., API calls).
@@ -108,6 +108,6 @@ export default App;
 
         ⁡⁢⁣⁣3️⃣ Zustand
         4️⃣ Recoil
-        5️⃣ Context + useReducer⁡
+        5️⃣ Context Api + useReducer⁡
 
 */

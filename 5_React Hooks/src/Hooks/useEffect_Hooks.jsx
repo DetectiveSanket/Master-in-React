@@ -38,19 +38,19 @@ export default UseEffectHooks;
 
         * Side effects = anything outside rendering: fetching data, subscriptions, DOM manipulation, timers.
 
-        • It replaces lifecycle methods in class components:
+        • ⁡⁣⁢⁣It replaces lifecycle methods in class components:⁡
             - componentDidMount → run once after render.
             - componentDidUpdate → run on updates.
             - componentWillUnmount → cleanup.
 
 
-        • Basic syntax:
+        •⁡⁣⁢⁣ Basic syntax:⁡
             ⁡⁢⁢⁢useEffect(() => {
                 \\ code runs after every render
                 like : console.log("Runs after first render and every update(if no dependency array is provided) or every re-render");
             });⁡
 
-        • Cleanup Functions
+        • ⁡⁣⁢⁣Cleanup Functions⁡
             - To clean up resources (like intervals or event listeners), return a function inside useEffect:
 
             ⁡⁢⁢⁢useEffect(() => {
@@ -58,7 +58,7 @@ export default UseEffectHooks;
                 return () => clearInterval(id); // cleanup on unmount or before next effect run
             }, []);⁡    
 
-        • React Component Lifecycle (Functional Components)  
+        • ⁡⁣⁢⁣React Component Lifecycle (Functional Components)⁡  
         
                 ┌─────────────┐
                 │  Component  │

@@ -18,6 +18,8 @@
    - What is the tech stack you used?
    - Work FLow of the Project?
    - What does your project do?
+10) How do you manage state in your React Application?*
+
 
 ----------------------------------------------------------------------------------------
 
@@ -210,3 +212,60 @@
                   });⁡
               ```
       - In this example, the cors middleware is used to enable CORS for all routes in the Express application. You can also enable CORS for specific routes as needed.           
+
+   9) ⁡⁢⁣⁣𝗛𝗼𝘄 𝗱𝗼 𝘆𝗼𝘂 𝗻𝗮𝗴𝗲 𝘀𝘁𝗮𝘁𝗲 𝗶𝗻 𝘆𝗼𝘂𝗿 𝗥𝗲𝗮𝗰𝘁 𝗔𝗽𝗽𝗹𝗶𝗰𝗮𝘁𝗶𝗼𝗻?*⁡
+      - In React applications, state management can be handled in several ways depending on the complexity and requirements of the application.
+      - For simple applications, React's built-in useState and useReducer hooks can be used to manage local component state.
+      - For more complex applications with multiple components that need to share state, Context API can be used to provide a global state that can be accessed by any component in the component tree.It avoid props drilling problem.
+      - For large-scale applications with complex state management needs, state management libraries like Redux, MobX, or Zustand can be used to manage application-wide state in a more structured and scalable way.
+      - Additionally, tools like React Query or SWR can be used for managing server state and data fetching in React applications.
+
+          >< ⁡⁣⁢⁣Basic syntax for useState:⁡
+              ```jsx
+              ⁡⁢⁢⁢    const [state, setState] = useState(initialState);
+
+                  // Update state
+                  setState(newState);⁡
+              ```
+          >< ⁡⁣⁢⁣Basic syntax for Context API:⁡
+              ```jsx
+              ⁡⁢⁢⁢    const MyContext = React.createContext();
+
+                  // Provider Component
+                  <MyContext.Provider value={someValue}>
+                      <ChildComponent />
+                  </MyContext.Provider>
+
+                  // Consuming the context in ChildComponent
+                  const value = useContext(MyContext);⁡
+              ```
+          >< ⁡⁣⁢⁣Basic syntax for Redux:⁡
+              ```javascript
+              ⁡⁢⁢⁢    // Action
+                  const increment = () => ({ type: 'INCREMENT' });
+
+                  // Reducer
+                    const counterReducer = (state = 0, action) => {
+                        switch (action.type) {
+                            case 'INCREMENT':
+                                return state + 1;
+                            default:
+                                return state;
+                        }
+                    };
+
+                  // Store
+                  const store = createStore(counterReducer);
+
+                  // Dispatching an action
+                  store.dispatch(increment());⁡
+              ```     
+
+        "I use a three-tiered strategy for state management to ensure the application remains scalable and performant.
+
+        First, for UI-specific logic like toggles or form inputs, I stick to Local State using useState.
+
+        Second, for Shared State like themes or user settings, I use the Context API to avoid prop drilling.
+
+        Finally, for Complex Global State like authentication or large data sets, I use Redux Toolkit. It provides a single source of truth and, with RTK Query, it simplifies how we handle asynchronous API logic like loading and error states. This approach ensures that data is only shared where it is truly needed, which minimizes unnecessary re-renders.
+
