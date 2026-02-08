@@ -20,9 +20,7 @@ function UseCallbackhook() {
             - In this case, the increment function will only be recreated if the count variable changes.
             - If count remains the same between renders, React will return the previously memoized function, preventing unnecessary re-renders of child components that rely on that function.
     */
-
-            
-            
+       
 
     return (
         <div>
@@ -103,7 +101,7 @@ export default UseCallbackhook;
             - This returns a memoized version of the callback that only changes if one of the dependencies has changed.
             * But the here we are using React.memo 𝗻𝗼𝘁 ⁡⁣⁣⁢𝗰𝗮𝗹𝗹𝗯𝗮𝗰𝗸 𝗵𝗼𝗼𝗸.⁡
 
-            • Limitation of memo:
+            • ⁡⁣⁢⁣Limitation of memo:⁡
                 - if we pass function as a prop to the child component then also child component re-render.
                 - so problem is useMemo is not able to handle function props.
                 - so to solve this problem we have to use ⁡⁣⁣⁢useCallback hook.⁡
@@ -114,20 +112,20 @@ export default UseCallbackhook;
 
         * React.memo -> wrap -> component re-render tabhi hoga jab props change hoga. nahi to re-render nahi hoga.    
         * If your are sending function as a prop , then react.memo is not able to save you from re-rendering of child component.
-        * So to solve this problem we have to use useCallback hook. 
+        * So to solve this problem we have to use ⁡⁣⁣⁢⁡⁣⁣⁢𝙪͟𝙨͟𝙚͟𝘾͟𝙖͟𝙡͟𝙡͟𝙗͟𝙖͟𝙘͟𝙠 𝙝͟𝙤͟𝙤͟𝙠⁡⁡. 
         
-        • solution:
+        ⁡⁣⁢⁣• solution:⁡
             - we have to wrap the ⁡⁣⁣⁢function⁡ inside useCallback hook.    
             - function that we are passing as a prop to the child component.
             - So its help to return the memoized version of the callback function that only changes if one of the dependencies has changed.
                 ex:-
                     
-        • syntax of useCallback hook:
+        ⁡⁣⁢⁣• syntax of useCallback hook:⁡
             useCallback(
-              () => {
-                first
-              },
-              [second],
+                () => {
+                    first
+                },
+                [second],
             )
             - where first is function and second is dependency array.
             - It will return a memoized version of the function that only changes if one of the dependencies has changed.

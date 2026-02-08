@@ -1,19 +1,21 @@
-/* import React from 'react'
+/* 
+    import React from 'react'
 
-function CallbackHookchild(props) {
+    function CallbackHookchild(props) {
 
-    console.log("Child component re-rendered again....");
+        console.log("Child component re-rendered again....");
 
-    return (
-        <div>
+        return (
+            <div>
 
-            <h3>Child Component</h3>
-            <p>Count value in child component : {props.name}</p>
-        </div>
-    )
-}
+                <h3>Child Component</h3>
+                <p>Count value in child component : {props.name}</p>
+            </div>
+        )
+    }
 
-export default CallbackHookchild; */
+    export default CallbackHookchild; 
+*/
 
 //* to avoid the unnecessary re-rendering of the child component we use React.memo *//
 

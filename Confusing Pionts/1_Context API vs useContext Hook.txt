@@ -59,7 +59,7 @@
 
 
 ┌──────────────────────────────────────────────────────────────────────────────┐
-│  2️⃣   THE SCENARIO: The "Family Secret Recipe" 👵                           │
+│  2️⃣   ⁡⁣⁢⁣THE SCENARIO: The "Family Secret Recipe" 👵⁡                           │
 └──────────────────────────────────────────────────────────────────────────────┘
 
     Imagine a Great-Grandmother who has a secret recipe (Data) 📜
@@ -115,7 +115,7 @@
 
 
 ┌──────────────────────────────────────────────────────────────────────────────┐
-│  3️⃣   WHEN TO USE WHICH? (The Workflow)                                     │
+│  3️⃣   ⁡⁣⁢⁣WHEN TO USE WHICH? (The Workflow) ⁡                                    │
 └──────────────────────────────────────────────────────────────────────────────┘
 
     Since they work together, "When to use" isn't about choosing 
@@ -125,17 +125,17 @@
     ║   STEP    ║       WHAT YOU USE        ║              WHY?               ║
     ╠═══════════╬═══════════════════════════╬═════════════════════════════════╣
     ║           ║                           ║                                 ║
-    ║  1. CREATE║  React.createContext()    ║  To define the "folder" where   ║
+    ║  1.CREATE ║  React.createContext()    ║  To define the "folder" where   ║
     ║           ║                           ║  your data will live            ║
     ║           ║                           ║                                 ║
     ╠═══════════╬═══════════════════════════╬═════════════════════════════════╣
     ║           ║                           ║                                 ║
-    ║  2. PROVIDE║  <MyContext.Provider>    ║  To wrap your app (or section)  ║
+    ║  2.PROVIDE║  <MyContext.Provider>     ║  To wrap your app (or section)  ║
     ║           ║                           ║  so data is available to all    ║
     ║           ║                           ║                                 ║
     ╠═══════════╬═══════════════════════════╬═════════════════════════════════╣
     ║           ║                           ║                                 ║
-    ║  3. CONSUME║  useContext(MyContext)   ║  To actually GRAB that data     ║
+    ║  3.CONSUME║  useContext(MyContext)    ║  To actually GRAB that data     ║
     ║           ║                           ║  inside a specific component    ║
     ║           ║                           ║                                 ║
     ╚═══════════╩═══════════════════════════╩═════════════════════════════════╝
@@ -143,7 +143,7 @@
 
 
 ┌──────────────────────────────────────────────────────────────────────────────┐
-│  4️⃣   REAL-WORLD USE CASES (When to use this concept)                       |
+│  4️⃣   ⁡⁢⁣⁣REAL-WORLD USE CASES (When to use this concept)⁡                       |
 └──────────────────────────────────────────────────────────────────────────────┘
 
     💡 Don't put everything in Context!
@@ -162,7 +162,7 @@
     ├─────────────────────────────────────────────────────────────────────┤
     │                                                                     │
     │  🔐 USER AUTHENTICATION                                             │
-    │     Knowing if user is "Logged In" and their "Username"            │
+    │     Knowing if user is "Logged In" and their "Username"             │
     │                                                                     │
     │     → Profile page needs it                                         │
     │     → Header needs it                                               │
