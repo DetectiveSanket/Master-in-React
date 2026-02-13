@@ -1,0 +1,8 @@
+
+
+#### ⁡⁢⁣⁣𝗣͟𝗲͟𝗿͟𝗳͟𝗼͟𝗿͟𝗺͟𝗮͟𝗻͟𝗰͟𝗲 𝗢͟𝗽͟𝘁͟𝗶͟𝗺͟𝗶͟𝘇͟𝗮͟𝘁͟𝗶͟𝗼͟𝗻 𝗛͟𝗼͟𝗼͟𝗸 𝗜͟𝗡 𝗥͟𝗲͟𝗮͟𝗰͟𝘁⁡ ###
+
+    1) useMemo
+    2) useCallback
+    3) React.memo
+    4) useEffect (with dependency array) (to control when effects run) .
