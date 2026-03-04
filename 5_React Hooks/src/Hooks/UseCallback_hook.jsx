@@ -52,12 +52,14 @@ export default UseCallbackhook;
 /* 
 ⁡⁢⁣⁣    # 𝘂𝘀𝗲𝗖𝗮𝗹𝗹𝗯𝗮𝗰𝗸 𝗛𝗼𝗼𝗸⁡
         * Its is used to avoid the unnecessary re-rendering of the child component.
+        - when a parent component re-renders, all of its child components also re-render by default.
+        * It Memoizes/chache a function reference
         - useCallback is a React hook that returns a memoized version of a callback function.
         - It is used to optimize performance by preventing unnecessary re-creations of functions on every render.
         - This is particularly useful when passing functions as props to child components, as it helps avoid unnecessary re-renders of those components.
 
         • ⁡⁣⁢⁣Problem statement:-⁡
-            - In React, when a parent component re-renders, all of its child components also re-render by default.
+            ^ In React, when a parent component re-renders, all of its child components also re-render by default.
             - This can lead to performance issues, especially if the child components are complex or if the parent component re-renders frequently.
             - Even if the props passed to the child components haven't changed, they will still re-render because they receive new references to the functions defined in the parent component.
                 ex:-
@@ -85,6 +87,30 @@ export default UseCallbackhook;
                     }
 
                     export default UseCallbackhook;⁡
+
+        ## ⁡⁣⁢⁣𝘂𝘀𝗲𝗖𝗮𝗹𝗹𝗯𝗮𝗰𝗸 + 𝗥𝗲𝗮𝗰𝘁.𝗺𝗲𝗺𝗼 𝗧𝗼𝗴𝗲𝘁𝗵𝗲𝗿 🤝 — 𝗖𝗹𝗲𝗮𝗿 𝗚𝘂𝗶𝗱𝗲🎯 ⁡
+            ^ First — Who Lives Where?
+                ? Parent Component  →  useCallback lives HERE
+                ? Child Component   →  React.memo wraps HERE
+            ^ Simple rule:
+                ? React.memo → wraps the Child component
+                ? useCallback → lives in the Parent component
+
+        🧠 ⁡⁣⁢⁣𝗪𝗵𝘆 𝗗𝗼 𝗧𝗵𝗲𝘆 𝗡𝗲𝗲𝗱 𝗘𝗮𝗰𝗵 𝗢𝘁𝗵𝗲𝗿?⁡
+            ^ React.memo alone — not enough!
+            ^ useCallback alone — not enough either!
+            & Together — The Perfect Combo!
+            
+        - React.memo is a ⁡⁣⁣⁢higher-order component t⁡hat memoizes the rendered output of a component, preventing unnecessary re-renders when the props haven't changed. However, if you pass a function as a prop to a child component, React.memo won't prevent re-renders because the function reference changes on every render.
+
+       🧠 𝗢𝗻𝗲-𝗟𝗶𝗻𝗲 𝗦𝘂𝗺𝗺𝗮𝗿𝘆
+            --------------------------------------------------------
+            | Hook What      | It Memoizes    |   Returns          |
+            | ---------------|----------------|--------------------|  
+            | useCallbackA   | function       |   Cached function  |
+            | useMemoA       | value/result   |   Cached value     |
+            --------------------------------------------------------
+            > ⁡⁣⁣⁢Both are performance optimization hooks — they skip re-computation on every render.⁡
 
         ⁡⁣⁢⁣• Basic syntax:⁡
             - we need to wrap the ⁡⁣⁣⁢child component function⁡ inside useCallback hook.

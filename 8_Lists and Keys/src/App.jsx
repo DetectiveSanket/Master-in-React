@@ -94,21 +94,23 @@ export default App;
         ⁡⁣⁢⁣• Rendering Lists⁡
             - Rendering a list in React means mapping an array to JSX elements.
             - React uses JavaScript’s map() to loop and return elements.
-
-
-        • ⁡⁣⁢⁣Keys in React
-            - Keys are unique identifiers for React to track list items.
-            - Without keys, React may re-render entire lists unnecessarily.
-            - A key should be:
-                Unique among siblings.
-                Stable (not change between renders).
-
-            ⚠️ Don’t use array indexes (0,1,2,...) unless the list never changes order.
             
-            ⁡
-     ⁡⁣⁢⁣• Dynamic Lists
-        - Lists can be dynamic: you can add, remove, or update items.
-        - React efficiently re-renders only the changed items (if keys are used correctly).
+
+            • ⁡⁣⁣⁢Keys in React⁡
+                - Keys are unique identifiers for React to track list items.
+                - Without keys, React may re-render entire lists unnecessarily.
+                - A key should be:
+                    Unique among siblings.
+                    Stable (not change between renders).
+    
+                ⚠️ Don’t use array indexes (0,1,2,...) unless the list never changes order.
+                
+         •⁡⁣⁣⁢ What Are Keys?⁡
+            - Keys are special string/number attributes you give to elements inside a list. They help React identify which items changed, were added, or removed.   
+
+         • Dynamic Lists
+            - Lists can be dynamic: you can add, remove, or update items.
+            - React efficiently re-renders only the changed items (if keys are used correctly).
 
      • List Performance⁡
         - Lists can get very large (e.g., 10,000+ rows).

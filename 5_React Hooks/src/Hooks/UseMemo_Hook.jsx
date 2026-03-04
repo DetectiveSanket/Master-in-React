@@ -9,7 +9,7 @@ function UseMemoHook() {
         console.log("Calculating...");
         for(let i = 0 ; i < 1000000000 ; i++) ;
         return num * 2;
-    }
+    } //* Every re-render = new function + recalculation = wasted performance 🐢
 
     
     //const calculation = expensiveCalculation(5); //-> every time when state changes , this function will run again and again

@@ -76,7 +76,13 @@ export default useState_Example;
 
         - State is data that changes over time in your React components.
         - When state changes, React re-renders the component (or part of it) to reflect the new data.
+        
+        🏠 ⁡⁢⁢⁣𝗦𝗧𝗔𝗧𝗘⁡⁡ — Data From Inside
+            State is internal data that a component manages itself. When state changes, React re-renders the component automatically.
 
+        📦 ⁡⁢⁢⁣𝗣𝗥𝗢𝗣𝗦⁡ — Data From Outside
+            Props are read-only inputs passed from a parent to a child component. The child cannot modify its own props.    
+    
         * Props → external data passed into a component (read-only).
         * State → internal data owned by the component (mutable through React methods).
 
@@ -121,6 +127,9 @@ export default useState_Example;
 
         - React state should never be ⁡⁣⁣⁢mutated directly⁡. You always use the ⁡⁣⁣⁢updater function.⁡
         - To mutate something directly means to change the existing object or array itself instead of creating a new copy.
+
+        • Mutated :- Can't change like string.
+        • Immutable :- Can change like array and object. But we have to create a new copy of it and then change the copy.
 
         ⁡⁢⁣⁢Incorrect:⁡
         count = count + 1; // ❌ won't trigger re-render
