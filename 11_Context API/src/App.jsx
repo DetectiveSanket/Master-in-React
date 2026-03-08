@@ -32,7 +32,7 @@ function App() {
 
             <hr />
 
-            <UseContext.Provider value={user}> {/* //* step 3: Provider (wrap all the child inside the provider) */}
+            <UseContext.Provider value={user}> {/* //* step 3: create Provider  and (wrap all the child inside the provider) */}
                 <h2>App Component</h2>
                 <ChildA />
                 {/* <ChildB /> */}
@@ -42,7 +42,7 @@ function App() {
 }
 
 export default App;
-export { UseContext };
+export { UseContext }; //* step 4: export the context so that we can use it in other components
 
 /* 
     ⁡⁢⁣⁣# 𝗖𝗼𝗻𝘁𝗲𝘅𝘁 𝗔𝗣𝗜⁡
@@ -85,9 +85,14 @@ export { UseContext };
         const value = useContext(MyContext);
         - This retrieves the current value of MyContext.
 
-    • ⁡⁣⁢⁣When to use:⁡
-        - When you need to access context values in deeply nested components.
-        - When you want to avoid prop drilling (passing props through many layers).
+    • ⁡⁣⁢⁡⁣⁢⁣When to use Context⁡
+        - Theme, locale, auth status -- data that many components need but changes infrequently.
+        - Avoiding prop drilling through 3+ levels of components.
+        - Lightweight dependency injection -- providing services or configuration.
+
+    • ⁡⁣⁢⁣When NOT to use Context 
+       ⁡⁣⁣⁢ - Frequently changing state -- every value change re-renders all consumers, even if they only use a slice of the context value.
+        - Complex state logic -- if you need middleware, time-travel debugging, or fine-grained subscriptions, use Redux, Zustand, or Jotai instead.⁡
         
     • ⁡⁣⁢⁣Common use cases:⁡
         - Theme management (light/dark mode).

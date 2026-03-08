@@ -39,9 +39,9 @@ export default UseEffectHooks;
         * Side effects = anything outside rendering: fetching data, subscriptions, DOM manipulation, timers.
 
         • ⁡⁣⁢⁣It replaces lifecycle methods in class components:⁡
-            - componentDidMount → run once after render.
-            - componentDidUpdate → run on updates.
-            - componentWillUnmount → cleanup.
+            - 𝗰𝗼𝗺𝗽𝗼𝗻𝗲𝗻𝘁𝗗𝗶𝗱𝗠𝗼𝘂𝗻𝘁 → run once after render.⁡⁣⁣⁢ First time component appears or inserted in the DOM.⁡
+            - 𝗰𝗼𝗺𝗽𝗼𝗻𝗲𝗻𝘁𝗗𝗶𝗱𝗨𝗽𝗱𝗮𝘁𝗲 → run on updates. ⁡⁣⁣⁢ ⁡⁣⁣⁢When state or props change and component re-renders.⁡
+            - 𝗰𝗼𝗺𝗽𝗼𝗻𝗲𝗻𝘁𝗪𝗶𝗹𝗹𝗨𝗻𝗺𝗼𝘂𝗻𝘁 → cleanup. ⁡⁣⁣⁢ ⁡⁣⁣⁢When component is removed from the DOM.⁡
 
 
         •⁡⁣⁢⁣ Basic syntax:⁡
@@ -78,23 +78,30 @@ export default UseEffectHooks;
                 │  Component  │
                 │  Unmounts   │  ← Cleanup function (if any) runs
                 └─────────────┘
+        • When does useEffect cleanup run? 
+            ^ Before the next effect runs (on updates).
+            ^ When the component unmounts.
+            - Before the effect re-runs and on unmount
+            * If you return a cleanup function from useEffect, it will run before the next effect runs and when the component unmounts. This is useful for cleaning up resources like timers or subscriptions to prevent memory leaks.
+            
             
         ⁡⁣⁢*⁣> ⁡⁣⁢⁣How useEffect fits into this⁡
 
-            useEffect(() => {...}, [])
-                - Runs once on mount
+            ⁡⁣⁣⁢𝘂𝘀𝗲𝗘𝗳𝗳𝗲𝗰𝘁(() => {...})⁡ (no array)
+                - Runs after every render
+                * If you don't pass a dependency array, the effect runs after every render, which can lead to performance issues if not used carefully.
+                - Cleanup runs before each subsequent render and on unmount
+
+            ⁡⁣⁣⁢𝘂𝘀𝗲𝗘𝗳𝗳𝗲𝗰𝘁(() => {...}, [])⁡
+                - Runs once on mount. Only once when first render.
                 * If you pass an empty dependency array, the effect runs only once after the first render , Not on updates. only once when the component is mounted.
                 - Cleanup runs on unmount
 
-            useEffect(() => {...}, [dep])
+            ⁡⁣⁣⁢𝘂𝘀𝗲𝗘𝗳𝗳𝗲𝗰𝘁(() => {...}, [𝗱𝗲𝗽])⁡
                 - Runs on mount and every time dep changes
                 * If you pass a dependency array with variables, the effect runs after the first render and whenever any of those variables change. This allows you to control when the effect should re-run based on specific state or prop changes.
                 - Cleanup runs before effect re-runs and on unmount
 
-            useEffect(() => {...}) (no array)
-                - Runs after every render
-                * If you don't pass a dependency array, the effect runs after every render, which can lead to performance issues if not used carefully.
-                - Cleanup runs before each subsequent render
 
         • ⁡⁣⁢⁣Dependency Array⁡
             - [] → run once (on mount).
