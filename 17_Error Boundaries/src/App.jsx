@@ -46,9 +46,9 @@ export default App;
 ___________________________________________________________________________________________________________________________    
 
    🧠 ⁡⁣⁢⁡⁣⁢⁣What Are Error Boundaries?⁡⁡
+        - Error Boundaries are components that catch JavaScript errors in their child components⁡ and display a ⁡⁣⁣⁢fallback⁡ ⁡⁣⁣⁢UI⁡ (instead of crashing the whole app).
         * React apps can crash if a component throws an error (e.g., due to a bug in rendering).
         - Normally, an error in one part of the UI can unmount the entire React app — bad for user experience.
-        - Error Boundaries are ⁡⁣⁣⁢special components that catch JavaScript errors in their child components⁡ and display a ⁡⁣⁣⁢fallback⁡ ⁡⁣⁣⁢UI⁡ (instead of crashing the whole app).
         * Think of them like a try...catch block, but for React components.
 
 __________________________________________________________________________________________________________________________

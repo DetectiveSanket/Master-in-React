@@ -46,7 +46,7 @@ function App() {
 
 export default App;
 
-// state -> The data that your app uses and displays. for example , in counter app, the count / count value is the state.
+// state -> The data that your app uses and displays or component needs to remember. for example , in counter app, the count / count value is the state.
 // Payload -> The data that come with req / reponse.
 // management -> How you handle and update that data.
 // libraries -> Pre-built tools that help you manage state more easily.

@@ -63,7 +63,7 @@ export default App;
 /* 
     ## ⁡⁢⁣⁣𝗟𝗮𝘇𝘆 𝗹𝗼𝗮𝗱𝗶𝗻𝗴 𝗶𝗻 𝗥𝗲𝗮𝗰𝘁⁡
 
-    Lazy loading is a technique that allows you to load components or modules only when they are needed, rather than loading everything upfront. This can improve the performance of your application by reducing the initial load time and optimizing resource usage.
+    * Lazy loading is a technique that allows you to load components or modules only when they are needed, rather than loading everything upfront. This can improve the performance of your application by reducing the initial load time and optimizing resource usage.
 
     - Normally when you import a component, it is loaded immediately when the application starts. With lazy loading, you can defer the loading of a component until it is actually rendered in the UI.
 

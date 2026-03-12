@@ -9,7 +9,7 @@ export const counterSlice = createSlice({
     name:'counter',
     initialState,
     
-    reducers: {
+    reducers: { // that handle multiple actoins related to counter.
         increment:(data) => { // state == data (any varible name that hold value / data);
             data.value += 1;
         },

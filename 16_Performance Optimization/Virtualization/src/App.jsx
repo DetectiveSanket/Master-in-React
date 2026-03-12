@@ -47,8 +47,8 @@ export default App
 
 
 
-    Solution:
-    - Virtualization is a technique that only renders the items that are currently visible in the viewport, improving performance by reducing the number of DOM nodes.
+    ⁡⁣⁢⁣𝗦𝗼𝗹𝘂𝘁𝗶𝗼𝗻⁡:
+    * Virtualization is a technique that only renders the items that are currently visible in the viewport, improving performance by reducing the number of DOM nodes.
 
     Libraries:
     - react-window
