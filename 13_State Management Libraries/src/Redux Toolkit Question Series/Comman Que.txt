@@ -28,7 +28,8 @@
    │   🎫 𝗗𝗜𝗦𝗣𝗔𝗧𝗖𝗛     = Submitting your slip to the teller                 │
    │                                                                         │
    │   𝗙𝗟𝗢𝗪: You → Write Slip (Action) → Give to Teller (Dispatch)          │
-   │         → Teller Processes (Reducer) → Balance Updates (State)          │
+   │         → Teller Processes (Reducer) → Balance Updates (State)          |
+   |        → Store (Vault) Updated!                                         │
    │                                                                         │
    └─────────────────────────────────────────────────────────────────────────┘
 
@@ -55,7 +56,7 @@
 
 
 ╭─────────────────────────────────────────────────────────────────────────────╮
-│  🎯 ⁡⁣⁢⁣𝗧𝗛𝗘 𝟯 𝗠𝗔𝗜𝗡 𝗧𝗢𝗢𝗟𝗦 (𝗥𝗲𝗺𝗲𝗺𝗯𝗲𝗿: 𝗦-𝗖-𝗔) ⁡                                     │
+│  🎯 ⁡⁣⁢⁣𝗧𝗛𝗘 𝟯 𝗠𝗔𝗜𝗡 𝗧𝗢𝗢𝗟𝗦 (𝗥𝗲𝗺𝗲𝗺𝗯𝗲𝗿: 𝗦-𝗖-𝗔) ⁡                                  │
 ╰─────────────────────────────────────────────────────────────────────────────╯
 
    1️⃣ 𝗰𝗿𝗲𝗮𝘁𝗲𝗦𝗹𝗶𝗰𝗲   → Creates a "piece" of your store
@@ -118,21 +119,22 @@
    │                                                                         │
    └─────────────────────────────────────────────────────────────────────────┘
 
-   📌 𝗛͟𝗢͟𝗪 𝗧͟𝗢 𝗨͟𝗦͟𝗘 𝗜͟𝗡 𝗖͟𝗢͟𝗠͟𝗣͟𝗢͟𝗡͟𝗘͟𝗡͟𝗧͟:
+   📌⁡⁢⁣⁣ 𝗛͟𝗢͟𝗪 𝗧͟𝗢 𝗨͟𝗦͟𝗘 𝗜͟𝗡 𝗖͟𝗢͟𝗠͟𝗣͟𝗢͟𝗡͟𝗘͟𝗡͟𝗧͟⁡:
    ┌─────────────────────────────────────────────────────────────────────────┐
-   │   import { useDispatch, useSelector } from 'react-redux';               │
+   │  ⁡⁢⁢⁢ import { useDispatch, useSelector } from 'react-redux';               │
    │   import { addItem } from './cartSlice';                                │
    │                                                                         │
    │   function ProductCard({ product }) {                                   │
-   │     const dispatch = useDispatch();                                     │
-   │     const cart = useSelector(state => state.cart);                      │
+   │     const dispatch = useDispatch();    --> ⁡⁣⁣⁢used for dispatching actions⁡ │
+   │                                                                         │
+   │     ⁡⁢⁢⁢const cart = useSelector(state => state.cart);                      │
    │                                                                         │
    │     return (                                                            │
-   │       <button onClick={() => dispatch(addItem(product))}>              │
+   │       <button onClick={() => dispatch(addItem(product))}>               │
    │         Add to Cart (₹{cart.totalPrice})                                │
    │       </button>                                                         │
    │     );                                                                  │
-   │   }                                                                     │
+   │   } ⁡ ⁡                                                                   │
    └─────────────────────────────────────────────────────────────────────────┘
 
 
@@ -233,7 +235,7 @@
 
    ✅ ANSWER:
 
-   🍔 SIMPLE ANALOGY - Restaurant Kitchen:
+   🍔 S͟I͟M͟P͟L͟E A͟N͟A͟L͟O͟G͟Y ͟- R͟e͟s͟t͟a͟u͟r͟a͟n͟t K͟i͟t͟c͟h͟e͟n͟:
    ┌─────────────────────────────────────────────────────────────────────────┐
    │                                                                         │
    │   Customer Order (Action) → Waiter checks (Middleware) → Kitchen (Reducer)
@@ -322,7 +324,7 @@
    │                                                                         │
    └─────────────────────────────────────────────────────────────────────────┘
 
-   📋 THE SOLUTION - One Slice Per Service:
+   📋 ⁡⁣⁢⁣THE SOLUTION - One Slice Per Service:⁡
    ┌─────────────────────────────────────────────────────────────────────────┐
    │                                                                         │
    │   // 📁 store/                                                          │
@@ -350,16 +352,16 @@
    │                                                                         │
    └─────────────────────────────────────────────────────────────────────────┘
 
-   💻 ACCESSING IN COMPONENTS:
+   💻 ⁡⁣⁢⁣ACCESSING IN COMPONENTS⁡:
    ┌─────────────────────────────────────────────────────────────────────────┐
    │   // In Header - get user data                                          │
-   │   const user = useSelector(state => state.user);                        │
+   │  ⁡⁢⁢⁢ const user = useSelector(state => state.user);                        ⁡│
    │                                                                         │
    │   // In RestaurantList - get restaurants                                │
-   │   const restaurants = useSelector(state => state.restaurants.list);     │
+   │  ⁡⁢⁢⁢ const restaurants = useSelector(state => state.restaurants.list); ⁡    │
    │                                                                         │
    │   // In Cart - get orders                                               │
-   │   const cart = useSelector(state => state.orders.cart);                 │
+   │   ⁡⁢⁢⁢const cart = useSelector(state => state.orders.cart);   ⁡              │
    │                                                                         │
    │   // ✅ Each component gets ONLY what it needs!                         │
    └─────────────────────────────────────────────────────────────────────────┘
@@ -392,65 +394,65 @@
    │                                                                         │
    └─────────────────────────────────────────────────────────────────────────┘
 
-   💻 𝗖𝗢𝗠𝗣𝗟𝗘𝗧𝗘 𝗖𝗢𝗗𝗘 𝗘𝗫𝗔𝗠𝗣𝗟𝗘 - 𝗙𝗲𝘁𝗰𝗵𝗶𝗻𝗴 𝗨𝘀𝗲𝗿𝘀:
+   💻 32
    ┌─────────────────────────────────────────────────────────────────────────┐
    │   // userSlice.js                                                       │
-   │   import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';     │
+   │   ⁡⁢⁢⁢import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';⁡     │
    │                                                                         │
    │   // 1️⃣ CREATE THE ASYNC THUNK                                          │
-   │   export const fetchUsers = createAsyncThunk(                           │
-   │     'users/fetchUsers',              // Action name                     │
-   │     async (_, { rejectWithValue }) => {                                 │
+   │   ⁡⁢⁢⁢export const fetchUsers = createAsyncThunk(                           │
+   │     'users/fetchUsers',⁡              // Action name                     │
+   │     ⁡⁢⁢⁢async (_, { rejectWithValue }) => {                                 │
    │       try {                                                             │
    │         const response = await fetch('/api/users');                     │
    │         const data = await response.json();                             │
-   │         return data;  // ✅ This goes to fulfilled                      │
-   │       } catch (error) {                                                 │
-   │         return rejectWithValue(error.message); // ❌ This goes to rejected
-   │       }                                                                 │
+   │         return data; ⁡ // ✅ This goes to fulfilled                      │
+   │       ⁡⁢⁢⁢} catch (error) {                                                 │
+   │         return rejectWithValue(error.message);⁡ // ❌ This goes to rejected
+   │      ⁡⁢⁢⁢ }                                                                 │
    │     }                                                                   │
-   │   );                                                                    │
+   │   );⁡                                                                    │
    │                                                                         │
    │   // 2️⃣ CREATE THE SLICE                                                │
-   │   const userSlice = createSlice({                                       │
+   │  ⁡⁢⁢⁢ const userSlice = createSlice({                                       │
    │     name: 'users',                                                      │
    │     initialState: {                                                     │
    │       data: [],                                                         │
-   │       loading: false,          // ⏳ For showing spinner                 │
-   │       error: null              // ❌ For showing error message           │
-   │     },                                                                  │
-   │     reducers: {},                                                       │
+   │       loading: false,⁡          // ⏳ For showing spinner               │
+   │      ⁡⁢⁢⁢ error: null⁡              // ❌ For showing error message         │
+   │     ⁡⁢⁢⁢},                                                                  │
+   │     reducers: {},  ⁡                                                     │
    │                                                                         │
    │     // 3️⃣ HANDLE ALL 3 STATES                                           │
-   │     extraReducers: (builder) => {                                       │
+   │    ⁡⁢⁢⁢ extraReducers: (builder) => {                                       │
    │       builder                                                           │
    │         .addCase(fetchUsers.pending, (state) => {                       │
-   │           state.loading = true;    // Show spinner                      │
-   │           state.error = null;                                           │
+   │           state.loading = true;⁡    // Show spinner                      │
+   │          ⁡⁢⁢⁢ state.error = null;                                           │
    │         })                                                              │
    │         .addCase(fetchUsers.fulfilled, (state, action) => {             │
-   │           state.loading = false;   // Hide spinner                      │
-   │           state.data = action.payload;  // Store data                   │
-   │         })                                                              │
+   │           state.loading = false;⁡   // Hide spinner                      │
+   │           ⁡⁢⁢⁢state.data = action.payload;⁡  // Store data                   │
+   │         ⁡⁢⁢⁢})                                                              │
    │         .addCase(fetchUsers.rejected, (state, action) => {              │
-   │           state.loading = false;   // Hide spinner                      │
-   │           state.error = action.payload; // Show error                   │
-   │         });                                                             │
+   │           state.loading = false; ⁡  // Hide spinner                      │
+   │           ⁡⁢⁢⁢state.error = action.payload;⁡ // Show error                   │
+   │         ⁡⁢⁢⁢});                                                             │
    │     }                                                                   │
-   │   });                                                                   │
+   │   });  ⁡                                                                 │
    └─────────────────────────────────────────────────────────────────────────┘
 
-   📌 USING IN COMPONENT:
+   📌⁡⁣⁢⁣ USING IN COMPONENT:⁡
    ┌─────────────────────────────────────────────────────────────────────────┐
-   │   function UserList() {                                                 │
+   │   ⁡⁢⁢⁢function UserList() {                                                 │
    │     const dispatch = useDispatch();                                     │
    │     const { data, loading, error } = useSelector(state => state.users); │
    │                                                                         │
    │     useEffect(() => {                                                   │
-   │       dispatch(fetchUsers());  // 🚀 Fetch on mount                     │
-   │     }, []);                                                             │
+   │       dispatch(fetchUsers());⁡  // 🚀 Fetch on mount                     │
+   │     ⁡⁢⁢⁢}, []);                                                             │
    │                                                                         │
-   │     if (loading) return <Spinner />;      // ⏳ Show loading             │
+   │     if (loading) return <Spinner />⁡;      // ⏳ Show loading             │
    │     if (error) return <Error msg={error}/>; // ❌ Show error            │
    │     return <UserTable users={data} />;    // ✅ Show data               │
    │   }                                                                     │
@@ -612,15 +614,15 @@
    💻 COMPLETE REAL EXAMPLE - Todo App:
    ┌─────────────────────────────────────────────────────────────────────────┐
    │   // todoSlice.js                                                       │
-   │   import { createSlice } from '@reduxjs/toolkit';                       │
+   │   ⁡⁢⁢⁢import { createSlice } from '@reduxjs/toolkit';                       │
    │                                                                         │
    │   const todoSlice = createSlice({                                       │
-   │     name: 'todos',  // 🏷️ Action prefix: 'todos/addTodo'                │
+   │     name: 'todos',⁡  // 🏷️ Action prefix: 'todos/addTodo'                │
    │                                                                         │
-   │     initialState: {                                                     │
+   │     ⁡⁢⁢⁢initialState: {                                                     │
    │       items: [],                                                        │
-   │       filter: 'all'  // 'all' | 'active' | 'completed'                  │
-   │     },                                                                  │
+   │       filter: 'all⁡'  // 'all' | 'active' | 'completed'                  │
+   │     ⁡⁢⁢⁢},                                                                  │
    │                                                                         │
    │     reducers: {                                                         │
    │       // 📝 Add new todo                                                │
@@ -630,30 +632,30 @@
    │           text: action.payload,                                         │
    │           completed: false                                              │
    │         });                                                             │
-   │       },                                                                │
+   │       }⁡,                                                                │
    │                                                                         │
    │       // ✅ Toggle complete                                              │
-   │       toggleTodo: (state, action) => {                                  │
+   │       ⁡⁢⁢⁢toggleTodo: (state, action) => {                                  │
    │         const todo = state.items.find(t => t.id === action.payload);    │
    │         if (todo) todo.completed = !todo.completed;                     │
    │       },                                                                │
-   │                                                                         │
+   │          ⁡                                                               │
    │       // 🗑️ Delete todo                                                 │
-   │       deleteTodo: (state, action) => {                                  │
+   │       ⁡⁢⁢⁢deleteTodo: (state, action) => {                                  │
    │         state.items = state.items.filter(t => t.id !== action.payload); │
-   │       },                                                                │
+   │       }, ⁡                                                               │
    │                                                                         │
    │       // 🔍 Set filter                                                  │
-   │       setFilter: (state, action) => {                                   │
+   │       ⁡⁢⁢⁢setFilter: (state, action) => {                                   │
    │         state.filter = action.payload;                                  │
    │       }                                                                 │
    │     }                                                                   │
-   │   });                                                                   │
+   │   }); ⁡                                                                  │
    │                                                                         │
    │   // 🎁 AUTOMATICALLY GENERATED:                                        │
-   │   export const { addTodo, toggleTodo, deleteTodo, setFilter }           │
+   │  ⁡⁢⁢⁢ export const { addTodo, toggleTodo, deleteTodo, setFilter }           │
    │     = todoSlice.actions;                                                │
-   │   export default todoSlice.reducer;                                     │
+   │   export default todoSlice.reducer; ⁡                                    │
    └─────────────────────────────────────────────────────────────────────────┘
 
    📌 WHAT GETS AUTO-GENERATED:
@@ -669,17 +671,17 @@
    │   // Creates: { type: 'todos/deleteTodo', payload: 123 }                │
    └─────────────────────────────────────────────────────────────────────────┘
 
-   🎤 INTERVIEW ANSWER:
+   🎤 ⁡⁣⁣⁢𝗜𝗡𝗧𝗘𝗥𝗩𝗜𝗘𝗪 𝗔𝗡𝗦𝗪𝗘𝗥:⁡
    ╔═══════════════════════════════════════════════════════════════════════╗
    ║  "createSlice combines name, initialState, and reducers in one place. ║
-   ║   It automatically generates action creators and action types.        ║
+   ║   It automatically generates ⁡⁣⁣⁢action creators and action types⁡.        ║
    ║   It uses Immer internally, so we can write 'mutating' code that      ║
    ║   actually produces immutable updates - reducing boilerplate greatly."║ 
    ╚═══════════════════════════════════════════════════════════════════════╝
 
 
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│ ❓ 𝗤𝟴. 𝗣𝗹𝗮𝗶𝗻 𝗥𝗲𝗱𝘂𝘅 𝘃𝘀 𝗥𝗲𝗱𝘂𝘅 𝗧𝗼𝗼𝗹𝗸𝗶𝘁 - 𝗪𝗵𝗮𝘁'𝘀 𝘁𝗵𝗲 𝗱𝗶𝗳𝗳𝗲𝗿𝗲𝗻𝗰𝗲?                   │
+│ ❓ ⁡⁢⁣⁣𝗤𝟴. 𝗣𝗹𝗮𝗶𝗻 𝗥𝗲𝗱𝘂𝘅 𝘃𝘀 𝗥𝗲𝗱𝘂𝘅 𝗧𝗼𝗼𝗹𝗸𝗶𝘁 - 𝗪𝗵𝗮𝘁'𝘀 𝘁𝗵𝗲 𝗱𝗶𝗳𝗳𝗲𝗿𝗲𝗻𝗰𝗲?⁡                   │
 └─────────────────────────────────────────────────────────────────────────────┘
 
    ✅ ANSWER:
@@ -789,7 +791,7 @@
    │   Each item creates a DOM node → Memory explodes → UI lags              │
    └─────────────────────────────────────────────────────────────────────────┘
 
-   🎯 SOLUTION 1: VIRTUALIZATION (Render only what's visible)
+   🎯⁡⁣⁢⁣ SOLUTION 1: VIRTUALIZATION (Render only what's visible)⁡
    ┌─────────────────────────────────────────────────────────────────────────┐
    │                                                                         │
    │   BEFORE (Rendering all items):         AFTER (Virtualization):         │
@@ -829,7 +831,7 @@
    │   }                                                                     │
    └─────────────────────────────────────────────────────────────────────────┘
 
-   🎯 SOLUTION 2: PAGINATION (Load data in chunks)
+   🎯 ⁡⁣⁢⁣SOLUTION 2: PAGINATION (Load data in chunks)⁡
    ┌─────────────────────────────────────────────────────────────────────────┐
    │   // Instead of fetching 10,000 users at once:                          │
    │   const [page, setPage] = useState(1);                                  │
@@ -852,7 +854,7 @@
    │   • Smooth scrolling needed  │   • SEO important (page URLs)         │
    └───────────────────────────────────────────────────────────────────────┘
 
-   🎤 INTERVIEW ANSWER:
+   🎤⁡⁣⁣⁢ 𝗜𝗡𝗧𝗘𝗥𝗩𝗜𝗘𝗪 𝗔𝗡𝗦𝗪𝗘𝗥:⁡
    ╔═══════════════════════════════════════════════════════════════════════╗
    ║  "For large lists, use virtualization (react-window) to render only   ║
    ║   visible items, or pagination to load data in chunks. This reduces   ║
@@ -862,7 +864,7 @@
 
 
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│ ❓ Q10. React.memo vs useMemo vs useCallback - What's the difference?       │
+│ ❓ ⁡⁢⁣⁣𝗤𝟭𝟬. 𝗥𝗲𝗮𝗰𝘁.𝗺𝗲𝗺𝗼 𝘃𝘀 𝘂𝘀𝗲𝗠𝗲𝗺𝗼 𝘃𝘀 𝘂𝘀𝗲𝗖𝗮𝗹𝗹𝗯𝗮𝗰𝗸 - 𝗪𝗵𝗮𝘁'𝘀 𝘁𝗵𝗲 𝗱𝗶𝗳𝗳𝗲𝗿𝗲𝗻𝗰𝗲?⁡        │
 └─────────────────────────────────────────────────────────────────────────────┘
 
    ✅ ANSWER:
@@ -952,7 +954,7 @@
    │   });                                                                   │
    └─────────────────────────────────────────────────────────────────────────┘
 
-   🎤 INTERVIEW ANSWER:
+   🎤⁡⁣⁣⁢ 𝗜𝗡𝗧𝗘𝗥𝗩𝗜𝗘𝗪 𝗔𝗡𝗦𝗪𝗘𝗥:⁡
    ╔═══════════════════════════════════════════════════════════════════════╗
    ║  "React.memo wraps components to skip re-renders if props are same.   ║
    ║   useMemo caches computed values like filtered/sorted arrays.         ║
@@ -968,50 +970,49 @@
 
 
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│ ❓ Q11. What is Virtual DOM and how does it work?                           │
+│ ❓ ⁡⁢⁣⁣𝗤𝟭𝟭. 𝗪𝗵𝗮𝘁 𝗶𝘀 𝗩𝗶𝗿𝘁𝘂𝗮𝗹 𝗗𝗢𝗠 𝗮𝗻𝗱 𝗵𝗼𝘄 𝗱𝗼𝗲𝘀 𝗶𝘁 𝘄𝗼𝗿𝗸?⁡                           │
 └─────────────────────────────────────────────────────────────────────────────┘
 
    ✅ ANSWER:
 
    🎯 SIMPLE DEFINITION:
-   Virtual DOM = A lightweight JavaScript COPY of the real DOM
-   Think of it like a "draft" before publishing - you edit the draft,
-   then only apply the final changes to the real thing!
+        Virtual DOM = A lightweight JavaScript COPY of the real DOM
+        Think of it like a "draft" before publishing - you edit the draft,
+        then only apply the final changes to the real thing!
 
-   🏠 REAL-WORLD ANALOGY - House Renovation:
+   🖥️ WHAT HAPPENS IN THE BROWSER (Real Dev Scenario):
    ┌─────────────────────────────────────────────────────────────────────────┐
    │                                                                         │
-   │   ❌ WITHOUT Virtual DOM (Direct DOM manipulation):                     │
-   │   • You want to change wall color, fix window, and add door             │
-   │   • Worker changes wall → ENTIRE house shakes                           │
-   │   • Worker fixes window → ENTIRE house shakes again                     │
-   │   • Worker adds door → ENTIRE house shakes again!                       │
-   │   • Each change causes disruption 😫                                    │
+   │   ❌ MANY DIRECT DOM UPDATES (vanilla/manual style):                    │
+   │       • JS updates element text, class, style one-by-one                │
+   │       • Each write can invalidate layout/style calculations              │
+   │       • Browser may do extra Recalculate Style / Layout / Paint work    │
+   │       • More DOM touching = higher chance of jank on complex UIs        │
    │                                                                         │
    │   ✅ WITH Virtual DOM (React's approach):                               │
-   │   • Worker draws a BLUEPRINT (Virtual DOM) with all changes             │
-   │   • Compares new blueprint with old blueprint                           │
-   │   • Makes ONLY the necessary changes to real house                      │
-   │   • One efficient renovation! 🏆                                        │
+   │       • State update triggers render in JS memory (new Virtual DOM)     │
+   │       • React diffs old vs new trees and builds minimal DOM patch list   │
+   │       • Commit phase touches only changed real DOM nodes                 │
+   │       • Browser repaints only affected regions more efficiently          │
    │                                                                         │
    └─────────────────────────────────────────────────────────────────────────┘
 
-   📋 HOW IT WORKS (Step by Step):
+   📋 ⁡⁣⁢⁣𝗛𝗢𝗪 𝗜𝗧 𝗪𝗢𝗥𝗞𝗦 (𝗦𝘁𝗲𝗽 𝗯𝘆 𝗦𝘁𝗲𝗽):⁡
    ┌─────────────────────────────────────────────────────────────────────────┐
    │                                                                         │
-   │   STEP 1: Initial Render                                                │
+   │   ⁡⁣⁣⁢STEP 1: Initial Render⁡⁡                                                │
    │   ┌───────────────────┐    ┌───────────────────┐                        │
    │   │   Virtual DOM     │ ═> │     Real DOM      │                        │
    │   │  (JS Object)      │    │   (Browser UI)    │                        │
    │   └───────────────────┘    └───────────────────┘                        │
    │                                                                         │
-   │   STEP 2: State Changes (e.g., button clicked)                          │
+   │   ⁡⁣⁣⁢STEP 2: State Changes (e.g., button clicked)⁡                          │
    │   ┌───────────────────┐                                                 │
    │   │  NEW Virtual DOM  │  ← React creates a NEW Virtual DOM              │
    │   │  (with changes)   │                                                 │
    │   └───────────────────┘                                                 │
    │                                                                         │
-   │   STEP 3: DIFFING (Compare old vs new)                                  │
+   │   ⁡⁣⁣⁢STEP 3: DIFFING (Compare old vs new) ⁡                                 │
    │   ┌──────────────────┐     ┌──────────────────┐                         │
    │   │ OLD Virtual DOM  │ 🔍  │ NEW Virtual DOM  │                         │
    │   │  <div>           │     │  <div>           │                         │
@@ -1020,12 +1021,12 @@
    │   │  </div>          │     │  </div>          │                         │
    │   └──────────────────┘     └──────────────────┘                         │
    │                                                                         │
-   │   STEP 4: PATCH (Apply only changes to Real DOM)                        │
+   │   ⁡⁣⁣⁢STEP 4: PATCH (Apply only changes to Real DOM) ⁡                       │
    │   Real DOM: Only update <span>5</span> → <span>6</span>                 │
    │                                                                         │
    └─────────────────────────────────────────────────────────────────────────┘
 
-   💻 CODE EXAMPLE - What happens when state changes:
+   💻 ⁡⁣⁢⁣CODE EXAMPLE - What happens when state changes:⁡
    ┌─────────────────────────────────────────────────────────────────────────┐
    │   function Counter() {                                                  │
    │     const [count, setCount] = useState(0);                              │
@@ -1047,7 +1048,7 @@
    │   //    (h1 and button are NOT touched!)                                │
    └─────────────────────────────────────────────────────────────────────────┘
 
-   🎤 INTERVIEW ANSWER:
+   🎤 ⁡⁣⁣⁢INTERVIEW ANSWER:⁡
    ╔═══════════════════════════════════════════════════════════════════════╗
    ║  "Virtual DOM is a lightweight JavaScript representation of the real  ║
    ║   DOM. When state changes, React creates a new Virtual DOM, compares  ║
@@ -1058,14 +1059,14 @@
 
 
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│ ❓ Q12. What is Reconciliation? Explain the Diffing Algorithm.              │
+│ ❓⁡⁢⁣⁣ 𝗤𝟭𝟮. 𝗪𝗵𝗮𝘁 𝗶𝘀 𝗥𝗲𝗰𝗼𝗻𝗰𝗶𝗹𝗶𝗮𝘁𝗶𝗼𝗻? 𝗘𝘅𝗽𝗹𝗮𝗶𝗻 𝘁𝗵𝗲 𝗗𝗶𝗳𝗳𝗶𝗻𝗴 𝗔𝗹𝗴𝗼𝗿𝗶𝘁𝗵𝗺.⁡                   │
 └─────────────────────────────────────────────────────────────────────────────┘
 
    ✅ ANSWER:
 
-   🎯 SIMPLE DEFINITION:
-   Reconciliation = React's process of COMPARING old & new Virtual DOM
-                    to decide what MINIMUM changes to make
+   🎯 S͟I͟M͟P͟L͟E D͟E͟F͟I͟N͟I͟T͟I͟O͟N͟:
+        ⁡⁣⁢⁣Reconciliation⁡ = React's process of COMPARING old & new Virtual DOM
+                        to decide what MINIMUM changes to make
 
    🎮 THINK OF IT LIKE "Spot the Difference" game:
    ┌─────────────────────────────────────────────────────────────────────────┐
@@ -1073,7 +1074,7 @@
    │   and circles ONLY the things that changed!                             │
    └─────────────────────────────────────────────────────────────────────────┘
 
-   📋 DIFFING ALGORITHM RULES:
+   📋⁡⁣⁢⁣ DIFFING ALGORITHM RULES:⁡
 
    RULE 1️⃣: Different type = Destroy & Rebuild
    ┌─────────────────────────────────────────────────────────────────────────┐
@@ -1142,9 +1143,9 @@
    │                                                                         │
    └─────────────────────────────────────────────────────────────────────────┘
 
-   🎤 INTERVIEW ANSWER:
+   🎤⁡⁣⁣⁢ 𝗜𝗡𝗧𝗘𝗥𝗩𝗜𝗘𝗪 𝗔𝗡𝗦𝗪𝗘𝗥:⁡
    ╔═══════════════════════════════════════════════════════════════════════╗
-   ║  "Reconciliation is React's diffing algorithm that compares old and   ║
+   ║  "⁡⁣⁣⁢Reconciliation is React's diffing algorithm⁡ that compares old and   ║
    ║   new Virtual DOM trees. It uses three rules: 1) Different elements   ║
    ║   rebuild the subtree, 2) Same elements update attributes only,       ║
    ║   3) Keys help identify list items to minimize updates. This keeps    ║
@@ -1154,14 +1155,12 @@
 
 
 ═══════════════════════════════════════════════════════════════════════════════
-   🌐 SECTION 4: API CALLS & DATA FETCHING
-═══════════════════════════════════════════════════════════════════════════════
-🌐 SECTION 4: API CALLS & DATA FETCHING
+🌐 ⁡⁢⁣⁢𝗦𝗘𝗖𝗧𝗜𝗢𝗡 𝟰: 𝗔𝗣𝗜 𝗖𝗔𝗟𝗟𝗦 & 𝗗𝗔𝗧𝗔 𝗙𝗘𝗧𝗖𝗛𝗜𝗡𝗚⁡
 ═══════════════════════════════════════════════════════════════════════════════
 
 
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│ ❓ Q13. How to make API calls in React? (Different Methods)                 │
+│ ❓ ⁡⁢⁣⁣𝗤𝟭𝟯. 𝗛𝗼𝘄 𝘁𝗼 𝗺𝗮𝗸𝗲 𝗔𝗣𝗜 𝗰𝗮𝗹𝗹𝘀 𝗶𝗻 𝗥𝗲𝗮𝗰𝘁? (𝗗𝗶𝗳𝗳𝗲𝗿𝗲𝗻𝘁 𝗠𝗲𝘁𝗵𝗼𝗱𝘀) ⁡                  │
 └─────────────────────────────────────────────────────────────────────────────┘
 
    ✅ ANSWER:
@@ -1231,7 +1230,7 @@
 
 
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│ ❓ Q14. How to handle Loading and Error states properly?                    │
+│ ❓⁡⁢⁣⁣ 𝗤𝟭𝟰. 𝗛𝗼𝘄 𝘁𝗼 𝗵𝗮𝗻𝗱𝗹𝗲 𝗟𝗼𝗮𝗱𝗶𝗻𝗴 𝗮𝗻𝗱 𝗘𝗿𝗿𝗼𝗿 𝘀𝘁𝗮𝘁𝗲𝘀 𝗽𝗿𝗼𝗽𝗲𝗿𝗹𝘆?  ⁡                   │
 └─────────────────────────────────────────────────────────────────────────────┘
 
    ✅ ANSWER:
@@ -1244,9 +1243,9 @@
    │     const [error, setError] = useState(null);                           │
    │                                                                         │
    │     // Render based on state:                                           │
-   │     if (loading) return <Skeleton count={5} />;  // ⏳ Loading           │
-   │     if (error) return <ErrorBox msg={error} />;  // ❌ Error             │
-   │     return <UserTable users={data} />;           // ✅ Success           │
+   │     if (loading) return <Skeleton count={5} />;  // ⏳ Loading         │
+   │     if (error) return <ErrorBox msg={error} />;  // ❌ Error           │
+   │     return <UserTable users={data} />;           // ✅ Success         │
    │   }                                                                     │
    └─────────────────────────────────────────────────────────────────────────┘
 
