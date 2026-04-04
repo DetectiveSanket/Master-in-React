@@ -78,10 +78,17 @@ export default useState_Example;
         - When state changes, React re-renders the component (or part of it) to reflect the new data.
         
         🏠 ⁡⁢⁢⁣𝗦𝗧𝗔𝗧𝗘⁡⁡ — Data From Inside
-            State is internal data that a component manages itself. When state changes, React re-renders the component automatically.
+            - State is internal data that a component manages itself. 
+            - State chnage over the time.
+            - When state changes, React re-renders the component automatically.
+            - Read and write
+            - State is mutable
 
         📦 ⁡⁢⁢⁣𝗣𝗥𝗢𝗣𝗦⁡ — Data From Outside
-            Props are read-only inputs passed from a parent to a child component. The child cannot modify its own props.    
+            - Props are read-only inputs passed from a parent to a child component.
+            - The child cannot modify its own props.    
+            - Props are read only 
+            - Props are immutable.
     
         * Props → external data passed into a component (read-only).
         * State → internal data owned by the component (mutable through React methods).
@@ -89,8 +96,11 @@ export default useState_Example;
 
     ⁡⁣⁢⁣2. useState Hook⁡
         - The useState hook is the most common way to manage local state in a functional component.
+        * useState() is a React Hook used to add state to a functional component.
         - It allows you to add state to your components without converting them to class components.
         - The useState hook returns an array with two elements: the current (initial value) state value and a function to update it.
+
+       >>> ⁡⁣⁣⁢useState is a React Hook that allows functional components to manage local state. It returns an array with two values: the current state and a setter function to update it. When the setter function is called, React updates the state and re-renders the component to reflect the new value.⁡
 
        * Parameters 
             • ⁡⁣⁢⁣initialState⁡: The value you want the state to be initially. It can be a value of any type, but there is a special behavior for functions. This argument is ignored after the initial render.
@@ -195,5 +205,14 @@ export default useState_Example;
                     </div>
                 );
             }⁡
+
+
+    ⁡⁢⁣⁣### 𝗪𝗵𝘆 𝘂𝘀𝗲 `𝘂𝘀𝗲𝗦𝘁𝗮𝘁𝗲` 𝗶𝗻𝘀𝘁𝗲𝗮𝗱 𝗼𝗳 𝗻𝗼𝗿𝗺𝗮𝗹 𝘃𝗮𝗿𝗶𝗮𝗯𝗹𝗲?⁡
+
+        * Because normal variables do not persist properly across renders and updating them does not trigger UI updates, but `useState` does.
+
+        Example explanation:
+
+        ^ A normal variable changes only in JavaScript memory, but React won’t know it needs to re-render. `useState` tells React that the value has changed and the UI should update.
 
 */

@@ -127,7 +127,7 @@
    │   function ProductCard({ product }) {                                   │
    │     const dispatch = useDispatch();    --> ⁡⁣⁣⁢used for dispatching actions⁡ │
    │                                                                         │
-   │     ⁡⁢⁢⁢const cart = useSelector(state => state.cart);                      │
+   │     ⁡⁢⁢⁢const cart = useSelector(state => state.cart);  -->                 │
    │                                                                         │
    │     return (                                                            │
    │       <button onClick={() => dispatch(addItem(product))}>               │
@@ -538,18 +538,18 @@
    └─────────────────────────────────────────────────────────────────────────┘
 
    📊 DETAILED COMPARISON:
-   ┌────────────────────┬─────────────────────────┬─────────────────────────┐
-   │     ASPECT         │      ASYNC THUNKS       │       useEffect         │
-   ├────────────────────┼─────────────────────────┼─────────────────────────┤
-   │ 📍 Scope           │ Global (whole app)      │ Local (one component)   │
+   ┌────────────────────┬───────────────────────────┬─────────────────────────┐
+   │     ASPECT         │      ASYNC THUNKS         │       useEffect         │
+   ├────────────────────┼───────────────────────────┼─────────────────────────┤
+   │ 📍 Scope           │ Global (whole app)        │ Local (one component)   │
    │ 🔄 Data sharing    │ ✅ Yes, across components│ ❌ No, only in component│
    │ ⏳ Loading state   │ ✅ Automatic tracking    │ ❌ Manual useState       │
    │ ❌ Error handling  │ ✅ Built-in rejected     │ ❌ Manual try-catch      │
    │ 💾 Caching         │ ✅ Redux store caches    │ ❌ Re-fetches each mount │
    │ 🔧 DevTools        │ ✅ Redux DevTools        │ ❌ No tracking           │
    │ 📦 Setup           │ ⚠️ Requires Redux setup  │ ✅ Zero setup            │
-   │ 🎯 Best for        │ Complex apps, shared data│ Simple, isolated data   │
-   └────────────────────┴─────────────────────────┴─────────────────────────┘
+   │ 🎯 Best for        │ Complex apps, shared data│ Simple, isolated data     │
+   └────────────────────┴──────────────────────────┴───────────────────────────┘
 
    💻 REAL EXAMPLE - User Profile:
    ┌─────────────────────────────────────────────────────────────────────────┐
@@ -1230,7 +1230,7 @@
 
 
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│ ❓⁡⁢⁣⁣ 𝗤𝟭𝟰. 𝗛𝗼𝘄 𝘁𝗼 𝗵𝗮𝗻𝗱𝗹𝗲 𝗟𝗼𝗮𝗱𝗶𝗻𝗴 𝗮𝗻𝗱 𝗘𝗿𝗿𝗼𝗿 𝘀𝘁𝗮𝘁𝗲𝘀 𝗽𝗿𝗼𝗽𝗲𝗿𝗹𝘆?  ⁡                   │
+│ ❓⁡⁢⁣⁣ 𝗤𝟭𝟰. 𝗛𝗼𝘄 𝘁𝗼 𝗵𝗮𝗻𝗱𝗹𝗲 𝗟𝗼𝗮𝗱𝗶𝗻𝗴 𝗮𝗻𝗱 𝗘𝗿𝗿𝗼𝗿 𝘀𝘁𝗮𝘁𝗲𝘀 𝗽𝗿𝗼𝗽𝗲𝗿𝗹𝘆?  ⁡                    │
 └─────────────────────────────────────────────────────────────────────────────┘
 
    ✅ ANSWER:
