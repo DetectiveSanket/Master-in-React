@@ -56,8 +56,7 @@ export { UseContext }; //* step 4: export the context so that we can use it in o
             * This can lead to code that is hard to maintain and understand, especially when many components in the hierarchy do not need the data.
             - To slove this problem, we can use Context API to provide the data at a higher level and consume it directly in the components that need it.
                 >< ⁡⁣⁢⁣Solution of props driling⁡
-                    - Context API
-                    - useContext Hook
+                    - Context API with useContext Hook
                     - State Management Libraries (like Redux, MobX)
 
         - ⁡⁣⁣⁢Key components of Context API:⁡
