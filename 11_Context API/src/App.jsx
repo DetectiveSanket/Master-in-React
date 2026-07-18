@@ -46,6 +46,7 @@ export { UseContext }; //* step 4: export the context so that we can use it in o
 
 /* 
     ⁡⁢⁣⁣# 𝗖𝗼𝗻𝘁𝗲𝘅𝘁 𝗔𝗣𝗜⁡
+    
         * Context API is React’s built-in way to share data globally across components without prop drilling.
         - It allows you to create a context object that can be accessed by any component within its provider.
         - Context is useful for managing global state, themes, user authentication, and other data that needs to be accessible throughout the app.

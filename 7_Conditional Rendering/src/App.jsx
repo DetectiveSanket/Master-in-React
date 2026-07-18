@@ -65,6 +65,7 @@ export default App;
 
 /* 
     ⁡⁢⁣⁣# 𝗖𝗼𝗻𝗱𝗶𝘁𝗶𝗼𝗻𝗮𝗹 𝗥𝗲𝗻𝗱𝗲𝗿𝗶𝗻𝗴 𝗶𝗻 𝗥𝗲𝗮𝗰𝘁⁡
+    
         - Conditional rendering in React allows you to render different components or elements based on certain conditions. This is typically done using JavaScript conditional statements like if/else, ternary operators, logical && operators, or switch statements.
         - It helps in creating dynamic and interactive user interfaces by displaying content based on user actions, application state, or other factors.
 

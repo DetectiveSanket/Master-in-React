@@ -98,6 +98,7 @@ export default App;
 
             • ⁡⁣⁣⁢Keys in React⁡
                 - Keys are unique identifiers for React to track list items.
+                - Keys are used to uniquely identify and differentiate between components in React. They help React identify which items have changed, added, or removed
                 - Without keys, React may re-render entire lists unnecessarily.
                 - A key should be:
                     Unique among siblings.
@@ -108,11 +109,11 @@ export default App;
          •⁡⁣⁣⁢ What Are Keys?⁡
             - Keys are special string/number attributes you give to elements inside a list. They help React identify which items changed, were added, or removed.   
 
-         • Dynamic Lists
+         • ⁡⁣⁣⁢Dynamic Lists⁡
             - Lists can be dynamic: you can add, remove, or update items.
             - React efficiently re-renders only the changed items (if keys are used correctly).
 
-     • List Performance⁡
+     • ⁡⁣⁣⁢List Performance⁡
         - Lists can get very large (e.g., 10,000+ rows).
         - Performance issues happen if React re-renders the entire list every time.
         - Optimization strategies:

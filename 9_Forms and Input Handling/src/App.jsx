@@ -153,8 +153,9 @@ export default App;
 
 /* 
     ⁡⁢⁣⁣# 𝗙𝗼𝗿𝗺𝘀 𝗮𝗻𝗱 𝗜𝗻𝗽𝘂𝘁 𝗛𝗮𝗻𝗱𝗹𝗶𝗻𝗴⁡
-    - Forms are essential for user input in web applications.
-    - React provides ways to handle form inputs and manage their state.
+
+        - Forms are essential for user input in web applications.
+        - React provides ways to handle form inputs and manage their state.
 
     • ⁡⁣⁢⁣𝗖𝗼𝗻𝘁𝗿𝗼𝗹𝗹𝗲𝗱 𝗖𝗼𝗺𝗽𝗼𝗻𝗲𝗻𝘁𝘀⁡
         - In controlled components, form data is handled by the React component's state.

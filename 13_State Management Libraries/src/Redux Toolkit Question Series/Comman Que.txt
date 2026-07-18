@@ -173,6 +173,86 @@
    "reducer is a single function used in ⁡⁣⁣⁢configureStore⁡ to combine all slices,
     while reducers is an object in ⁡⁣⁣⁢createSlice⁡ containing multiple action handlers."
 
+------------------------------------------------------
+
+# ⁡⁢⁣⁣𝗛𝗼𝘄 𝘁𝗼 𝗮𝗰𝗵𝗶𝗲𝘃𝗲 𝗥𝗲𝗱𝘂𝘅 𝗧𝗼𝗼𝗹𝗸𝗶𝘁 𝗳𝘂𝗻𝗰𝘁𝗶𝗼𝗻𝗮𝗹𝗶𝘁𝘆⁡
+
+   𝗖𝗼𝗿𝗲 𝗕𝘂𝗶𝗹𝗱𝗶𝗻𝗴 𝗕𝗹𝗼𝗰𝗸𝘀:- 
+
+   ⁡⁣⁢⁣ 𝟭. 𝗰𝗼𝗻𝗳𝗶𝗴𝘂𝗿𝗲𝗦𝘁𝗼𝗿𝗲()⁡
+
+        - Creates the Redux store with sensible defaults.
+
+      ⁡⁢⁢⁢  import { configureStore } from "@reduxjs/toolkit";
+        import counterReducer from "./counterSlice";
+
+        export const store = configureStore({
+            reducer: {
+                counter: counterReducer,
+            },
+        });
+⁡
+    ⁡⁣⁢⁣𝟮. 𝗰𝗿𝗲𝗮𝘁𝗲𝗦𝗹𝗶𝗰𝗲()⁡
+
+       - Creates a reducer and automatically generates action creators.
+
+        ⁡⁢⁢⁢import { createSlice } from "@reduxjs/toolkit";
+
+        const counterSlice = createSlice({
+
+        name: "counter",
+
+        initialState: { value: 0 },
+            reducers: {
+                increment: (state) => {
+                state.value++;
+                },
+                decrement: (state) => {
+                state.value--;
+                },
+            },
+        });
+
+        export const { increment, decrement } = counterSlice.actions;
+        export default counterSlice.reducer;⁡
+
+
+⁡⁣⁢⁣    𝟯. 𝗣𝗿𝗼𝘃𝗶𝗱𝗲𝗿
+⁡
+        - Makes the Redux store available throughout the React application.
+
+        ⁡⁢⁢⁢import { Provider } from "react-redux";
+
+        <Provider store={store}>
+            <App />
+        </Provider>;⁡
+
+
+⁡⁣⁢⁣    𝟰. 𝘂𝘀𝗲𝗦𝗲𝗹𝗲𝗰𝘁𝗼𝗿()
+⁡
+        - Reads data from the Redux store.
+
+⁡⁢⁢⁢        const count = useSelector((state) => state.counter.value);
+⁡
+⁡⁣⁢⁣    𝟱. 𝘂𝘀𝗲𝗗𝗶𝘀𝗽𝗮𝘁𝗰𝗵()
+⁡
+        - Dispatches actions to update the store.
+
+        ⁡⁢⁢⁢const dispatch = useDispatch();
+        dispatch(increment());⁡
+
+    • ⁡⁣⁢⁣𝗗𝗮𝘁𝗮 𝗙𝗹𝗼𝘄⁡
+
+        User Action
+           ↓
+        dispatch(action)
+           ↓
+        Reducer (Slice)
+           ↓
+        Store Updates
+           ↓
+        React Component Re-renders    
+
 ═══════════════════════════════════════════════════════════════════════════════
 -------------🚗----------------- Plan Road ----------------🛻-----------------
 ═══════════════════════════════════════════════════════════════════════════════
