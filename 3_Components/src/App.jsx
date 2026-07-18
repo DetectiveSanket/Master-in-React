@@ -68,4 +68,4 @@ export default App
 
       • ⁡⁣⁢⁣Class Components:⁡ These are ES6 classes that extend the React.Component class. They can hold and manage their own state and lifecycle methods.
 
-*/
+*/ 

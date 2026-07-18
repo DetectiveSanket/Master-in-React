@@ -29,13 +29,13 @@ function UseCallbackhook() {
             <h2>Count : {count}</h2>
             <button onClick={increment}>Increment Count</button>
 
-            {/* <CallbackHookchild 
-               name="sanket"  
-               
-            /> //* every time when parent component re-render , the child component also re-render. to avoid this we use React.memo */}
+            {/* 
+                <CallbackHookchild name="sanket" /> //* every time when parent component re-render , the child component also re-render. to avoid this we use React.memo 
+            */}
 
             {/* 
-                //todo: If your are sending function as a prop , then react.memo is not able to save you from re-rendering of child component.
+                - ⁡⁢⁣⁣𝗜𝗳 𝘆𝗼𝘂𝗿 𝗮𝗿𝗲 𝘀𝗲𝗻𝗱𝗶𝗻𝗴 𝗳𝘂𝗻𝗰𝘁𝗶𝗼𝗻 𝗮𝘀 𝗮 𝗽𝗿𝗼𝗽 , 𝘁𝗵𝗲𝗻 𝗿𝗲𝗮𝗰𝘁.𝗺𝗲𝗺𝗼 𝗶𝘀 𝗻𝗼𝘁 𝗮𝗯𝗹𝗲 𝘁𝗼 𝘀𝗮𝘃𝗲 𝘆𝗼𝘂 𝗳𝗿𝗼𝗺 𝗿𝗲-𝗿𝗲𝗻𝗱𝗲𝗿𝗶𝗻𝗴 𝗼𝗳 𝗰𝗵𝗶𝗹𝗱 𝗰𝗼𝗺𝗽𝗼𝗻𝗲𝗻𝘁.⁡
+
                 //* So to solve this problem we have to use 𝘂𝘀𝗲𝗖𝗮𝗹𝗹𝗯𝗮𝗰𝗸 𝗵𝗼𝗼𝗸.
             */}
 
@@ -51,12 +51,18 @@ export default UseCallbackhook;
 
 /* 
 ⁡⁢⁣⁣    # 𝘂𝘀𝗲𝗖𝗮𝗹𝗹𝗯𝗮𝗰𝗸 𝗛𝗼𝗼𝗸⁡
+
         * Its is used to avoid the unnecessary re-rendering of the child component.
         - when a parent component re-renders, all of its child components also re-render by default.
         * It Memoizes/chache a function reference
         - useCallback is a React hook that returns a memoized version of a callback function.
         - It is used to optimize performance by preventing unnecessary re-creations of functions on every render.
         - This is particularly useful when passing functions as props to child components, as it helps avoid unnecessary re-renders of those components.
+
+       • ⁡⁣⁢⁣𝗧𝗵𝗲 𝗺𝗮𝗶𝗻 𝗱𝗶𝗳𝗳𝗲𝗿𝗲𝗻𝗰𝗲 𝗶𝘀 𝘄𝗵𝗮𝘁 𝘁𝗵𝗲𝘆 𝗮𝗰𝘁𝘂𝗮𝗹𝗹𝘆 𝗰𝗮𝗰𝗵𝗲 (𝗺𝗲𝗺𝗼𝗶𝘇𝗲):⁡
+
+            - useCallback caches a function definition between renders.
+            - React.memo caches a rendered component output between renders.
 
         • ⁡⁣⁢⁣Problem statement:-⁡
             ^ In React, when a parent component re-renders, all of its child components also re-render by default.
@@ -89,9 +95,11 @@ export default UseCallbackhook;
                     export default UseCallbackhook;⁡
 
         ## ⁡⁣⁢⁣𝘂𝘀𝗲𝗖𝗮𝗹𝗹𝗯𝗮𝗰𝗸 + 𝗥𝗲𝗮𝗰𝘁.𝗺𝗲𝗺𝗼 𝗧𝗼𝗴𝗲𝘁𝗵𝗲𝗿 🤝 — 𝗖𝗹𝗲𝗮𝗿 𝗚𝘂𝗶𝗱𝗲🎯 ⁡
+
             ^ First — Who Lives Where?
                 ? Parent Component  →  useCallback lives HERE
                 ? Child Component   →  React.memo wraps HERE
+
             ^ Simple rule:
                 ? React.memo → wraps the Child component
                 ? useCallback → lives in the Parent component
@@ -107,8 +115,8 @@ export default UseCallbackhook;
             --------------------------------------------------------
             | Hook What      | It Memoizes    |   Returns          |
             | ---------------|----------------|--------------------|  
-            | useCallbackA   | function       |   Cached function  |
-            | useMemoA       | value/result   |   Cached value     |
+            | useCallback    | function       |   Cached function  |
+            | useMemo        | value/result   |   Cached value     |
             --------------------------------------------------------
             > ⁡⁣⁣⁢Both are performance optimization hooks — they skip re-computation on every render.⁡
 

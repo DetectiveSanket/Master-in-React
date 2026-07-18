@@ -90,7 +90,7 @@ export default useState_Example;
             - Props are read only 
             - Props are immutable.
     
-        * Props → external data passed into a component (read-only).
+        * Props → external data passed into a one component to another component (read-only).
         * State → internal data owned by the component (mutable through React methods).
 
 

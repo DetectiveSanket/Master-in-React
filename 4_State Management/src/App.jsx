@@ -39,8 +39,8 @@ export default App
 
     - When state changes, React re-renders the component (or part of it) to reflect the new data. This is what makes React applications interactive and responsive to user input.
     
-    • Ways to Manage State in React:
-        1. useState Hook: The most common way to manage local state in functional components.
+    •⁡⁣⁢⁣ 𝗪𝗮𝘆𝘀 𝘁𝗼 𝗠𝗮𝗻𝗮𝗴𝗲 𝗦𝘁𝗮𝘁𝗲 𝗶𝗻 𝗥𝗲𝗮𝗰𝘁:⁡
+        1. ⁡⁢⁣⁣useState Hook:⁡ The most common way to manage local state in functional components.
         2. useReducer Hook: For more complex state logic or when the next state depends on the previous one.
         3. useContext Hook: For sharing state across multiple components without prop drilling.
         4. Context API: For sharing state across multiple components without prop drilling.
@@ -52,7 +52,11 @@ export default App
    # ⁡⁢⁣⁣𝗟𝗶𝗳𝘁𝗶𝗻𝗴 𝗦𝘁𝗮𝘁𝗲 𝗨𝗽 𝗶𝗻 𝗥𝗲𝗮𝗰𝘁⁡ 🏋️ — Complete Guide
 
         🤔 What Exactly Is It?
-            > Lifting State Up means moving state from a child component up to the nearest common parent so that multiple children can share the same data.
+            > Lifting state up is a pattern where the state of a child
+            component is moved to its parent component,
+            allowing multiple child components to share the
+            same state.
+            
             
             • Simple definition:
                 > "When two or more components need the same data — move that state UP to their parent and pass it DOWN as props."

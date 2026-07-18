@@ -3,7 +3,7 @@
 
 ```
 |__1.
-|── Prerequisites (JavaScript Foundation)
+|── Prerequisites (JavaScript Foundation)  🔰
 | ├── ES6+ Features          ✔️
 | | ├── Arrow Functions      ✔️
 | | ├── Destructuring        ✔️

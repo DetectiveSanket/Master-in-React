@@ -39,8 +39,11 @@ export default UseEffectHooks;
         * Side effects = anything outside rendering: fetching data, subscriptions, DOM manipulation, timers.
 
         • ⁡⁣⁢⁣It replaces lifecycle methods in class components:⁡
+
             - 𝗰𝗼𝗺𝗽𝗼𝗻𝗲𝗻𝘁𝗗𝗶𝗱𝗠𝗼𝘂𝗻𝘁 → run once after render.⁡⁣⁣⁢ First time component appears or inserted in the DOM.⁡
+
             - 𝗰𝗼𝗺𝗽𝗼𝗻𝗲𝗻𝘁𝗗𝗶𝗱𝗨𝗽𝗱𝗮𝘁𝗲 → run on updates. ⁡⁣⁣⁢ ⁡⁣⁣⁢When state or props change and component re-renders.⁡
+
             - 𝗰𝗼𝗺𝗽𝗼𝗻𝗲𝗻𝘁𝗪𝗶𝗹𝗹𝗨𝗻𝗺𝗼𝘂𝗻𝘁 → cleanup. ⁡⁣⁣⁢ ⁡⁣⁣⁢When component is removed from the DOM.⁡
 
 
@@ -72,12 +75,14 @@ export default UseEffectHooks;
                 │   Updates   │  ← Re-render → useEffect runs if deps changed
                 └─────┬───────┘
                       │
-          Component removed from DOM
+            Component removed from DOM
                       ▼
                 ┌─────────────┐
-                │  Component  │
+                │  Component  │ 
                 │  Unmounts   │  ← Cleanup function (if any) runs
                 └─────────────┘
+        -----------------------------------
+
         • When does useEffect cleanup run? 
             ^ Before the next effect runs (on updates).
             ^ When the component unmounts.
