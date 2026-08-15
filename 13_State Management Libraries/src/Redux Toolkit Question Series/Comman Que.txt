@@ -186,32 +186,34 @@
       ⁡⁢⁢⁢  import { configureStore } from "@reduxjs/toolkit";
         import counterReducer from "./counterSlice";
 
-        export const store = configureStore({
+         export const store = configureStore({
             reducer: {
                 counter: counterReducer,
             },
-        });
+         });
 ⁡
     ⁡⁣⁢⁣𝟮. 𝗰𝗿𝗲𝗮𝘁𝗲𝗦𝗹𝗶𝗰𝗲()⁡
 
        - Creates a reducer and automatically generates action creators.
 
-        ⁡⁢⁢⁢import { createSlice } from "@reduxjs/toolkit";
+        ⁡⁢⁢ ⁡⁢⁢⁢import { createSlice } from "@reduxjs/toolkit";
 
-        const counterSlice = createSlice({
+         const counterSlice = createSlice({
 
-        name: "counter",
+            name: "counter",
 
-        initialState: { value: 0 },
+            initialState: { value: 0 },
+
             reducers: {
-                increment: (state) => {
-                state.value++;
-                },
-                decrement: (state) => {
-                state.value--;
-                },
+               increment: (state) => {
+                  state.value++;
+               },
+
+               decrement: (state) => {
+                  state.value--;
+               },
             },
-        });
+         });
 
         export const { increment, decrement } = counterSlice.actions;
         export default counterSlice.reducer;⁡
@@ -220,12 +222,12 @@
 ⁡⁣⁢⁣    𝟯. 𝗣𝗿𝗼𝘃𝗶𝗱𝗲𝗿
 ⁡
         - Makes the Redux store available throughout the React application.
+⁡⁢⁢⁢
+         import { Provider } from "react-redux";
 
-        ⁡⁢⁢⁢import { Provider } from "react-redux";
-
-        <Provider store={store}>
-            <App />
-        </Provider>;⁡
+         <Provider store={store}>
+               <App />
+         </Provider>;⁡
 
 
 ⁡⁣⁢⁣    𝟰. 𝘂𝘀𝗲𝗦𝗲𝗹𝗲𝗰𝘁𝗼𝗿()
@@ -370,7 +372,7 @@
    │   });⁡                                                                   │
    └─────────────────────────────────────────────────────────────────────────┘
 
-   🎯 𝗖𝗢𝗠𝗠𝗢𝗡 𝗨𝗦𝗘 𝗖𝗔𝗦𝗘𝗦:
+   🎯 ⁡⁣⁢⁣𝗖𝗢𝗠𝗠𝗢𝗡 𝗨𝗦𝗘 𝗖𝗔𝗦𝗘𝗦:⁡
    ├── 📝 Logging - Track all actions for debugging
    ├── 🔐 Authentication - Check if user is logged in before API calls
    ├── 🌐 API Calls - Thunk middleware (built-in with Redux Toolkit!)
@@ -461,9 +463,9 @@
    ✅ ANSWER:
 
    🎯 SIMPLE DEFINITION:
-   Async Thunk = A function that handles API calls and automatically 
+   Async Thunk = ⁡⁣⁣⁢A function that handles API calls and automatically 
                  tracks loading/success/error states! 
-
+⁡
    🍕 REAL-WORLD ANALOGY - Pizza Delivery:
    ┌─────────────────────────────────────────────────────────────────────────┐
    │                                                                         │
@@ -528,19 +530,20 @@
    │     const { data, loading, error } = useSelector(state => state.users); │
    │                                                                         │
    │     useEffect(() => {                                                   │
-   │       dispatch(fetchUsers());⁡  // 🚀 Fetch on mount                     │
+   │       dispatch(fetchUsers());⁡  // 🚀 Fetch on mount                     
    │     ⁡⁢⁢⁢}, []);                                                 
-               │
-   │                                                                         │
-   │     if (loading) return <Spinner />⁡;      // ⏳ Show loading             │
-   │     if (error) return <Error msg={error}/>; // ❌ Show error            │
-   │     return <UserTable users={data} />;    // ✅ Show data               │
+   │
+   │                                                                         
+   │     if (loading) return <Spinner />⁡;      // ⏳ Show loading             
+   │     if (error) return <Error msg={error}/>; // ❌ Show error            
+   │     return <UserTable users={data} />;    // ✅ Show data               
    │   }                                                                     │
    └─────────────────────────────────────────────────────────────────────────┘
 
    🎤 ⁡⁣⁢⁣I͟N͟T͟E͟R͟V͟I͟E͟W A͟N͟S͟W͟E͟R͟:⁡
    ╔═══════════════════════════════════════════════════════════════════════╗
-   ║  "createAsyncThunk handles async operations like API calls. It        ║
+   ║  "createAsyncThunk in build function in redux, that  handles async    ║
+   ║     operations like API calls. It                                     ║
    ║   automatically generates three action types: ⁡⁣⁣⁢pending, fulfilled,     ║
    ║   and rejected⁡. We handle these in extraReducers to manage loading    ║
    ║   states and errors without writing boilerplate code."                ║

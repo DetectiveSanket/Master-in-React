@@ -92,10 +92,10 @@ export default App;
     ________________________________________________________________________________________________________________
     | ⁡⁣⁣⁢Feature              | Old Way (BrowserRouter)             | New Way (createBrowserRouter) ⁡                   |
     | -------------------- | ----------------------------------- | ------------------------------------------------ |
-    | **Router Setup**     | Wrap app in `<BrowserRouter>`       | No `<BrowserRouter>` needed                      |
-    | **Route Definition** | Inside `<Routes>` with `<Route>`    | Defined in JS object array                       |
-    | **Good For**         | Small/medium projects, simpler code | Large apps, central route config, code-splitting |
-    | **Example**          | `<Route path="/" element={<Home />} />` | `{ path: "/", element: <Home /> }`           |
+    |   Router Setup       | Wrap app in `<BrowserRouter>`       | No `<BrowserRouter>` needed                      |
+    |   Route Definition   | Inside `<Routes>` with `<Route>`    | Defined in JS object array                       |
+    |   Good For           | Small/medium projects, simpler code | Large apps, central route config, code-splitting |
+    |   Example            | `<Route path="/" element={<Home />} />` | `{ path: "/", element: <Home /> }`           |
     |_______________________________________________________________________________________________________________|
 
  */
@@ -105,6 +105,7 @@ export default App;
     ⁡⁢⁣⁣## 𝗥𝗲𝗮𝗰𝘁 𝗥𝗼𝘂𝘁𝗲𝗿 𝗗𝗼𝗺⁡
 
         - React Router Dom is a powerful library for handling routing in React applications. It allows developers to create single-page applications with dynamic routing capabilities, enabling seamless navigation between different views or components without requiring a full page reload.
+        
         * Before React Router Dom , React Application.....
 
         * React Router is a library (not built into React) that lets you handle routing (switching pages/views) in a React app.

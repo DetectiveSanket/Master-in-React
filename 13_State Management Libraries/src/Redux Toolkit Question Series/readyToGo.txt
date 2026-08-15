@@ -1,0 +1,81 @@
+
+
+Q) What is state management in React? 
+- 
+    IMG OVERSION:-
+        - State is just data that can change over time. State management is how you store that data, update it predictably, and make sure the UI stays in sync with it. In small components, useState or useReducer is enough. But as apps grow, sharing state across many components gets messy. That's where centralized solutions like Redux come in.
+
+    INTERVIEW READY:-
+        - State management is about handling data that changes over time and keeping the UI in sync. For small scopes, React hooks work fine, but for larger apps, we use centralized solutions to keep things predictable.    
+
+
+Q) What is Redux?
+- 
+    INTERVIEW READY:-
+        - Redux is a state management library. We mainly use it to manage and share application-level state between multiple components. It provides a centralized store, so instead of passing data through many components, different components can access the shared state from the store.  
+
+
+Q) why do we need Redux if React already provides useState and useContext?
+-
+    INTERVIEW READY 1:-
+        - React's useState and useContext are great for managing state in small applications or within a single component tree. However, as applications grow, managing state across multiple components can become complex and lead to issues like prop drilling. Redux provides a centralized store that allows for predictable state management, making it easier to share state across different parts of the application without passing props down through many layers of components.  
+
+    INTERVIEW READY 2:-
+        - useState is mainly used for local component state. If multiple components need the same data, we can use Context to share it, but as the application grows, managing complex shared state with Context can become harder. Redux gives us a more structured and predictable way to manage application-level state, especially when we have many components and complex state updates.            
+
+
+Q) What is the Redux Store?
+- 
+    The Redux Store is the centralized place where the application's shared state is stored. Components can read the required state from the store and dispatch actions when they want to update it. Reducers define how that state should change.
+
+Q) What is an Action in Redux?
+
+Q) What is Redux Toolkit ?
+
+    - The Redux Toolkit is state management library that is the official, recommended way to write Redux.
+
+    - The problem with traditional Redux is that you often had to write a lot of repetitive code — actions, action types, reducers, and store configuration separately.
+
+    - those problems reduced by reducing boilerplate and providing utilities like configureStore, createSlice, and createAsyncThunk. It makes Redux easier to set up and use, especially for managing complex application state.
+
+
+Q) What is the difference between Redux and Redux Toolkit?
+
+    - “The main difference is that Redux is the core state-management library, while Redux Toolkit is the official recommended way to use Redux. Redux Toolkit reduces the boilerplate and provides utilities like configureStore, createSlice, and createAsyncThunk, which make Redux easier to set up and maintain.”
+
+Q) What is the difference between Redux and Context API?
+
+    - The main difference is that Redux is a state management library that provides a centralized store for managing application-level state, while the Context API is a built-in feature of React that allows you to share state across components without prop drilling. Redux is more suitable for larger applications with complex state management needs, while the Context API is better for simpler use cases.
+
+
+Q) What is createSlice in Redux Toolkit?
+
+    - createSlice is a Redux Toolkit function that lets us define a feature's name, initial state, and reducer functions in one place. It also automatically generates the corresponding action creators and action types, which significantly reduces Redux boilerplate.   
+
+    - createSlice → name + initialState + reducers → automatically gives actions
+
+Q) You said createSlice automatically creates actions. How does it create those actions from the reducers we define?”
+
+    - When we define reducer functions inside createSlice, Redux Toolkit uses those reducer names to automatically generate the corresponding action creators and action types. So we don't have to create them manually.
+
+Q) Okay, then what is the difference between a reducer and an action?
+
+    - A reducer is a function that receives the current state and an action, and decides how the state should change.
+
+    - The action contains information about what happened. It can also contain a payload with data.  
+
+    - Def:- A reducer is a function that takes the current state and an action, and returns the updated state. The action describes what happened, and its payload can contain the data needed for the update.”
+
+Q) 👉 “Okay, then what exactly is an action in Redux? And what do you mean by payload?”
+
+    - In Redux, payload simply means the data carried by an action.
+
+    - Action = what happened
+
+    - Payload = extra data about what happened
+    
+    - Reducer = how state should change
+
+    - Def:- An action describes what happened in the application. It can also contain a payload, which is the data needed to perform that state update. For example, when adding a product to a cart, addToCart can be the action and the product information can be its payload.
+
+Q)     

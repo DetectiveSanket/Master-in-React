@@ -51,7 +51,7 @@ export default App;
 // management -> How you handle and update that data.
 // libraries -> Pre-built tools that help you manage state more easily.
 
-/* 
+/*  
 
     # ⁡⁢⁣⁣𝗦𝘁𝗮𝘁𝗲 𝗠𝗮𝗻𝗮𝗴𝗲𝗺𝗲𝗻𝘁 𝗟𝗶𝗯𝗿𝗮𝗿𝗶𝗲𝘀⁡
 

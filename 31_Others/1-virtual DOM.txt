@@ -96,7 +96,9 @@
 │ ❓⁡⁢⁣⁣ 𝗤𝟭𝟮. 𝗪𝗵𝗮𝘁 𝗶𝘀 𝗥𝗲𝗰𝗼𝗻𝗰𝗶𝗹𝗶𝗮𝘁𝗶𝗼𝗻? 𝗘𝘅𝗽𝗹𝗮𝗶𝗻 𝘁𝗵𝗲 𝗗𝗶𝗳𝗳𝗶𝗻𝗴 𝗔𝗹𝗴𝗼𝗿𝗶𝘁𝗵𝗺.⁡                   │
 └─────────────────────────────────────────────────────────────────────────────┘
 
-   ✅ ANSWER: reconciliation -- it’s React’s process of comparing the old and new virtual DOM to update only what’s changed in the real DOM, improving performance. 
+   ✅ ANSWER: reconciliation -- it’s React’s process of comparing the old and new virtual DOM to update only what’s changed in the real DOM, 
+                                 which improves performance by minimizing costly DOM manipulations.
+
 
    🎯 S͟I͟M͟P͟L͟E D͟E͟F͟I͟N͟I͟T͟I͟O͟N͟:
         ⁡⁣⁢⁣Reconciliation⁡ = React's process of COMPARING old & new Virtual DOM
