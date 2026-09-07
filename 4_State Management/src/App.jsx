@@ -40,11 +40,11 @@ export default App
     - When state changes, React re-renders the component (or part of it) to reflect the new data. This is what makes React applications interactive and responsive to user input.
     
     •⁡⁣⁢⁣ 𝗪𝗮𝘆𝘀 𝘁𝗼 𝗠𝗮𝗻𝗮𝗴𝗲 𝗦𝘁𝗮𝘁𝗲 𝗶𝗻 𝗥𝗲𝗮𝗰𝘁:⁡
-        1. ⁡⁢⁣⁣useState Hook:⁡ The most common way to manage local state in functional components.
-        2. useReducer Hook: For more complex state logic or when the next state depends on the previous one.
-        3. useContext Hook: For sharing state across multiple components without prop drilling.
-        4. Context API: For sharing state across multiple components without prop drilling.
-        5. Third-Party Libraries: Such as Redux, MobX, or Zustand for larger applications with more complex state management needs.
+        1. ⁡⁣⁣⁢𝘂𝘀𝗲𝗦𝘁𝗮𝘁𝗲 𝗛𝗼𝗼𝗸:⁡⁡ The most common way to manage local state in functional components.
+        2. ⁡⁣⁣⁢useReducer Hook:⁡ For more complex state logic or when the next state depends on the previous one.
+        3. ⁡⁣⁣⁢useContext Hook:⁡ For sharing state across multiple components without prop drilling.
+        4. ⁡⁣⁣⁢Context API:⁡ For sharing state across multiple components without prop drilling.
+        5. ⁡⁣⁣⁢Third-Party Libraries:⁡ Such as Redux, MobX, or Zustand for larger applications with more complex state management needs.
 
     - React state should never be mutated directly. You always use the updater function.
     - To mutate something directly means to change the existing object or array itself instead of creating a new copy.

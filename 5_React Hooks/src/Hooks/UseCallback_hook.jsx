@@ -147,6 +147,7 @@ export default UseCallbackhook;
         * React.memo -> wrap -> component re-render tabhi hoga jab props change hoga. nahi to re-render nahi hoga.    
         * If your are sending function as a prop , then react.memo is not able to save you from re-rendering of child component.
         * So to solve this problem we have to use ⁡⁣⁣⁢⁡⁣⁣⁢𝙪͟𝙨͟𝙚͟𝘾͟𝙖͟𝙡͟𝙡͟𝙗͟𝙖͟𝙘͟𝙠 𝙝͟𝙤͟𝙤͟𝙠⁡⁡. 
+        > ⁡⁢⁣⁣So in this case we have to use both React.memo and useCallback hook together to prevent unnecessary re-renders of child components that rely on functions passed as props.⁡
         
         ⁡⁣⁢⁣• solution:⁡
             - we have to wrap the ⁡⁣⁣⁢function⁡ inside useCallback hook.    
