@@ -220,20 +220,17 @@
 
 
 ⁡⁣⁢⁣    𝟯. 𝗣𝗿𝗼𝘃𝗶𝗱𝗲𝗿
-⁡
-        - Makes the Redux store available throughout the React application.
-⁡⁢⁢⁢
-         import { Provider } from "react-redux";
+      - Makes the Redux store available throughout the React application.
+     import { Provider } from "react-redux";
 
-         <Provider store={store}>
-               <App />
-         </Provider>;⁡
+     <Provider store={store}>
+           <App />
+     </Provider>;⁡
 
 
 ⁡⁣⁢⁣    𝟰. 𝘂𝘀𝗲𝗦𝗲𝗹𝗲𝗰𝘁𝗼𝗿()
 ⁡
-        - Reads data from the Redux store.
-
+      - Reads data from the Redux store.
 ⁡⁢⁢⁢        const count = useSelector((state) => state.counter.value);
 ⁡
 ⁡⁣⁢⁣    𝟱. 𝘂𝘀𝗲𝗗𝗶𝘀𝗽𝗮𝘁𝗰𝗵()
@@ -352,39 +349,39 @@
    │                                                                         │
    └─────────────────────────────────────────────────────────────────────────┘
 
-   💻 ⁡⁣⁢⁣CODE EXAMPLE - Custom Logger Middleware:⁡
-   ┌─────────────────────────────────────────────────────────────────────────┐
-   │   // Simple logging middleware                                          │
-   │ ⁡⁢⁢⁢  const loggerMiddleware = (store) => (next) => (action) => {           │
-   │     console.log('🚀 Action:', action.type);                             │
-   │     console.log('📦 Before:', store.getState());                        │
-   │                                                                         │
-   │     const result = next(action);  ⁡⁣⁣⁢// Pass to next middleware⁡            │
-   │                                                                         │
-  ⁡⁢⁢⁢ │     console.log('✅ After:', store.getState());                         │
-   │     return result;                                                      │
-   │   };  ⁡                                                                  │
-   │        ⁡                                                                 │
-   │   // Using in configureStore                                            │
-⁡⁢⁢⁢   │   const store = configureStore({                                        │
-   │     reducer: rootReducer,                                               │
-   │     middleware: (getDefault) => getDefault().concat(loggerMiddleware)   │
-   │   });⁡                                                                   │
-   └─────────────────────────────────────────────────────────────────────────┘
+      💻 ⁡⁣⁢⁣CODE EXAMPLE - Custom Logger Middleware:⁡
+      ┌─────────────────────────────────────────────────────────────────────────┐
+      │   // Simple logging middleware                                          │
+      │ ⁡⁢⁢⁢  const loggerMiddleware = (store) => (next) => (action) => {           │
+      │     console.log('🚀 Action:', action.type);                             │
+      │     console.log('📦 Before:', store.getState());                        │
+      │                                                                         │
+      │     const result = next(action);  ⁡⁣⁣⁢// Pass to next middleware⁡            │
+      │                                                                         │
+   ⁡⁢⁢⁢ │     console.log('✅ After:', store.getState());                         │
+      │     return result;                                                      │
+      │   };  ⁡                                                                  │
+      │        ⁡                                                                 │
+      │   // Using in configureStore                                            │
+   ⁡⁢⁢⁢   │   const store = configureStore({                                        │
+      │     reducer: rootReducer,                                               │
+      │     middleware: (getDefault) => getDefault().concat(loggerMiddleware)   │
+      │   });⁡                                                                   │
+      └─────────────────────────────────────────────────────────────────────────┘
 
-   🎯 ⁡⁣⁢⁣𝗖𝗢𝗠𝗠𝗢𝗡 𝗨𝗦𝗘 𝗖𝗔𝗦𝗘𝗦:⁡
-   ├── 📝 Logging - Track all actions for debugging
-   ├── 🔐 Authentication - Check if user is logged in before API calls
-   ├── 🌐 API Calls - Thunk middleware (built-in with Redux Toolkit!)
-   └── 📊 Analytics - Send events to analytics services
- 
-   🎤 ⁡⁣⁢⁣INTERVIEW ANSWER:⁡
-   ╔══════════════════════════════════════════════════════════════════════════════╗
-   ║  "Middleware sits between ⁡⁣⁣⁢dispatch⁡ and ⁡⁣⁣⁢reducer⁡, intercepting                 ║
-   ║   ⁡⁣⁣⁢actions⁡. It's used for ⁡⁣⁣⁢side effect like⁡ logging, authentication checks,    ║
-   ║   and ⁡⁣⁣⁢async operations⁡. Redux Toolkit includes Thunk middleware by           ║
-   ║   default for handling API calls."                                           ║
-   ╚══════════════════════════════════════════════════════════════════════════════╝
+      🎯 ⁡⁣⁢⁣𝗖𝗢𝗠𝗠𝗢𝗡 𝗨𝗦𝗘 𝗖𝗔𝗦𝗘𝗦:⁡
+      ├── 📝 Logging - Track all actions for debugging
+      ├── 🔐 Authentication - Check if user is logged in before API calls
+      ├── 🌐 API Calls - Thunk middleware (built-in with Redux Toolkit!)
+      └── 📊 Analytics - Send events to analytics services
+   
+      🎤 ⁡⁣⁢⁣INTERVIEW ANSWER:⁡
+      ╔══════════════════════════════════════════════════════════════════════════════╗
+      ║  "Middleware sits between ⁡⁣⁣⁢dispatch⁡ and ⁡⁣⁣⁢reducer⁡, intercepting                 ║
+      ║   ⁡⁣⁣⁢actions⁡. It's used for ⁡⁣⁣⁢side effect like⁡ logging, authentication checks,    ║
+      ║   and ⁡⁣⁣⁢async operations⁡. Redux Toolkit includes Thunk middleware by           ║
+      ║   default for handling API calls."                                           ║
+      ╚══════════════════════════════════════════════════════════════════════════════╝
 
 
 ┌─────────────────────────────────────────────────────────────────────────────┐
@@ -465,89 +462,89 @@
    🎯 SIMPLE DEFINITION:
    Async Thunk = ⁡⁣⁣⁢A function that handles API calls and automatically 
                  tracks loading/success/error states! 
-⁡
-   🍕 REAL-WORLD ANALOGY - Pizza Delivery:
-   ┌─────────────────────────────────────────────────────────────────────────┐
-   │                                                                         │
-   │   ⏳ PENDING    = "Your pizza is being prepared" (Loading...)           │
-   │   ✅ FULFILLED  = "Pizza delivered!" (Data received)                    │
-   │   ❌ REJECTED   = "Sorry, we're out of cheese" (Error occurred)         │
-   │                                                                         │
-   └─────────────────────────────────────────────────────────────────────────┘
+   d
+      🍕 REAL-WORLD ANALOGY - Pizza Delivery:
+      ┌─────────────────────────────────────────────────────────────────────────┐
+      │                                                                         │
+      │   ⏳ PENDING    = "Your pizza is being prepared" (Loading...)           │
+      │   ✅ FULFILLED  = "Pizza delivered!" (Data received)                    │
+      │   ❌ REJECTED   = "Sorry, we're out of cheese" (Error occurred)         │
+      │                                                                         │
+      └─────────────────────────────────────────────────────────────────────────┘
 
-   💻 32
-   ┌─────────────────────────────────────────────────────────────────────────┐
-   │   // userSlice.js                                                       │
-   │   ⁡⁢⁢⁢import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';⁡     │
-   │                                                                         │
-   │   // 1️⃣ CREATE THE ASYNC THUNK                                          │
-   │   ⁡⁢⁢⁢export const fetchUsers = createAsyncThunk(                           │
-   │     'users/fetchUsers',⁡              // Action name                     │
-   │     ⁡⁢⁢⁢async (_, { rejectWithValue }) => {                                 │
-   │       try {                                                             │
-   │         const response = await fetch('/api/users');                     │
-   │         const data = await response.json();                             │
-   │         return data; ⁡ // ✅ This goes to fulfilled                      │
-   │       ⁡⁢⁢⁢} catch (error) {                                                 │
-   │         return rejectWithValue(error.message);⁡ // ❌ This goes to rejected
-   │      ⁡⁢⁢⁢ }                                                                 │
-   │     }                                                                   │
-   │   );⁡                                                                    │
-   │                                                                         │
-   │   // 2️⃣ CREATE THE SLICE                                                │
-   │  ⁡⁢⁢⁢ const userSlice = createSlice({                                       │
-   │     name: 'users',                                                      │
-   │     initialState: {                                                     │
-   │       data: [],                                                         │
-   │       loading: false,⁡          // ⏳ For showing spinner               │
-   │      ⁡⁢⁢⁢ error: null⁡              // ❌ For showing error message         │
-   │     ⁡⁢⁢⁢},                                                                  │
-   │     reducers: {},  ⁡                                                     │
-   │                                                                         │
-   │     // 3️⃣ HANDLE ALL 3 STATES                                           │
-   │    ⁡⁢⁢⁢ extraReducers: (builder) => {                                       │
-   │       builder                                                           │
-   │         .addCase(fetchUsers.pending, (state) => {                       │
-   │           state.loading = true;⁡    // Show spinner                      │
-   │          ⁡⁢⁢⁢ state.error = null;                                           │
-   │         })                                                              │
-   │         .addCase(fetchUsers.fulfilled, (state, action) => {             │
-   │           state.loading = false;⁡   // Hide spinner                      │
-   │           ⁡⁢⁢⁢state.data = action.payload;⁡  // Store data                   │
-   │         ⁡⁢⁢⁢})                                                              │
-   │         .addCase(fetchUsers.rejected, (state, action) => {              │
-   │           state.loading = false; ⁡  // Hide spinner                      │
-   │           ⁡⁢⁢⁢state.error = action.payload;⁡ // Show error                   │
-   │         ⁡⁢⁢⁢});                                                             │
-   │     }                                                                   │
-   │   });  ⁡                                                                 │
-   └─────────────────────────────────────────────────────────────────────────┘
+      💻 32
+      ┌─────────────────────────────────────────────────────────────────────────┐
+      │   // userSlice.js                                                       │
+      │   ⁡⁢⁢⁢import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';⁡     │
+      │                                                                         │
+      │   // 1️⃣ CREATE THE ASYNC THUNK                                          │
+      │   ⁡⁢⁢⁢export const fetchUsers = createAsyncThunk(                           │
+      │     'users/fetchUsers',⁡              // Action name                     │
+      │     ⁡⁢⁢⁢async (_, { rejectWithValue }) => {                                 │
+      │       try {                                                             │
+      │         const response = await fetch('/api/users');                     │
+      │         const data = await response.json();                             │
+      │         return data; ⁡ // ✅ This goes to fulfilled                      │
+      │       ⁡⁢⁢⁢} catch (error) {                                                 │
+      │         return rejectWithValue(error.message);⁡ // ❌ This goes to rejected
+      │      ⁡⁢⁢⁢ }                                                                 │
+      │     }                                                                   │
+      │   );⁡                                                                    │
+      │                                                                         │
+      │   // 2️⃣ CREATE THE SLICE                                                │
+      │  ⁡⁢⁢⁢ const userSlice = createSlice({                                       │
+      │     name: 'users',                                                      │
+      │     initialState: {                                                     │
+      │       data: [],                                                         │
+      │       loading: false,⁡          // ⏳ For showing spinner               │
+      │      ⁡⁢⁢⁢ error: null⁡              // ❌ For showing error message         │
+      │     ⁡⁢⁢⁢},                                                                  │
+      │     reducers: {},  ⁡                                                     │
+      │                                                                         │
+      │     // 3️⃣ HANDLE ALL 3 STATES                                           │
+      │    ⁡⁢⁢⁢ extraReducers: (builder) => {                                       │
+      │       builder                                                           │
+      │         .addCase(fetchUsers.pending, (state) => {                       │
+      │           state.loading = true;⁡    // Show spinner                      │
+      │          ⁡⁢⁢⁢ state.error = null;                                           │
+      │         })                                                              │
+      │         .addCase(fetchUsers.fulfilled, (state, action) => {             │
+      │           state.loading = false;⁡   // Hide spinner                      │
+      │           ⁡⁢⁢⁢state.data = action.payload;⁡  // Store data                   │
+      │         ⁡⁢⁢⁢})                                                              │
+      │         .addCase(fetchUsers.rejected, (state, action) => {              │
+      │           state.loading = false; ⁡  // Hide spinner                      │
+      │           ⁡⁢⁢⁢state.error = action.payload;⁡ // Show error                   │
+      │         ⁡⁢⁢⁢});                                                             │
+      │     }                                                                   │
+      │   });  ⁡                                                                 │
+      └─────────────────────────────────────────────────────────────────────────┘
 
-   📌⁡⁣⁢⁣ USING IN COMPONENT:⁡
-   ┌─────────────────────────────────────────────────────────────────────────┐
-   │   ⁡⁢⁢⁢function UserList() {                                                 │
-   │     const dispatch = useDispatch();                                     │
-   │     const { data, loading, error } = useSelector(state => state.users); │
-   │                                                                         │
-   │     useEffect(() => {                                                   │
-   │       dispatch(fetchUsers());⁡  // 🚀 Fetch on mount                     
-   │     ⁡⁢⁢⁢}, []);                                                 
-   │
-   │                                                                         
-   │     if (loading) return <Spinner />⁡;      // ⏳ Show loading             
-   │     if (error) return <Error msg={error}/>; // ❌ Show error            
-   │     return <UserTable users={data} />;    // ✅ Show data               
-   │   }                                                                     │
-   └─────────────────────────────────────────────────────────────────────────┘
+      📌⁡⁣⁢⁣ USING IN COMPONENT:⁡
+      ┌─────────────────────────────────────────────────────────────────────────┐
+      │   ⁡⁢⁢⁢function UserList() {                                                 │
+      │     const dispatch = useDispatch();                                     │
+      │     const { data, loading, error } = useSelector(state => state.users); │
+      │                                                                         │
+      │     useEffect(() => {                                                   │
+      │       dispatch(fetchUsers());⁡  // 🚀 Fetch on mount                     
+      │     ⁡⁢⁢⁢}, []);                                                  
+      │
+      │                                                                         
+      │     if (loading) return <Spinner />⁡;      // ⏳ Show loading             
+      │     if (error) return <Error msg={error}/>; // ❌ Show error            
+      │     return <UserTable users={data} />;    // ✅ Show data               
+      │   }                                                                     │
+      └─────────────────────────────────────────────────────────────────────────┘
 
-   🎤 ⁡⁣⁢⁣I͟N͟T͟E͟R͟V͟I͟E͟W A͟N͟S͟W͟E͟R͟:⁡
-   ╔═══════════════════════════════════════════════════════════════════════╗
-   ║  "createAsyncThunk in build function in redux, that  handles async    ║
-   ║     operations like API calls. It                                     ║
-   ║   automatically generates three action types: ⁡⁣⁣⁢pending, fulfilled,     ║
-   ║   and rejected⁡. We handle these in extraReducers to manage loading    ║
-   ║   states and errors without writing boilerplate code."                ║
-   ╚═══════════════════════════════════════════════════════════════════════╝
+      🎤 ⁡⁣⁢⁣I͟N͟T͟E͟R͟V͟I͟E͟W A͟N͟S͟W͟E͟R͟:⁡
+      ╔═══════════════════════════════════════════════════════════════════════╗
+      ║  "⁡⁣⁣⁢createAsyncThunk in build function in redux, that  handles async    ║
+      ║     operations like API calls. It                                     ║
+      ║   automatically generates three action types: pending, fulfilled,     ║
+      ║   and rejected. We handle these in extraReducers to manage loading    ║
+      ║   states and errors without writing boilerplate code.⁡"                ║
+      ╚═══════════════════════════════════════════════════════════════════════╝
 
 
 ┌─────────────────────────────────────────────────────────────────────────────┐
@@ -863,7 +860,7 @@
 
 
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│ ❓ Q9. How to optimize performance with large lists (1000+ items)?          │
+│ ❓ ⁡⁢⁣⁣Q9. How to optimize performance with large lists (1000+ items)?⁡          │
 └─────────────────────────────────────────────────────────────────────────────┘
 
    ✅ ANSWER:
@@ -1345,7 +1342,7 @@ Q) Can you explain how React’s reconciliation process works and why the virtua
 
 
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│ ❓ Q15. How to prevent unnecessary re-renders in React?                     │
+│ ❓ ⁡⁢⁣⁣Q15. How to prevent unnecessary re-renders in React?    ⁡                 │
 └─────────────────────────────────────────────────────────────────────────────┘
 
    ✅ ANSWER:
@@ -1386,7 +1383,7 @@ Q) Can you explain how React’s reconciliation process works and why the virtua
 
 
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│ ❓ Q16. How to design React frontend for microservices backend?             │
+│ ❓ ⁡⁢⁣⁣Q16. How to design React frontend for microservices backend?⁡             │
 └─────────────────────────────────────────────────────────────────────────────┘
 
    ✅ ANSWER:
@@ -1467,7 +1464,7 @@ Q) Can you explain how React’s reconciliation process works and why the virtua
 
 ╔══════════════════════════════════════════════════════════════════════════════╗
 ║                                                                              ║
-║   📝 QUICK REVISION CHECKLIST - Review Before Interview!                     ║
+║   📝 ⁡⁢⁣⁣QUICK REVISION CHECKLIST - Review Before Interview!   ⁡                  ║
 ║                                                                              ║
 ╠══════════════════════════════════════════════════════════════════════════════╣
 ║                                                                              ║

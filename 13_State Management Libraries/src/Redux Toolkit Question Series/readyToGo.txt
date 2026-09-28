@@ -43,7 +43,11 @@
 ⁡
     - “The main difference is that Redux is the core state-management library, while Redux Toolkit is the official recommended way to use Redux. Redux Toolkit reduces the boilerplate and provides utilities like configureStore, createSlice, and createAsyncThunk, which make Redux easier to set up and maintain.”
 
-⁡⁢⁣⁣𝗤) 𝗪𝗵𝗮𝘁 𝗶𝘀 𝘁𝗵𝗲 𝗱𝗶𝗳𝗳𝗲𝗿𝗲𝗻𝗰𝗲 𝗯𝗲𝘁𝘄𝗲𝗲𝗻 𝗥𝗲𝗱𝘂𝘅 𝗮𝗻𝗱 𝗖𝗼𝗻𝘁𝗲𝘅𝘁 𝗔𝗣𝗜?
+⁡⁢⁣⁣𝗤: 𝗪𝗵𝗮𝘁 𝗶𝘀 𝘁𝗵𝗲 𝗱𝗶𝗳𝗳𝗲𝗿𝗲𝗻𝗰𝗲 𝗯𝗲𝘁𝘄𝗲𝗲𝗻 𝗥𝗲𝗱𝘂𝘅 𝗮𝗻𝗱 𝘂𝘀𝗲𝗖𝗼𝗻te𝘅𝘁?⁡
+
+    - "Both solve prop drilling. useContext is simpler but causes unnecessary re-renders across all consumers. Redux is more powerful — components only re-render when their specific subscribed state changes. For small apps use Context, for large complex apps use Redux."
+
+⁡⁢⁣⁣⁡⁢⁣⁣𝗤) 𝗪𝗵𝗮𝘁 𝗶𝘀 𝘁𝗵𝗲 𝗱𝗶𝗳𝗳𝗲𝗿𝗲𝗻𝗰𝗲 𝗯𝗲𝘁𝘄𝗲𝗲𝗻 𝗥𝗲𝗱𝘂𝘅 𝗮𝗻𝗱 𝗖𝗼𝗻𝘁𝗲𝘅𝘁 𝗔𝗣𝗜?⁡
 ⁡
     - The main difference is that Redux is a state management library that provides a centralized store for managing application-level state, while the Context API is a built-in feature of React that allows you to share state across components without prop drilling. Redux is more suitable for larger applications with complex state management needs, while the Context API is better for simpler use cases.
 
@@ -57,8 +61,9 @@
 ⁡⁢⁣⁣Q) You said createSlice automatically creates actions. How does it create those actions from the reducers we define?”
 ⁡
     - When we define reducer functions inside createSlice, Redux Toolkit uses those reducer names to automatically generate the corresponding action creators and action types. So we don't have to create them manually.
+    
 
-Q) Okay, then what is the difference between a reducer and an action?
+⁡⁢⁣⁣𝗤) 𝗢𝗸𝗮𝘆, 𝘁𝗵𝗲𝗻 𝘄𝗵𝗮𝘁 𝗶𝘀 𝘁𝗵𝗲 𝗱𝗶𝗳𝗳𝗲𝗿𝗲𝗻𝗰𝗲 𝗯𝗲𝘁𝘄𝗲𝗲𝗻 𝗮 𝗿𝗲𝗱𝘂𝗰𝗲𝗿 𝗮𝗻𝗱 𝗮𝗻 𝗮𝗰𝘁𝗶𝗼𝗻?⁡
 
     - A reducer is a function that receives the current state and an action, and decides how the state should change.
 
@@ -66,7 +71,7 @@ Q) Okay, then what is the difference between a reducer and an action?
 
     - Def:- A reducer is a function that takes the current state and an action, and returns the updated state. The action describes what happened, and its payload can contain the data needed for the update.”
 
-Q) 👉 “Okay, then what exactly is an action in Redux? And what do you mean by payload?”
+⁡⁢⁣⁣𝗤) 👉 “𝗢𝗸𝗮𝘆, 𝘁𝗵𝗲𝗻 𝘄𝗵𝗮𝘁 𝗲𝘅𝗮𝗰𝘁𝗹𝘆 𝗶𝘀 𝗮𝗻 𝗮𝗰𝘁𝗶𝗼𝗻 𝗶𝗻 𝗥𝗲𝗱𝘂𝘅? 𝗔𝗻𝗱 𝘄𝗵𝗮𝘁 𝗱𝗼 𝘆𝗼𝘂 𝗺𝗲𝗮𝗻 𝗯𝘆 𝗽𝗮𝘆𝗹𝗼𝗮𝗱?”⁡
 
     - In Redux, payload simply means the data carried by an action.
 
@@ -78,4 +83,7 @@ Q) 👉 “Okay, then what exactly is an action in Redux? And what do you mean b
 
     - Def:- An action describes what happened in the application. It can also contain a payload, which is the data needed to perform that state update. For example, when adding a product to a cart, addToCart can be the action and the product information can be its payload.
 
-Q)     
+⁡⁢⁣⁣𝗤) 𝗪𝗵𝗮𝘁 𝗶𝘀 𝗽𝗮𝘆𝗹𝗼𝗮𝗱 𝗶𝗻 𝗥𝗲𝗱𝘂𝘅?⁡
+
+"Payload is the data you send along with an action. For example, dispatch(incrementByAmount(5)) — here 5 is the payload. Inside the reducer you access it via action.payload."  
+

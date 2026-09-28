@@ -91,6 +91,5 @@ export default App;
 
             - Suspense:- This component is used to wrap the lazy-loaded component. It takes a fallback prop that is rendered while the component is being loaded. Once the component is loaded, it will replace the fallback content.
 
-            - Suspense:- This component is used to wrap the lazy-loaded component. It takes a fallback prop that is rendered while the component is being loaded. Once the component is loaded, it will replace the fallback content.
     
     */
