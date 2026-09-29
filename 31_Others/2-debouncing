@@ -1,0 +1,78 @@
+**Debouncing** and **throttling** control how often a function runs when an event fires repeatedly, such as typing, scrolling, or resizing.
+
+### Debouncing
+
+Debouncing waits until events stop occurring for a specified time before running the function.
+
+Example: search input.
+
+```js
+function debounce(callback, delay) {
+  let timer;
+
+  return (...args) => {
+    clearTimeout(timer);
+    timer = setTimeout(() => callback(...args), delay);
+  };
+}
+
+const search = debounce((value) => {
+  console.log("API request:", value);
+}, 500);
+```
+
+If the user types `React`, the API request runs only once, 500 ms after typing stops.
+
+Use debouncing for:
+
+- Search suggestions
+- Form validation
+- Saving after typing
+- Window resize completion
+
+### Throttling
+
+Throttling runs a function at most once during a fixed time interval, even if events continue occurring.
+
+```js
+function throttle(callback, delay) {
+  let waiting = false;
+
+  return (...args) => {
+    if (waiting) return;
+
+    callback(...args);
+    waiting = true;
+
+    setTimeout(() => {
+      waiting = false;
+    }, delay);
+  };
+}
+
+const handleScroll = throttle(() => {
+  console.log("Scroll position:", window.scrollY);
+}, 200);
+```
+
+While scrolling continuously, the function runs at most once every 200 ms.
+
+Use throttling for:
+
+- Scroll handlers
+- Mouse movement
+- Dragging
+- Window resizing while it happens
+- Continuous progress updates
+
+### Main difference
+
+| Technique | Function runs |
+|---|---|
+| Debouncing | After events stop |
+| Throttling | Periodically during events |
+
+A simple memory aid:
+
+- **Debounce:** “Wait until the user finishes.”
+- **Throttle:** “Keep running, but limit the frequency.”

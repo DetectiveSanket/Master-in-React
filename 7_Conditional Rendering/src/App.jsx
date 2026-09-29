@@ -23,7 +23,13 @@ function App() {
 
     //* 4) Early Returns
         if(!isLoggedIn) {
-            return <LoginBtn />
+            // return <LoginBtn />
+            return (
+                <div>
+                    <h1 style={{background:"orange" , text:'red'}}> Page is not found </h1>
+                    <button className='text-orange-500'> clime me </button>
+                </div>
+            )
         }
         
 

@@ -1,0 +1,246 @@
+
+================================================================================
+						 REACT 18+ FEATURES
+================================================================================
+
+Quick guide
+-----------
+React 18 introduced concurrent rendering: React can pause, continue, or
+prioritize rendering work. React 19 builds on that model with Actions,
+optimistic UI, Server Components, and simpler form handling.
+
+Version map
+-----------
+React 18   Concurrent rendering, automatic batching, transitions, new root APIs
+React 19   Actions, forms, optimistic updates, ref/context improvements
+React 19.2 Activity, ViewTransition, useEffectEvent, better performance tools
+
+NOTE: Some features depend on the framework. Server Components and Server
+Actions, for example, require a framework or server setup that supports them.
+
+
+--------------------------------------------------------------------------------
+REACT 18
+--------------------------------------------------------------------------------
+
+1. Concurrent rendering
+   React can work on rendering in the background, pause it, and prioritize
+   urgent updates. Use it when a large update should not block user input.
+
+2. Automatic batching
+   React groups multiple state updates into one render, including updates from
+   promises, timers, and native events. Use it to reduce unnecessary renders.
+
+3. createRoot
+   The new root API enables React 18 behavior and replaces ReactDOM.render.
+   Use it when mounting a client-rendered application.
+
+   Example:
+   const root = createRoot(document.getElementById('root'));
+   root.render(<App />);
+
+4. hydrateRoot
+   Hydrates server-rendered HTML using the React 18 root API. Use it for SSR
+   applications so the browser can attach React behavior to existing markup.
+
+5. startTransition
+   Marks state updates as non-urgent background work. Use it when filtering,
+   navigating, or rendering a large view should not interrupt typing or clicks.
+
+6. useTransition
+   Provides isPending plus a transition function for non-urgent updates. Use it
+   to show a pending indicator while a tab, route, or expensive list updates.
+
+7. useDeferredValue
+   Lets a value update later while urgent UI remains responsive. Use it when a
+   search field should update immediately but a results list is expensive.
+
+8. Suspense for streaming SSR
+   Suspense boundaries can be sent to the browser progressively as server data
+   becomes ready. Use it to show a fallback instead of blocking the full page.
+
+9. Selective hydration
+   Hydration can prioritize the part of a server-rendered page that the user is
+   interacting with. Use it to improve responsiveness on large SSR pages.
+
+10. useId
+	Generates stable, unique IDs that match between server and client. Use it
+	for accessible label/input relationships and other generated DOM IDs.
+
+11. useSyncExternalStore
+	Safely subscribes to external stores in concurrent rendering. Use it when
+	integrating Redux-like stores, browser APIs, or custom observable state.
+
+12. useInsertionEffect
+	Runs before layout effects so CSS-in-JS libraries can insert styles early.
+	Use it mainly when authoring a styling library, not in normal components.
+
+13. Strict Mode checks
+	In development, Strict Mode intentionally re-runs certain render and effect
+	paths to expose unsafe side effects. Use it to find bugs before production.
+
+14. flushSync
+	Forces React to flush updates synchronously. Use it only when an external
+	browser API must immediately observe the updated DOM, such as measurement.
+
+
+--------------------------------------------------------------------------------
+REACT 19
+--------------------------------------------------------------------------------
+
+15. Actions
+	React can track async mutations, including pending, success, and error
+	states. Use Actions for form submissions, mutations, and async workflows.
+
+16. useActionState
+	Connects an Action to state and exposes its pending status. Use it to keep
+	form result, validation messages, and submission state together.
+
+17. useFormStatus
+	Reads the status of a parent form submission from a child component. Use it
+	to disable a submit button or show "Submitting..." without prop drilling.
+
+18. useOptimistic
+	Shows the expected result immediately while an async request is running.
+	Use it for likes, comments, messages, or any interaction where latency is
+	noticeable and failures can be reconciled.
+
+19. Form Actions
+	A form's action can receive FormData and perform an async mutation. Use it
+	to simplify submission logic and progressive enhancement in supported apps.
+
+20. Server Components
+	Components can render on the server and keep server-only code out of the
+	browser bundle. Use them for database-backed pages and smaller client JS.
+
+21. Server Actions / Server Functions
+	A client interaction can call an async server function through a framework's
+	server integration. Use them for mutations without hand-writing an API
+	endpoint for every form or action.
+
+22. The use API
+	Reads a Promise or context during render. Promises suspend with Suspense,
+	while context can be read without a separate useContext call. Use it for
+	data dependencies and conditional context reading.
+
+	Example:
+	const data = use(dataPromise);
+	const theme = use(ThemeContext);
+
+23. ref as a prop
+	Function components can receive ref like any other prop; forwardRef is no
+	longer required for this common case. Use it when exposing an input or
+	imperative handle from a component.
+
+24. Context as a provider
+	A context object can be rendered directly as a provider. Use
+	<ThemeContext value={theme}> instead of <ThemeContext.Provider> in new code.
+
+25. Document metadata
+	Components can render title, meta, and link elements and React hoists them
+	to document head. Use it for route-specific titles, descriptions, and icons.
+
+26. Stylesheet support
+	React can coordinate stylesheet links and their precedence during rendering.
+	Use it when components or routes need to load CSS without ordering bugs.
+
+27. Resource hints
+	APIs such as preload, preinit, prefetchDNS, and preconnect let React declare
+	important resources. Use them to improve font, image, stylesheet, or module
+	loading when a resource is known to be needed.
+
+28. Improved hydration errors
+	React reports clearer server/client mismatch messages and points closer to
+	the differing element. Use the diagnostics to fix nondeterministic SSR.
+
+29. Better ref cleanup
+	Callback refs can return a cleanup function. Use it to release listeners,
+	observers, or other resources created when a DOM node is attached.
+
+30. Improved custom element support
+	React 19 improves passing properties and events to custom elements. Use it
+	when integrating Web Components into a React application.
+
+
+--------------------------------------------------------------------------------
+REACT 19.2 AND NEWER 19.x FEATURES
+--------------------------------------------------------------------------------
+
+31. Activity
+	Activity can hide or display a subtree while preserving its state and
+	managing effects. Use it for tabs, background routes, and pre-rendered UI
+	that should remain warm without being visible.
+
+32. ViewTransition
+	React can coordinate updates with the browser View Transitions API. Use it
+	for smooth page, route, list, and layout transitions where supported.
+
+33. useEffectEvent
+	Separates non-reactive event logic from an Effect while allowing that logic
+	to read the latest values. Use it when an Effect should not re-subscribe just
+	because a callback needs current props or state.
+
+34. Partial pre-rendering support
+	React and supporting frameworks can pre-render stable parts of a page and
+	resume dynamic work later. Use it to combine fast initial HTML with dynamic
+	server content; exact APIs depend on the framework.
+
+35. React Performance Tracks
+	React adds profiling information for React work to browser performance
+	tooling. Use it to investigate slow renders, transitions, and scheduling.
+
+36. React Compiler
+	The compiler automatically optimizes component re-rendering in supported
+	setups. Use it to reduce manual memoization; treat compiler configuration
+	and framework support as project-specific rather than a drop-in API.
+
+
+--------------------------------------------------------------------------------
+RELATED APIs AND PATTERNS
+--------------------------------------------------------------------------------
+
+These are important when learning React 18+, but are not all new React 18/19
+features themselves:
+
+Error boundaries
+	Catch rendering errors in a subtree and show fallback UI. Use them around
+	routes, widgets, and other independently recoverable parts of an app.
+
+Suspense
+	Shows fallback UI while a supported child is not ready. Use it with lazy
+	components, streaming SSR, and framework data-loading integrations.
+
+React.lazy
+	Loads a component dynamically. Use it with Suspense for route-level or
+	feature-level code splitting.
+
+Server-side rendering (SSR)
+	Sends HTML from a server before client JavaScript loads. Use it for faster
+	first content, SEO, and applications that need server-rendered pages.
+
+
+WHICH FEATURE SHOULD I USE?
+---------------------------
+
+Search box feels slow while typing       useDeferredValue or debounce
+Large update blocks a click               startTransition / useTransition
+Repeated scroll or resize events          throttle
+Form mutation with pending state          Actions / useActionState
+Instant feedback before server response  useOptimistic
+Server data should not ship to browser    Server Components
+Accessible generated IDs                  useId
+External store integration                useSyncExternalStore
+Server-rendered page becomes interactive  hydrateRoot and Suspense
+Preserve hidden tab or route state        Activity
+
+
+UPGRADE NOTES
+-------------
+
+* React 18 applications should migrate from ReactDOM.render to createRoot.
+* Do not use flushSync to solve ordinary performance problems; it opts out of
+  React's scheduling and can make rendering slower.
+* Server Components, Server Actions, resource hints, and partial pre-rendering
+  require support from the chosen framework and deployment environment.
+* The React Compiler does not replace correct component design or eliminate the
+  need to measure performance.

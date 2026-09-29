@@ -12,7 +12,19 @@
 ⁡⁢⁣⁣𝗤) 𝗪𝗵𝗮𝘁 𝗶𝘀 𝗥𝗲𝗱𝘂𝘅?⁡
 - 
     ⁡⁣⁢⁣𝗜𝗡𝗧𝗘𝗥𝗩𝗜𝗘𝗪 𝗥𝗘𝗔𝗗𝗬:-⁡
-        - Redux is a state management library. We mainly use it to manage and share application-level state between multiple components. It provides a centralized store, so instead of passing data through many components, different components can access the shared state from the store.  
+        - Redux is a state management library. We mainly use it to manage and share the state. between multiple components. It provides a centralized store , that hold entire applicatin data, so instead of passing data through many components, different components can access the shared state from the store.  
+
+      • ⁡⁣⁢⁣𝗗𝗮𝘁𝗮 𝗙𝗹𝗼𝘄⁡
+
+        User Action
+           ↓
+        dispatch(action)
+           ↓
+        Reducer (Slice)
+           ↓
+        Store Updates
+           ↓
+        React Component Re-renders  
 
 
 ⁡⁢⁣⁣𝗤) why do we need Redux if React already provides ⁡⁢⁣⁣𝘂𝘀𝗲𝗦𝘁𝗮𝘁𝗲 𝗮𝗻𝗱 𝘂𝘀𝗲𝗖𝗼𝗻𝘁𝗲𝘅𝘁?⁡
@@ -70,6 +82,19 @@
     - The action contains information about what happened. It can also contain a payload with data.  
 
     - Def:- A reducer is a function that takes the current state and an action, and returns the updated state. The action describes what happened, and its payload can contain the data needed for the update.”
+
+Q)⁡⁣⁣⁢ 𝗦𝗼 𝘂𝘀𝗲S𝗲𝗹𝗲𝗰𝘁𝗼𝗿 𝗶𝘀 𝘂𝘀𝗲𝗱 𝘁𝗼 , 𝗴𝗲𝘁 𝘁𝗵𝗲 𝗱𝗮𝘁𝗮 𝗶𝗻 𝗮 𝗳𝘂𝗻𝗰𝘁𝗶𝗼𝗻 𝗰𝗼𝗺𝗽𝗼𝗻𝗲𝗻𝘁 𝗳𝗿𝗼𝗺 𝘁𝗵𝗲 𝘀𝘁𝗼𝗿𝗲 𝗮𝗻𝗱 𝘂𝗵, 𝘂𝘀𝗲 𝗱𝗶𝘀𝗽𝗮𝘁𝗰𝗵 𝗶𝘀 𝘂𝘀𝗲𝗱 𝘁𝗼 𝘀𝗲𝗻𝗱 the 𝗮𝗰𝘁𝗶𝗼𝗻 𝘁𝗼 𝘁𝗵𝗲 𝘀𝘁𝗼𝗿𝗲 𝘁𝗼 𝘂𝗽𝗱𝗮𝘁𝗲 𝘁𝗵𝗲 𝘀𝘁𝗮𝘁𝗲.⁡
+
+    - useSelector = read from store 
+    - useDispatch = send actions to store 
+
+    - "useSelector and useDispatch are two hooks from React-Redux used to interact with the Redux store.
+
+    - useSelector is used to read or extract data from the store inside a functional component. It takes a selector function that receives the entire state and returns the specific piece you need.
+
+    - useDispatch returns the dispatch function which you use to send actions to the store. The reducer then processes that action and updates the state.
+
+    - In practice you always use both together — useSelector to read, useDispatch to update."
 
 ⁡⁢⁣⁣𝗤) 👉 “𝗢𝗸𝗮𝘆, 𝘁𝗵𝗲𝗻 𝘄𝗵𝗮𝘁 𝗲𝘅𝗮𝗰𝘁𝗹𝘆 𝗶𝘀 𝗮𝗻 𝗮𝗰𝘁𝗶𝗼𝗻 𝗶𝗻 𝗥𝗲𝗱𝘂𝘅? 𝗔𝗻𝗱 𝘄𝗵𝗮𝘁 𝗱𝗼 𝘆𝗼𝘂 𝗺𝗲𝗮𝗻 𝗯𝘆 𝗽𝗮𝘆𝗹𝗼𝗮𝗱?”⁡
 
